@@ -2,67 +2,139 @@
 
 **Fund the whole community plan, or nobody gets stranded.**
 
-A plan has one to three essential, separately earmarked budgets, fixed beneficiaries, a prefunded DAO matching allocation and one deadline. Every budget must reach its own community target. Success creates all beneficiary payment rights together; failure unlocks contributor principal refunds and the DAO's reserve return. Actual token payouts remain independent and retryable.
+A community event needs a venue, equipment and access passes. If only the venue gets funded, the money is wasted and the people who gave it are stuck. AllTogether lets a community fund a plan made of up to three essential budgets with one deadline. Every budget has to reach its own target. If they all do, every beneficiary is paid. If any one falls short, every contributor gets their money back, and so does the DAO that offered matching funds.
 
-## Run the application
+Built for the **Social Money** track of the NEAR Hackathon. The matching funds come from a real [Sputnik DAO](https://github.com/near-daos/sputnik-dao-contract) on NEAR testnet, which approves them through an on-chain proposal and vote.
 
-Requires Node 24 or newer and pnpm 11.25.0. From this directory:
+## How it works
 
-```powershell
+1. **An organizer creates a plan** with one to three budgets, a fixed beneficiary account for each, and a deadline.
+2. **A community DAO sponsors it.** A Sputnik DAO proposal transfers the matching reserve into the escrow contract. Approval alone is not enough; the plan opens only once the reserve has actually arrived.
+3. **People pledge** test tokens (testUSD, a NEP-141 token) to individual budgets. Overfilled or late pledges are returned automatically by the token's `ft_transfer_call` resolver.
+4. **After the deadline, anyone can finalize the plan.**
+   - *All budgets reached their targets:* every beneficiary gets a payment credit at the same moment.
+   - *Any budget fell short:* no beneficiary is paid. Contributors get exact refunds, and the DAO gets its reserve back.
+5. **Payouts are separate and retryable.** If a beneficiary's account can't receive tokens yet, the transfer fails safely, the credit is restored, and the payout can be retried later without paying twice.
+
+The escrow is a Rust contract (`contract/`). The web app (`web/`) and API (`server/`) give each role a view of the same rules.
+
+## See it on NEAR testnet
+
+All accounts hold valueless test assets.
+
+| Component | Account |
+|---|---|
+| Escrow contract | [`escrow.at-rel-owner-mw3qu2g0.testnet`](https://testnet.nearblocks.io/address/escrow.at-rel-owner-mw3qu2g0.testnet) |
+| Test token (testUSD) | [`testusd.at-rel-owner-mw3qu2g0.testnet`](https://testnet.nearblocks.io/address/testusd.at-rel-owner-mw3qu2g0.testnet) |
+| Sputnik DAO | [`alltogether-mw3kfemk.sputnikv2.testnet`](https://testnet.nearblocks.io/address/alltogether-mw3kfemk.sputnikv2.testnet) |
+
+Two complete plans were run on testnet, one that failed and one that succeeded:
+
+| Step | Transaction |
+|---|---|
+| DAO proposal to sponsor plan 2 | [`93FNRoVm…`](https://testnet.nearblocks.io/txns/93FNRoVm38bovEygFc9nPG5Pe84e55oRXDApAj7EbLpP) |
+| DAO council approves it | [`6mToimmu…`](https://testnet.nearblocks.io/txns/6mToimmu7QEMweYGnwpc1bntniau5QwMw8bL1NsJBNk5) |
+| A pledge to plan 2 | [`2pPE4EmR…`](https://testnet.nearblocks.io/txns/2pPE4EmRTwpxqWCZvFvkvEv6iTefz1zaPrkjHYVat18a) |
+| An overfilled pledge returned by the resolver | [`5nyJp88V…`](https://testnet.nearblocks.io/txns/5nyJp88Vhiw9YuVkkV7vx6EbQEyxiFXNCTEEEx6LBNFs) |
+| Plan 2 finalized as successful | [`AwCNq6e6…`](https://testnet.nearblocks.io/txns/AwCNq6e6jvR8ipriczbxwmPFuRwvJyeNdUYXqn61v8re) |
+| Payout fails for an unregistered beneficiary; credit restored | [`BuERa6Ef…`](https://testnet.nearblocks.io/txns/BuERa6EfFHxGuNaTSxCfknRS6fkbozHqNPXLwyJc47uU) |
+| Retry after registration pays exactly once | [`9tdmwDDh…`](https://testnet.nearblocks.io/txns/9tdmwDDheWMo1fasb31VFh2yVVKpdUhpRJSbR25L9Y32) |
+| Plan 1 finalized as failed | [`4ycGwY1b…`](https://testnet.nearblocks.io/txns/4ycGwY1bcwGXqM4o2qmNxJMsQ2VVdBscQgsfwhkkV79L) |
+| Contributor refund paid | [`ATuzvbdn…`](https://testnet.nearblocks.io/txns/ATuzvbdn1gJmWYM2yryP6MQRyThggh1MxVooKKBG5LbE) |
+| DAO reserve returned | [`BGc6A2E2…`](https://testnet.nearblocks.io/txns/BGc6A2E2DBbEA3j1A9havggD5uMGtvhCXWbqxi7DNpXX) |
+
+All 51 transactions of that run are in [`docs/qa-release-testnet.json`](docs/qa-release-testnet.json).
+
+### Check the contract yourself
+
+These read-only calls need no wallet. They query the public testnet RPC (`e30=` is `{}` in base64):
+
+```sh
+# Totals across all plans: accepted and paid principal, custody, pending transfers
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet","method_name":"get_accounting","args_base64":"e30="}}'
+
+# All plans and their outcomes
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet","method_name":"list_campaigns","args_base64":"e30="}}'
+
+# Deployed code hash; should be DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_account","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet"}}'
+```
+
+`result.result` in the first two responses is a byte array of JSON text. testUSD has 6 decimals, so `"2145000000"` means 2,145 testUSD. On 6 November 2026, `accepted_inflows` and `confirmed_paid` were both 2,145 testUSD, with nothing left in custody or pending. The deployed code hash matches the WASM committed at `contract/target/near/alltogether_escrow.wasm` (SHA-256 `b6adf23a…c5e7`).
+
+## Run it locally
+
+Requires Node.js 24+ and pnpm 11.25.0.
+
+```sh
 pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open <http://127.0.0.1:5173>. The persistent SQLite API runs at <http://127.0.0.1:8787>. For a built application, run `pnpm build`, then `pnpm start` and open port 8787. `ALLTOGETHER_DB` selects a separate database; the default is `data/alltogether.sqlite`.
+Open <http://127.0.0.1:5173>. The API runs on port 8787 and stores its data in `data/alltogether.sqlite` (set `ALLTOGETHER_DB` to use a different file). For a production build, run `pnpm build && pnpm start` and open port 8787.
 
-The local workspace uses a clearly labeled persistent demo ledger and simulated roles. The separate **Live testnet** workspace reads verified finalized state and connects an external testnet wallet for reviewed transactions. The server never receives a wallet private key. Local role selection does not authenticate an onchain account.
+The app has two workspaces:
 
-## Try the complete flow
+- **Local demo.** A persistent local ledger with sample roles (Organizer, Community DAO, Alice, Bob), so the whole flow can be tried without a wallet. It is clearly labeled as a simulation; picking a role does not sign anything on chain.
+- **Live testnet.** Reads the deployed contracts above and connects a NEAR testnet wallet (through [near-connect](https://www.npmjs.com/package/@hot-labs/near-connect)) to review and sign real transactions. The server never sees a wallet key.
 
-1. Select **Organizer** and load sample plans, or create a plan with your own fixed budgets and deadline. Sample plans are clearly marked fixtures; one uses a real three-minute deadline.
-2. Request sponsorship, switch to **Community DAO**, approve the proposal, then fund the exact matching reserve. Approval alone does not open contributions.
-3. Switch to Alice or Bob and pledge to individual budgets. Before closing, removing a pledge creates a separate withdrawal credit; claiming it is another action.
-4. After the actual deadline, anyone can finalize. A missing essential budget blocks every beneficiary entitlement. **My funds** exposes failed principal, then separate refund-credit creation and payment claim actions.
-5. A complete plan creates all beneficiary credits. An unregistered receiver's payment fails safely; register the receiver and retry. Activity, custody and exports expose the resulting state.
+### Try the complete flow (local demo)
 
-`pnpm seed` idempotently loads fixtures while the API is running. `pnpm scenario` runs an actual short-deadline local API walkthrough covering success, failure, exact refunds, rejected overfill and payment recovery. It creates new test plans. Startup does not erase or reseed existing balances. To start fresh without deleting anything, select a new `ALLTOGETHER_DB` path.
+1. As **Organizer**, load the sample plans or create your own. One sample uses a real three-minute deadline.
+2. Request sponsorship, switch to **Community DAO**, approve the proposal, then fund the matching reserve. Approval alone does not open the plan.
+3. Switch to **Alice** or **Bob** and pledge to individual budgets. Before the deadline, a pledge can be withdrawn.
+4. After the deadline, anyone can finalize. If a budget missed its target, **My funds** shows the refund to claim.
+5. If every budget succeeded, beneficiaries can claim. An unregistered receiver's payout fails safely; register it and retry.
 
-## Verified implementation
+`pnpm seed` loads the sample plans into a running API. `pnpm scenario` runs a short-deadline walkthrough of success, failure, refunds, a rejected overfill and payout recovery.
 
-- 63 JavaScript/TypeScript tests passed, including real HTTP concurrency, accounting interleavings, crash recovery at three transfer boundaries, complete 52-attempt exports and refund discovery.
-- 17 Rust escrow tests and five test-token tests passed.
-- TypeScript checks and production frontend build passed.
-- Both optimized Rust WASM artifacts were built and deployed to dedicated NEAR testnet accounts.
-- A genuine Sputnik DAO approved actual token transfer-call funding. Both failed and successful plans were executed on testnet, including rejected-transfer token returns, contributor/DAO refunds, beneficiary payments and failed-registration retry.
-- Desktop UI sponsorship, pledge, finalization and refund recovery were exercised. A single-budget plan was published through a real 360px iframe viewport with no horizontal document overflow.
+## Tests
 
-Current release checks: [release testnet](docs/RELEASE_TESTNET.md), [wallet/controller QA](docs/RELEASE_WALLET_QA.md), [release UI](docs/RELEASE_UI.md), [operations](docs/RELEASE_OPERATIONS.md), and [workspace release QA](release-qa/REPRODUCIBILITY.md). Earlier evidence is retained in [EVIDENCE.md](docs/EVIDENCE.md), [NEAR.md](docs/NEAR.md), [STORAGE.md](docs/STORAGE.md) and [public testnet receipts](docs/testnet-scenario.json). No sandbox-node execution is claimed; the recorded integration runs used the actual public testnet.
-
-## Actual testnet deployment
-
-| Component | Account |
-| --- | --- |
-| Sputnik DAO | `alltogether-mw3kfemk.sputnikv2.testnet` |
-| Escrow | `escrow.at-rel-owner-mw3qu2g0.testnet` |
-| Test token | `testusd.at-rel-owner-mw3qu2g0.testnet` |
-
-These are valueless test assets. The Live testnet workspace supports external wallet connection, exact transaction review and persistent receipt reconciliation. Actual SDK-backed controller execution was verified separately; external wallet account login/approval was not exercised in release QA. Keep a correct local clock: a receipt executed before its saved intent cannot confirm it, and clock-skew ambiguity remains Unknown. Dedicated testnet deployment keys are retained for development, so the deployments are not immutable or audited. Keys are ignored under `.secrets`, are never printed, and are not user wallet credentials.
-
-## Verification commands
-
-```powershell
-pnpm test
-pnpm build
-pnpm test:contract
-pnpm build:contract
+```sh
+pnpm test            # 63 application tests
+pnpm typecheck       # strict TypeScript
+pnpm build           # production frontend
+pnpm test:contract   # 22 Rust tests (17 escrow + 5 token); needs Rust
+pnpm build:contract  # optimized WASM; needs Rust, the wasm32 target and cargo-near
 ```
 
-The contract scripts use the workspace-local Rust/GNU/CMake toolchain on this Windows workstation; elsewhere install Rust, its WASM target and cargo-near. Registry access and loopback tests require the execution environment's network permissions. Package locks pin dependency versions.
+The tests cover concurrent HTTP requests, accounting under interleaved actions, crash recovery at three points during a transfer, and refund discovery. The results of the last full release check are in [`release-qa/RELEASE_GATE.md`](release-qa/RELEASE_GATE.md).
 
-See `scripts/testnet-bootstrap.mjs`, `scripts/testnet-dao.mjs`, `scripts/testnet-contracts.mjs`, `scripts/testnet-scenario.mjs` and `scripts/near/` for guarded, dedicated-testnet-only operations. Never point them at mainnet or supply a personal wallet. Current scenario credentials/configuration belong to this local development workspace; a fresh clone must create its own dedicated testnet setup.
+## Repository layout
 
-## Boundaries
+| Path | Contents |
+|---|---|
+| `contract/` | Rust escrow contract (`src/`) and the testUSD test token (`test-token/`); committed release WASMs under `target/near/` |
+| `server/` | Node API with SQLite storage and the read-only NEAR testnet reader |
+| `web/` | React app, including the wallet controller for the Live testnet workspace |
+| `shared/` | Types and rules shared by the server and the web app |
+| `scripts/` | Dev, build, seed, backup/restore and the testnet setup scripts (`scripts/near/`, `testnet-*.mjs`) |
+| `tests/` | Application, server and release tests |
+| `docs/` | Design notes and on-chain evidence; start with the [evidence index](docs/EVIDENCE_INDEX.md) |
+| `release-qa/` | Fresh-install, restore, dependency and browser checks |
 
-The DAO retains its ordinary treasury and governance; only the approved tranche and pledges enter the campaign escrow. Funding success does not establish supplier delivery. Named accounts are not unique people. Storage/native gas costs are separate from testUSD principal. A pending chain transfer cannot be retried merely because a browser timer expires. Unsolicited token deposits are not silently allocated to campaigns.
+The testnet scripts are only for creating a **new, dedicated** testnet setup. They refuse to run against mainnet or replay a completed run. Their keys are written to the ignored `.secrets/` folder and never committed.
 
-AllTogether and [ArchivePass](../archivepass/) are independent NEAR Hackathon projects with separate application code, contracts, data and tests. Each README identifies the other. The [product specification](PRODUCT_SPEC.md) and [implementation plan](IMPLEMENTATION_PLAN.md) record the complete scope and design.
+## Known limitations
+
+- **Testnet only**, with a valueless test token. There is no mainnet deployment.
+- **The escrow contract is still upgradable.** Its deployment key is kept for development, so it is not yet locked or audited.
+- **Signing in the Live workspace has been tested only through an SDK wallet adapter.** Opening and closing the external wallet picker was checked in the browser, but logging in with a real wallet and approving a transaction there has not been tested yet.
+- A successful plan proves the money was raised and paid out, not that the venue or supplier delivered.
+
+## Built with
+
+- **Contracts:** Rust, [near-sdk](https://github.com/near/near-sdk-rs) 5.30, near-contract-standards (NEP-141 / NEP-145)
+- **App:** TypeScript, React 19, Vite, Node.js 24 (built-in SQLite), [near-api-js](https://github.com/near/near-api-js) 7.4, [@hot-labs/near-connect](https://www.npmjs.com/package/@hot-labs/near-connect)
+- **On chain:** NEAR testnet, Sputnik DAO v2
+- **AI tools:** OpenAI Codex was used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
+
+The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/Cargo.lock`.
+
+## Development history
+
+The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the DAO, contracts and accounts were created on 5 November 2026 (see [`docs/qa-release-testnet-setup.json`](docs/qa-release-testnet-setup.json) and the explorer links above).
+
+## License
+
+[MIT](LICENSE)
