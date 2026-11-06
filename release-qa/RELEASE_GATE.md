@@ -21,7 +21,7 @@ Final checks before publishing, completed 6 November 2026. Scope: the local app 
 | Browser fault recovery | A lost response after a committed pledge, then a reload, resumed the same request with no double debit; stale data and account switching handled |
 | Narrow screens | Real 360px frame: no horizontal page overflow |
 
-Source and artifact SHA-256 values for the checked release are in [FINAL_SOURCE_MANIFEST.json](FINAL_SOURCE_MANIFEST.json). It was recorded before the project was put under Git, so the README and the documentation files edited since will not match it; the code, contracts and WASMs are unchanged. Fresh-install and restore details are in [REPRODUCIBILITY.md](REPRODUCIBILITY.md); browser checks are in [BROWSER_RELEASE_QA.md](BROWSER_RELEASE_QA.md).
+Source and artifact SHA-256 values for the checked release are in [FINAL_SOURCE_MANIFEST.json](FINAL_SOURCE_MANIFEST.json). It was recorded before the project was put under Git. Files changed since then: the README and documentation, the testnet binding files for the redeploy, and `scripts/qa-release-testnet.mjs` (the testnet setup script, changed to create keyless contracts and a new DAO). The app, contract sources and WASMs are unchanged. Fresh-install and restore details are in [REPRODUCIBILITY.md](REPRODUCIBILITY.md); browser checks are in [BROWSER_RELEASE_QA.md](BROWSER_RELEASE_QA.md).
 
 ## Not covered
 
