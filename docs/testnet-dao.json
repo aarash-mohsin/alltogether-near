@@ -1,0 +1,55 @@
+{
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "rootAccount": "at-mw3kfemk.testnet",
+  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+  "factory": "sputnikv2.testnet",
+  "codeHash": "AA4nA45vauiac3jdVwJTzSdUP3oj2r1fDaPAb2mHdgcH",
+  "policy": {
+    "roles": [
+      {
+        "name": "all",
+        "kind": "Everyone",
+        "permissions": [
+          "*:AddProposal"
+        ],
+        "vote_policy": {}
+      },
+      {
+        "name": "council",
+        "kind": {
+          "Group": [
+            "at-mw3kfemk.testnet"
+          ]
+        },
+        "permissions": [
+          "*:Finalize",
+          "*:AddProposal",
+          "*:VoteApprove",
+          "*:VoteReject",
+          "*:VoteRemove"
+        ],
+        "vote_policy": {}
+      }
+    ],
+    "default_vote_policy": {
+      "weight_kind": "RoleWeight",
+      "quorum": "0",
+      "threshold": [
+        1,
+        2
+      ]
+    },
+    "proposal_bond": "1000000000000000000000000",
+    "proposal_period": "604800000000000",
+    "bounty_bond": "1000000000000000000000000",
+    "bounty_forgiveness_period": "86400000000000"
+  },
+  "config": {
+    "name": "AllTogether demo community",
+    "purpose": "Dedicated NEAR testnet funding demonstration; test assets only.",
+    "metadata": ""
+  },
+  "observedAt": "2026-11-05T13:21:56.323Z",
+  "note": "Dedicated single-member demo council; no real funds or user wallets."
+}

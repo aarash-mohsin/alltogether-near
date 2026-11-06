@@ -1,0 +1,210 @@
+{
+  "network": "testnet",
+  "observedAt": "2026-11-05T16:24:23.949Z",
+  "status": "passed",
+  "proposals": [
+    {
+      "campaignId": "1",
+      "returnedProposalId": 2,
+      "proposal": {
+        "id": 2,
+        "proposer": "at-mw3kfemk.testnet",
+        "description": "AllTogether release 1, immutable terms a754d7cf144b6cee3cc5faa7707b341d6e9c629cf8ccd8463cc578b7c461a6c2, all budgets required",
+        "kind": {
+          "FunctionCall": {
+            "receiver_id": "testusd.at-rel-owner-mw3qu2g0.testnet",
+            "actions": [
+              {
+                "method_name": "ft_transfer_call",
+                "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXczcXUyZzAudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDEiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjFcIixcInRlcm1zX2hhc2hcIjpcImE3NTRkN2NmMTQ0YjZjZWUzY2M1ZmFhNzcwN2IzNDFkNmU5YzYyOWNmOGNjZDg0NjNjYzU3OGI3YzQ2MWE2YzJcIn0ifQ==",
+                "deposit": "1",
+                "gas": "100000000000000"
+              }
+            ]
+          }
+        },
+        "status": "Approved",
+        "vote_counts": {
+          "council": [
+            1,
+            0,
+            0
+          ]
+        },
+        "votes": {
+          "at-mw3kfemk.testnet": "Approve"
+        },
+        "submission_time": "1793895265268752100"
+      },
+      "creationTransactionHash": "Hzn6EimeHgTEtcqupdZhsxhTindqxay4gRUZwBnsFLCy"
+    },
+    {
+      "campaignId": "2",
+      "returnedProposalId": 3,
+      "proposal": {
+        "id": 3,
+        "proposer": "at-mw3kfemk.testnet",
+        "description": "AllTogether release 2, immutable terms 5e5aae6c1faa625f16cc76ae3dce6a46b2e1122079a73594f07e648f586fc4d7, all budgets required",
+        "kind": {
+          "FunctionCall": {
+            "receiver_id": "testusd.at-rel-owner-mw3qu2g0.testnet",
+            "actions": [
+              {
+                "method_name": "ft_transfer_call",
+                "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXczcXUyZzAudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDIiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjJcIixcInRlcm1zX2hhc2hcIjpcIjVlNWFhZTZjMWZhYTYyNWYxNmNjNzZhZTNkY2U2YTQ2YjJlMTEyMjA3OWE3MzU5NGYwN2U2NDhmNTg2ZmM0ZDdcIn0ifQ==",
+                "deposit": "1",
+                "gas": "100000000000000"
+              }
+            ]
+          }
+        },
+        "status": "Approved",
+        "vote_counts": {
+          "council": [
+            1,
+            0,
+            0
+          ]
+        },
+        "votes": {
+          "at-mw3kfemk.testnet": "Approve"
+        },
+        "submission_time": "1793895424263192220"
+      },
+      "creationTransactionHash": "93FNRoVm38bovEygFc9nPG5Pe84e55oRXDApAj7EbLpP"
+    }
+  ],
+  "credits": [
+    {
+      "id": "1:refund:alice.at-rel-owner-mw3qu2g0.testnet:-",
+      "campaign_id": "1",
+      "kind": "refund",
+      "owner": "alice.at-rel-owner-mw3qu2g0.testnet",
+      "recipient": "alice.at-rel-owner-mw3qu2g0.testnet",
+      "leg_id": null,
+      "available": "0",
+      "pending": "0",
+      "paid": "525000000",
+      "nonce": "1",
+      "last_attempt": {
+        "nonce": "1",
+        "amount": "525000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895395764",
+        "resolved_at_ms": "1793895396774"
+      }
+    },
+    {
+      "id": "1:refund:bob.at-rel-owner-mw3qu2g0.testnet:-",
+      "campaign_id": "1",
+      "kind": "refund",
+      "owner": "bob.at-rel-owner-mw3qu2g0.testnet",
+      "recipient": "bob.at-rel-owner-mw3qu2g0.testnet",
+      "leg_id": null,
+      "available": "0",
+      "pending": "0",
+      "paid": "50000000",
+      "nonce": "1",
+      "last_attempt": {
+        "nonce": "1",
+        "amount": "50000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895405175",
+        "resolved_at_ms": "1793895406516"
+      }
+    },
+    {
+      "id": "1:sponsor_refund:alltogether-mw3kfemk.sputnikv2.testnet:-",
+      "campaign_id": "1",
+      "kind": "sponsor_refund",
+      "owner": "alltogether-mw3kfemk.sputnikv2.testnet",
+      "recipient": "alltogether-mw3kfemk.sputnikv2.testnet",
+      "leg_id": null,
+      "available": "0",
+      "pending": "0",
+      "paid": "400000000",
+      "nonce": "1",
+      "last_attempt": {
+        "nonce": "1",
+        "amount": "400000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895411364",
+        "resolved_at_ms": "1793895412520"
+      }
+    },
+    {
+      "id": "2:beneficiary:venue.at-rel-owner-mw3qu2g0.testnet:0",
+      "campaign_id": "2",
+      "kind": "beneficiary",
+      "owner": "venue.at-rel-owner-mw3qu2g0.testnet",
+      "recipient": "venue.at-rel-owner-mw3qu2g0.testnet",
+      "leg_id": 0,
+      "available": "0",
+      "pending": "0",
+      "paid": "600000000",
+      "nonce": "1",
+      "last_attempt": {
+        "nonce": "1",
+        "amount": "600000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895551024",
+        "resolved_at_ms": "1793895552210"
+      }
+    },
+    {
+      "id": "2:beneficiary:equipment.at-rel-owner-mw3qu2g0.testnet:1",
+      "campaign_id": "2",
+      "kind": "beneficiary",
+      "owner": "equipment.at-rel-owner-mw3qu2g0.testnet",
+      "recipient": "equipment.at-rel-owner-mw3qu2g0.testnet",
+      "leg_id": 1,
+      "available": "0",
+      "pending": "0",
+      "paid": "250000000",
+      "nonce": "2",
+      "last_attempt": {
+        "nonce": "2",
+        "amount": "250000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895566603",
+        "resolved_at_ms": "1793895567699"
+      }
+    },
+    {
+      "id": "2:beneficiary:access.at-rel-owner-mw3qu2g0.testnet:2",
+      "campaign_id": "2",
+      "kind": "beneficiary",
+      "owner": "access.at-rel-owner-mw3qu2g0.testnet",
+      "recipient": "access.at-rel-owner-mw3qu2g0.testnet",
+      "leg_id": 2,
+      "available": "0",
+      "pending": "0",
+      "paid": "150000000",
+      "nonce": "1",
+      "last_attempt": {
+        "nonce": "1",
+        "amount": "150000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793895572635",
+        "resolved_at_ms": "1793895573697"
+      }
+    }
+  ],
+  "artifactIdentity": {
+    "escrow": {
+      "accountId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+      "codeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS"
+    },
+    "token": {
+      "accountId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+      "codeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy"
+    }
+  },
+  "storageQuote": {
+    "required_yocto": "2924080000000000000000000",
+    "reserved_bytes": "292408",
+    "participant_limit": 128,
+    "record_bytes": "193208",
+    "key_overhead_per_record": 128
+  }
+}

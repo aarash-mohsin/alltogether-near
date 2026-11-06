@@ -1,0 +1,14 @@
+{
+  "sourceWritten": true,
+  "unitTested": true,
+  "wasmBuilt": true,
+  "sandboxVerified": false,
+  "deployedTestnet": true,
+  "liveFlowVerified": true,
+  "detail": "Fresh release token/escrow and actual Sputnik-funded success/refund/payout flows verified. Separate Live testnet workspace connects external wallets and reconciles actual final receipts; SDK-backed controller execution tested. External wallet approval UI not exercised. Dedicated testnet upgrade keys retained; local demo roles remain simulation.",
+  "evidencePath": "docs/qa-release-testnet.json",
+  "appTests": 63,
+  "rustTests": 22,
+  "browserWalletWorkspace": true,
+  "externalWalletUIApprovalTested": false
+}

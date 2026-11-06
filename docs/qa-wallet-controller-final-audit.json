@@ -1,0 +1,602 @@
+{
+  "status": "passed",
+  "auditedAt": "2026-11-05T22:13:21.059Z",
+  "readOnly": true,
+  "externalWalletUIApproval": false,
+  "provider": "https://testnet-rpc.intea.rs",
+  "source": {
+    "mode": "near",
+    "network": "testnet",
+    "observedAt": "1793916795339",
+    "stale": false,
+    "blockHeight": "276401260",
+    "blockHash": "CdFQFcfsazu29We4hKvs8vNokxNELGv7j1kkRAqxzncS",
+    "blockTimestampNs": "1793916760629154112"
+  },
+  "counts": {
+    "actualTransactions": 22,
+    "operationRecords": 19
+  },
+  "balances": {
+    "tester": "985000000",
+    "bob": "765000000",
+    "dao": "350000000",
+    "bobNative": "282147027206396499999988"
+  },
+  "firstCampaign": {
+    "id": "3",
+    "terms": {
+      "schemaVersion": 1,
+      "domain": "alltogether/near-testnet/v1",
+      "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+      "campaignId": "3",
+      "organizer": "at-rel-owner-mw3qu2g0.testnet",
+      "title": "Wallet controller independent release QA",
+      "summary": "Real signed controller flow with cancellation, response loss and resolver refunds.",
+      "detail": "Dedicated faucet assets only. The external wallet approval interface is not exercised by this SDK signing adapter.",
+      "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+      "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+      "tokenDecimals": 6,
+      "tokenSymbol": "testUSD",
+      "deadlineMs": "1793896483383",
+      "participantLimit": 128,
+      "matchRule": "one-to-one-capped-v1",
+      "settlementRule": "all-legs-v1",
+      "legs": [
+        {
+          "legId": 0,
+          "title": "Venue",
+          "purpose": "Independent controller verification",
+          "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+          "budget": "100000000",
+          "declaredSponsorCap": "50000000",
+          "sponsorAllocation": "50000000",
+          "communityTarget": "50000000"
+        }
+      ]
+    },
+    "terms_hash": "54d0b1dfc859abd46a7a0a284e873c739dcefdc070ab71b09c1aaec375d09837",
+    "state": "Failed",
+    "created_at_ms": "1793896246492",
+    "finalized_at_ms": "1793896579413",
+    "failure_reason": "INCOMPLETE_BUDGETS",
+    "active": [
+      "15000000"
+    ],
+    "closing_active": [
+      "15000000"
+    ],
+    "participant_count": 1,
+    "accounting": {
+      "accepted_inflows": "70000000",
+      "active_principal": "0",
+      "sponsor_reserved": "0",
+      "failed_principal_reserved": "0",
+      "available_credits": "0",
+      "pending_transfers": "0",
+      "confirmed_paid": "70000000"
+    }
+  },
+  "finalSnapshot": {
+    "network": "testnet",
+    "verified": true,
+    "binding": {
+      "network": "testnet",
+      "rpc": "https://testnet-rpc.intea.rs",
+      "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+      "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+      "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+      "expectedEscrowCodeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
+      "expectedTokenCodeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy"
+    },
+    "gasPriceYocto": "100000000",
+    "source": {
+      "mode": "near",
+      "network": "testnet",
+      "observedAt": "1793916795339",
+      "stale": false,
+      "blockHeight": "276401260",
+      "blockHash": "CdFQFcfsazu29We4hKvs8vNokxNELGv7j1kkRAqxzncS",
+      "blockTimestampNs": "1793916760629154112"
+    },
+    "contracts": {
+      "escrowCodeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
+      "tokenCodeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy",
+      "escrowAccessKeyCount": 1,
+      "tokenAccessKeyCount": 1,
+      "upgradeAuthority": "prototype_keys_retained"
+    },
+    "config": {
+      "dao_id": "alltogether-mw3kfemk.sputnikv2.testnet",
+      "token_id": "testusd.at-rel-owner-mw3qu2g0.testnet",
+      "token_decimals": 6,
+      "token_symbol": "testUSD",
+      "participant_limit": 128,
+      "max_legs": 3,
+      "domain": "alltogether/near-testnet/v1",
+      "network": "testnet",
+      "version": "0.1.0",
+      "transfer_gas_tgas": 25,
+      "callback_gas_tgas": 20
+    },
+    "tokenMetadata": {
+      "spec": "ft-1.0.0",
+      "name": "AllTogether Test Dollars (no monetary value)",
+      "symbol": "testUSD",
+      "icon": null,
+      "reference": null,
+      "reference_hash": null,
+      "decimals": 6
+    },
+    "daoPolicy": {
+      "roles": [
+        {
+          "name": "all",
+          "kind": "Everyone",
+          "permissions": [
+            "*:AddProposal"
+          ],
+          "vote_policy": {}
+        },
+        {
+          "name": "council",
+          "kind": {
+            "Group": [
+              "at-mw3kfemk.testnet"
+            ]
+          },
+          "permissions": [
+            "*:Finalize",
+            "*:AddProposal",
+            "*:VoteApprove",
+            "*:VoteReject",
+            "*:VoteRemove"
+          ],
+          "vote_policy": {}
+        }
+      ],
+      "default_vote_policy": {
+        "weight_kind": "RoleWeight",
+        "quorum": "0",
+        "threshold": [
+          1,
+          2
+        ]
+      },
+      "proposal_bond": "1000000000000000000000000",
+      "proposal_period": "604800000000000",
+      "bounty_bond": "1000000000000000000000000",
+      "bounty_forgiveness_period": "86400000000000"
+    },
+    "campaigns": [
+      {
+        "id": "1",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+          "campaignId": "1",
+          "organizer": "at-rel-owner-mw3qu2g0.testnet",
+          "title": "Release incomplete accessible workshop",
+          "summary": "Actual Sputnik and independent-faucet contributor verification",
+          "detail": "All essential earmarked budgets must succeed together.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793895376661",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Workshop space",
+              "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "600000000",
+              "declaredSponsorCap": "200000000",
+              "sponsorAllocation": "200000000",
+              "communityTarget": "400000000"
+            },
+            {
+              "legId": 1,
+              "title": "Equipment",
+              "purpose": "Shared tools",
+              "beneficiary": "equipment.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "250000000",
+              "declaredSponsorCap": "125000000",
+              "sponsorAllocation": "125000000",
+              "communityTarget": "125000000"
+            },
+            {
+              "legId": 2,
+              "title": "Accessibility",
+              "purpose": "Essential access",
+              "beneficiary": "access.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "150000000",
+              "declaredSponsorCap": "75000000",
+              "sponsorAllocation": "75000000",
+              "communityTarget": "75000000"
+            }
+          ]
+        },
+        "terms_hash": "a754d7cf144b6cee3cc5faa7707b341d6e9c629cf8ccd8463cc578b7c461a6c2",
+        "state": "Failed",
+        "created_at_ms": "1793895260385",
+        "finalized_at_ms": "1793895386423",
+        "failure_reason": "INCOMPLETE_BUDGETS",
+        "active": [
+          "400000000",
+          "125000000",
+          "50000000"
+        ],
+        "closing_active": [
+          "400000000",
+          "125000000",
+          "50000000"
+        ],
+        "participant_count": 2,
+        "accounting": {
+          "accepted_inflows": "975000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "0",
+          "available_credits": "0",
+          "pending_transfers": "0",
+          "confirmed_paid": "975000000"
+        }
+      },
+      {
+        "id": "2",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+          "campaignId": "2",
+          "organizer": "at-rel-owner-mw3qu2g0.testnet",
+          "title": "Release complete accessible workshop",
+          "summary": "Actual Sputnik and independent-faucet contributor verification",
+          "detail": "All essential earmarked budgets must succeed together.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793895536297",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Workshop space",
+              "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "600000000",
+              "declaredSponsorCap": "200000000",
+              "sponsorAllocation": "200000000",
+              "communityTarget": "400000000"
+            },
+            {
+              "legId": 1,
+              "title": "Equipment",
+              "purpose": "Shared tools",
+              "beneficiary": "equipment.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "250000000",
+              "declaredSponsorCap": "125000000",
+              "sponsorAllocation": "125000000",
+              "communityTarget": "125000000"
+            },
+            {
+              "legId": 2,
+              "title": "Accessibility",
+              "purpose": "Essential access",
+              "beneficiary": "access.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "150000000",
+              "declaredSponsorCap": "75000000",
+              "sponsorAllocation": "75000000",
+              "communityTarget": "75000000"
+            }
+          ]
+        },
+        "terms_hash": "5e5aae6c1faa625f16cc76ae3dce6a46b2e1122079a73594f07e648f586fc4d7",
+        "state": "Succeeded",
+        "created_at_ms": "1793895419946",
+        "finalized_at_ms": "1793895546096",
+        "failure_reason": null,
+        "active": [
+          "400000000",
+          "125000000",
+          "75000000"
+        ],
+        "closing_active": [
+          "400000000",
+          "125000000",
+          "75000000"
+        ],
+        "participant_count": 2,
+        "accounting": {
+          "accepted_inflows": "1000000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "0",
+          "available_credits": "0",
+          "pending_transfers": "0",
+          "confirmed_paid": "1000000000"
+        }
+      },
+      {
+        "id": "3",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+          "campaignId": "3",
+          "organizer": "at-rel-owner-mw3qu2g0.testnet",
+          "title": "Wallet controller independent release QA",
+          "summary": "Real signed controller flow with cancellation, response loss and resolver refunds.",
+          "detail": "Dedicated faucet assets only. The external wallet approval interface is not exercised by this SDK signing adapter.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793896483383",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Independent controller verification",
+              "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "100000000",
+              "declaredSponsorCap": "50000000",
+              "sponsorAllocation": "50000000",
+              "communityTarget": "50000000"
+            }
+          ]
+        },
+        "terms_hash": "54d0b1dfc859abd46a7a0a284e873c739dcefdc070ab71b09c1aaec375d09837",
+        "state": "Failed",
+        "created_at_ms": "1793896246492",
+        "finalized_at_ms": "1793896579413",
+        "failure_reason": "INCOMPLETE_BUDGETS",
+        "active": [
+          "15000000"
+        ],
+        "closing_active": [
+          "15000000"
+        ],
+        "participant_count": 1,
+        "accounting": {
+          "accepted_inflows": "70000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "0",
+          "available_credits": "0",
+          "pending_transfers": "0",
+          "confirmed_paid": "70000000"
+        }
+      },
+      {
+        "id": "4",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+          "campaignId": "4",
+          "organizer": "at-rel-owner-mw3qu2g0.testnet",
+          "title": "Controller live resolver and success QA",
+          "summary": "Real overfill refund classification and immutable beneficiary settlement.",
+          "detail": "Actual controller and fixed finalized RPC with generated faucet signers. External wallet UI is outside this protocol integration.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793916330075",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Real controller race and settlement",
+              "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+              "budget": "100000000",
+              "declaredSponsorCap": "50000000",
+              "sponsorAllocation": "50000000",
+              "communityTarget": "50000000"
+            }
+          ]
+        },
+        "terms_hash": "bdcd3ce48a67956f74a8f34086f7b72749ba34fef80336df3d4424a839983f7b",
+        "state": "Succeeded",
+        "created_at_ms": "1793915764373",
+        "finalized_at_ms": "1793916372574",
+        "failure_reason": null,
+        "active": [
+          "50000000"
+        ],
+        "closing_active": [
+          "50000000"
+        ],
+        "participant_count": 2,
+        "accounting": {
+          "accepted_inflows": "100000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "0",
+          "available_credits": "0",
+          "pending_transfers": "0",
+          "confirmed_paid": "100000000"
+        }
+      }
+    ],
+    "fromIndex": "0",
+    "nextIndex": null,
+    "campaign": {
+      "id": "4",
+      "terms": {
+        "schemaVersion": 1,
+        "domain": "alltogether/near-testnet/v1",
+        "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+        "campaignId": "4",
+        "organizer": "at-rel-owner-mw3qu2g0.testnet",
+        "title": "Controller live resolver and success QA",
+        "summary": "Real overfill refund classification and immutable beneficiary settlement.",
+        "detail": "Actual controller and fixed finalized RPC with generated faucet signers. External wallet UI is outside this protocol integration.",
+        "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+        "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+        "tokenDecimals": 6,
+        "tokenSymbol": "testUSD",
+        "deadlineMs": "1793916330075",
+        "participantLimit": 128,
+        "matchRule": "one-to-one-capped-v1",
+        "settlementRule": "all-legs-v1",
+        "legs": [
+          {
+            "legId": 0,
+            "title": "Venue",
+            "purpose": "Real controller race and settlement",
+            "beneficiary": "venue.at-rel-owner-mw3qu2g0.testnet",
+            "budget": "100000000",
+            "declaredSponsorCap": "50000000",
+            "sponsorAllocation": "50000000",
+            "communityTarget": "50000000"
+          }
+        ]
+      },
+      "terms_hash": "bdcd3ce48a67956f74a8f34086f7b72749ba34fef80336df3d4424a839983f7b",
+      "state": "Succeeded",
+      "created_at_ms": "1793915764373",
+      "finalized_at_ms": "1793916372574",
+      "failure_reason": null,
+      "active": [
+        "50000000"
+      ],
+      "closing_active": [
+        "50000000"
+      ],
+      "participant_count": 2,
+      "accounting": {
+        "accepted_inflows": "100000000",
+        "active_principal": "0",
+        "sponsor_reserved": "0",
+        "failed_principal_reserved": "0",
+        "available_credits": "0",
+        "pending_transfers": "0",
+        "confirmed_paid": "100000000"
+      }
+    },
+    "campaignCredits": [
+      {
+        "id": "4:beneficiary:venue.at-rel-owner-mw3qu2g0.testnet:0",
+        "campaign_id": "4",
+        "kind": "beneficiary",
+        "owner": "venue.at-rel-owner-mw3qu2g0.testnet",
+        "recipient": "venue.at-rel-owner-mw3qu2g0.testnet",
+        "leg_id": 0,
+        "available": "0",
+        "pending": "0",
+        "paid": "100000000",
+        "nonce": "1",
+        "last_attempt": {
+          "nonce": "1",
+          "amount": "100000000",
+          "status": "Succeeded",
+          "created_at_ms": "1793916456926",
+          "resolved_at_ms": "1793916458083"
+        }
+      }
+    ],
+    "account": {
+      "accountId": "controller.at-rel-owner-mw3qu2g0.testnet",
+      "nativeBalance": "592349978280750199999992",
+      "nativeStorageStake": "1820000000000000000000",
+      "spendableNativeBalance": "590529978280750199999992",
+      "tokenBalance": "985000000",
+      "tokenStorage": {
+        "total": "1250000000000000000000",
+        "available": "0"
+      },
+      "campaign": {
+        "account_id": "controller.at-rel-owner-mw3qu2g0.testnet",
+        "positions": [
+          {
+            "active": "15000000",
+            "accepted_total": "15000000",
+            "refund_consumed": false
+          }
+        ],
+        "credits": []
+      }
+    },
+    "custody": {
+      "accounting": {
+        "accepted_inflows": "2145000000",
+        "active_principal": "0",
+        "sponsor_reserved": "0",
+        "failed_principal_reserved": "0",
+        "available_credits": "0",
+        "pending_transfers": "0",
+        "confirmed_paid": "2145000000"
+      },
+      "observedTokenBalance": "0",
+      "bookResidual": "0",
+      "cashLiabilities": "0",
+      "reconciliation": "Matched"
+    },
+    "storageQuotes": {
+      "1": {
+        "required_yocto": "2253560000000000000000000",
+        "reserved_bytes": "225356",
+        "participant_limit": 128,
+        "record_bytes": "159180",
+        "key_overhead_per_record": 128
+      },
+      "2": {
+        "required_yocto": "2588820000000000000000000",
+        "reserved_bytes": "258882",
+        "participant_limit": 128,
+        "record_bytes": "176194",
+        "key_overhead_per_record": 128
+      },
+      "3": {
+        "required_yocto": "2924080000000000000000000",
+        "reserved_bytes": "292408",
+        "participant_limit": 128,
+        "record_bytes": "193208",
+        "key_overhead_per_record": 128
+      }
+    },
+    "tokenStorageBounds": {
+      "min": "1250000000000000000000",
+      "max": "1250000000000000000000"
+    },
+    "faucet": {
+      "enabled": true,
+      "amount": "1000000000",
+      "claimed": true,
+      "remainingAccounts": 253
+    },
+    "history": {
+      "available": false,
+      "detail": "This view reads current contract state. Historical activity is not reconstructed or invented; inspect recorded transaction receipts separately."
+    }
+  },
+  "evidenceSha256": {
+    "docs/qa-wallet-controller.json": "035c4cf6c14979052bb66863121a4cf777fc312246dde28843e38370a9936825",
+    "docs/qa-wallet-controller-success.json": "f2a83c65ff8ff9f160c685202e3a57ecae9b4c66ada96010ae29712ba4317bfd",
+    "docs/qa-wallet-controller-reverification.json": "5e0ce4c561af83f8543864bb21179e88f5a13bf9dd4fb619eb9d2903eabd32f3",
+    "docs/qa-wallet-controller-operation-reverification.json": "77116afb8956815fdb3280c675b33a89990b2cd8784bc62d121e8ff7804f64a3"
+  },
+  "testedSourceSha256": {
+    "web/src/near-controller.ts": "86702efc4e8bc0b0a4184683b156bf479b60906549b40cd0065b0b47a4f5cfd2",
+    "server/near.ts": "405cb2f37bc10db58a2398d80628e328a89f8d1606f8481398726ae57fda54c1",
+    "shared/near.ts": "97d8b28ba1d619d3e281df6dfe7fbee967904b72c30ce32fa0c08e36e7f0ecd0",
+    "shared/rpc.ts": "9d9117ccfff32c56fc6aefb6af7b8e234592519b39f4ddde0924d73f964af22d",
+    "docs/testnet-config.json": "aa736836599d5990bb21c3e44e40db2f5e8d738d8cf0189735784e5243ce9104"
+  }
+}

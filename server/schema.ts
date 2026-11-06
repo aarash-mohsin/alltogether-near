@@ -1,0 +1,22 @@
+export const SCHEMA_VERSION = 1;
+export const SCHEMA_SQL = `
+CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS accounts (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS campaigns (id TEXT PRIMARY KEY, state TEXT NOT NULL CHECK(state IN ('AwaitingFunding','Open','Succeeded','Failed')), payload TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS admissions (campaign_id TEXT NOT NULL REFERENCES campaigns(id), account_id TEXT NOT NULL REFERENCES accounts(id), PRIMARY KEY(campaign_id, account_id));
+CREATE TABLE IF NOT EXISTS positions (campaign_id TEXT NOT NULL REFERENCES campaigns(id), account_id TEXT NOT NULL REFERENCES accounts(id), leg_id INTEGER NOT NULL CHECK(leg_id BETWEEN 0 AND 2), payload TEXT NOT NULL, PRIMARY KEY(campaign_id,account_id,leg_id));
+CREATE TABLE IF NOT EXISTS credits (id TEXT PRIMARY KEY, campaign_id TEXT NOT NULL REFERENCES campaigns(id), owner TEXT NOT NULL REFERENCES accounts(id), payload TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS credits_owner ON credits(owner);
+CREATE INDEX IF NOT EXISTS credits_campaign ON credits(campaign_id);
+CREATE TABLE IF NOT EXISTS attempts (id TEXT PRIMARY KEY, campaign_id TEXT NOT NULL REFERENCES campaigns(id), credit_id TEXT NOT NULL REFERENCES credits(id), status TEXT NOT NULL CHECK(status IN ('Pending','Succeeded','Failed')), payload TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS attempts_pending ON attempts(status);
+CREATE INDEX IF NOT EXISTS attempts_campaign ON attempts(campaign_id);
+CREATE TABLE IF NOT EXISTS transfer_results (attempt_id TEXT PRIMARY KEY REFERENCES attempts(id), payload TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS proposals (id TEXT PRIMARY KEY, campaign_id TEXT NOT NULL REFERENCES campaigns(id), payload TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS proposals_campaign ON proposals(campaign_id);
+CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, campaign_id TEXT REFERENCES campaigns(id), payload TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS events_campaign ON events(campaign_id,id);
+CREATE TABLE IF NOT EXISTS idempotency (actor TEXT NOT NULL, key TEXT NOT NULL, fingerprint TEXT NOT NULL, status INTEGER NOT NULL, response_json TEXT NOT NULL, PRIMARY KEY(actor,key));
+CREATE TABLE IF NOT EXISTS custody (id INTEGER PRIMARY KEY CHECK(id=1), balance TEXT NOT NULL, fixture_issued TEXT NOT NULL);
+INSERT OR IGNORE INTO custody(id,balance,fixture_issued) VALUES(1,'0','0');
+`;

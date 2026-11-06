@@ -1,0 +1,20 @@
+node_modules/
+.release-backups/
+.release-restores/
+dist/
+contract/target/
+target/
+.env
+.env.local
+.secrets/
+data/*.sqlite*
+data/*.db*
+data/*.json
+test-results/
+playwright-report/
+
+# Demo recordings are published separately
+demo/
+
+# Demo recordings are published separately
+demo/

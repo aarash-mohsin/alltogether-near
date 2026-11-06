@@ -1,0 +1,34 @@
+{
+  "terms": {
+    "schemaVersion": 1,
+    "domain": "alltogether/near-testnet/v1",
+    "escrowId": "escrow.alltogether.testnet",
+    "campaignId": "42",
+    "organizer": "organizer.alltogether.testnet",
+    "title": "Café makers — 台北",
+    "summary": "One small, exact shared commitment.",
+    "detail": "Every essential budget must be ready.",
+    "daoId": "community.alltogether.testnet",
+    "tokenId": "testusd.alltogether.testnet",
+    "tokenDecimals": 6,
+    "tokenSymbol": "testUSD",
+    "deadlineMs": "1800000000000",
+    "participantLimit": 128,
+    "matchRule": "one-to-one-capped-v1",
+    "settlementRule": "all-legs-v1",
+    "legs": [
+      {
+        "legId": 0,
+        "title": "Accessibility",
+        "purpose": "A funded ramp",
+        "beneficiary": "access.alltogether.testnet",
+        "budget": "101",
+        "declaredSponsorCap": "60",
+        "sponsorAllocation": "50",
+        "communityTarget": "51"
+      }
+    ]
+  },
+  "canonical": "[\"alltogether-terms-v1\",1,\"alltogether/near-testnet/v1\",\"escrow.alltogether.testnet\",\"42\",\"organizer.alltogether.testnet\",\"Café makers — 台北\",\"One small, exact shared commitment.\",\"Every essential budget must be ready.\",\"community.alltogether.testnet\",\"testusd.alltogether.testnet\",6,\"testUSD\",\"1800000000000\",128,\"one-to-one-capped-v1\",\"all-legs-v1\",[[0,\"Accessibility\",\"A funded ramp\",\"access.alltogether.testnet\",\"101\",\"60\",\"50\",\"51\"]]]",
+  "sha256": "ed1a22c0cbfc711eda581fe324b14df282a9bb20ebe19a1afe9cc598d47f3a8b"
+}

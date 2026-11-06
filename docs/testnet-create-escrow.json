@@ -1,0 +1,89 @@
+{
+  "recordedAt": "2026-11-05T13:29:24.599Z",
+  "network": "testnet",
+  "accountId": "escrow.at-mw3kqf0k.testnet",
+  "transactionHash": "BWEzHaUwMmPBbXrYpLJwTy29vcSMRgWiW9EWGpYw7T5w",
+  "status": {
+    "SuccessValue": ""
+  },
+  "transactionOutcome": {
+    "block_hash": "89nrzMoaCGJnvSgeTC666LZnqf1V5SGqh9LvE4cKLA4u",
+    "id": "BWEzHaUwMmPBbXrYpLJwTy29vcSMRgWiW9EWGpYw7T5w",
+    "outcome": {
+      "executor_id": "at-mw3kqf0k.testnet",
+      "gas_burnt": 824947687500,
+      "logs": [],
+      "metadata": {
+        "gas_profile": null,
+        "version": 1
+      },
+      "receipt_ids": [
+        "3xHhE2tD2CnD4oxiVKBc762a7xicXW1PHS3zMVH8zTB9"
+      ],
+      "status": {
+        "SuccessReceiptId": "3xHhE2tD2CnD4oxiVKBc762a7xicXW1PHS3zMVH8zTB9"
+      },
+      "tokens_burnt": "82494768750000000000"
+    },
+    "proof": []
+  },
+  "receipts": [
+    {
+      "block_hash": "37tbtL3H5rghDwCKtT9eZz3URDyq84Nj64GP1WkgYBjB",
+      "id": "3xHhE2tD2CnD4oxiVKBc762a7xicXW1PHS3zMVH8zTB9",
+      "outcome": {
+        "executor_id": "escrow.at-mw3kqf0k.testnet",
+        "gas_burnt": 7524947687500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null,
+            null,
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [
+          "HcPH7KC77jz5XgDsLUh3TXpijCtNswhUBmyv5CY7eY9B"
+        ],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "7032494768750000000000"
+      },
+      "proof": [
+        {
+          "direction": "Left",
+          "hash": "FCK2MwsmReGjMTFcrb3hMLPMjn45R6cWYVYhnd7RQN2o"
+        },
+        {
+          "direction": "Right",
+          "hash": "BMDN3WHW3Mr65x2y9WoRCVPC4ypnHf1thVgDz5v58LuN"
+        }
+      ]
+    },
+    {
+      "block_hash": "AZduWvhqhqYCWoboQE3yBQFiiJgDP3EpBN5mCY6FNYKL",
+      "id": "HcPH7KC77jz5XgDsLUh3TXpijCtNswhUBmyv5CY7eY9B",
+      "outcome": {
+        "executor_id": "at-mw3kqf0k.testnet",
+        "gas_burnt": 223182562500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "0"
+      },
+      "proof": []
+    }
+  ]
+}

@@ -1,0 +1,1792 @@
+{
+  "recordedAt": "2026-11-05T13:37:09.538Z",
+  "network": "testnet",
+  "config": {
+    "recordedAt": "2026-11-05T13:29:42.613Z",
+    "network": "testnet",
+    "rpc": "https://test.rpc.fastnear.com",
+    "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+    "escrowId": "escrow.at-mw3kqf0k.testnet",
+    "tokenId": "testusd.at-mw3kqf0k.testnet",
+    "ownerId": "at-mw3kqf0k.testnet",
+    "councilId": "at-mw3kfemk.testnet",
+    "beneficiaries": [
+      "venue.at-mw3kqf0k.testnet",
+      "equipment.at-mw3kqf0k.testnet",
+      "access.at-mw3kqf0k.testnet"
+    ]
+  },
+  "scenarios": [
+    {
+      "campaignId": "1",
+      "success": false,
+      "proposalId": 0,
+      "final": {
+        "id": "1",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-mw3kqf0k.testnet",
+          "campaignId": "1",
+          "organizer": "at-mw3kqf0k.testnet",
+          "title": "Incomplete accessible maker day",
+          "summary": "Genuine NEAR testnet verification",
+          "detail": "One missing essential budget prevents all allocations.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-mw3kqf0k.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793885664414",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Workshop space",
+              "beneficiary": "venue.at-mw3kqf0k.testnet",
+              "budget": "600000000",
+              "declaredSponsorCap": "200000000",
+              "sponsorAllocation": "200000000",
+              "communityTarget": "400000000"
+            },
+            {
+              "legId": 1,
+              "title": "Equipment",
+              "purpose": "Shared tools",
+              "beneficiary": "equipment.at-mw3kqf0k.testnet",
+              "budget": "250000000",
+              "declaredSponsorCap": "125000000",
+              "sponsorAllocation": "125000000",
+              "communityTarget": "125000000"
+            },
+            {
+              "legId": 2,
+              "title": "Accessibility",
+              "purpose": "Essential access",
+              "beneficiary": "access.at-mw3kqf0k.testnet",
+              "budget": "150000000",
+              "declaredSponsorCap": "75000000",
+              "sponsorAllocation": "75000000",
+              "communityTarget": "75000000"
+            }
+          ]
+        },
+        "terms_hash": "b835fa17638dccdfb0d08a05ef1d9a95cc3e034ae9241c2aec9a097d17f9a706",
+        "state": "Failed",
+        "created_at_ms": "1793885575467",
+        "finalized_at_ms": "1793885675029",
+        "failure_reason": "INCOMPLETE_BUDGETS",
+        "active": [
+          "400000000",
+          "125000000",
+          "50000000"
+        ],
+        "closing_active": [
+          "400000000",
+          "125000000",
+          "50000000"
+        ],
+        "participant_count": 1,
+        "accounting": {
+          "accepted_inflows": "975000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "575000000",
+          "available_credits": "400000000",
+          "pending_transfers": "0",
+          "confirmed_paid": "0"
+        }
+      },
+      "accountingAfterPayouts": {
+        "accepted_inflows": "975000000",
+        "active_principal": "0",
+        "sponsor_reserved": "0",
+        "failed_principal_reserved": "0",
+        "available_credits": "0",
+        "pending_transfers": "0",
+        "confirmed_paid": "975000000"
+      }
+    },
+    {
+      "campaignId": "2",
+      "success": true,
+      "proposalId": 1,
+      "final": {
+        "id": "2",
+        "terms": {
+          "schemaVersion": 1,
+          "domain": "alltogether/near-testnet/v1",
+          "escrowId": "escrow.at-mw3kqf0k.testnet",
+          "campaignId": "2",
+          "organizer": "at-mw3kqf0k.testnet",
+          "title": "Complete accessible maker day",
+          "summary": "Genuine NEAR testnet verification",
+          "detail": "One missing essential budget prevents all allocations.",
+          "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "tokenId": "testusd.at-mw3kqf0k.testnet",
+          "tokenDecimals": 6,
+          "tokenSymbol": "testUSD",
+          "deadlineMs": "1793885785325",
+          "participantLimit": 128,
+          "matchRule": "one-to-one-capped-v1",
+          "settlementRule": "all-legs-v1",
+          "legs": [
+            {
+              "legId": 0,
+              "title": "Venue",
+              "purpose": "Workshop space",
+              "beneficiary": "venue.at-mw3kqf0k.testnet",
+              "budget": "600000000",
+              "declaredSponsorCap": "200000000",
+              "sponsorAllocation": "200000000",
+              "communityTarget": "400000000"
+            },
+            {
+              "legId": 1,
+              "title": "Equipment",
+              "purpose": "Shared tools",
+              "beneficiary": "equipment.at-mw3kqf0k.testnet",
+              "budget": "250000000",
+              "declaredSponsorCap": "125000000",
+              "sponsorAllocation": "125000000",
+              "communityTarget": "125000000"
+            },
+            {
+              "legId": 2,
+              "title": "Accessibility",
+              "purpose": "Essential access",
+              "beneficiary": "access.at-mw3kqf0k.testnet",
+              "budget": "150000000",
+              "declaredSponsorCap": "75000000",
+              "sponsorAllocation": "75000000",
+              "communityTarget": "75000000"
+            }
+          ]
+        },
+        "terms_hash": "966a7ab92d031fd118f2c2ad5a19e4c69a81990c79c610e13b59642710a5afd1",
+        "state": "Succeeded",
+        "created_at_ms": "1793885696648",
+        "finalized_at_ms": "1793885796290",
+        "failure_reason": null,
+        "active": [
+          "400000000",
+          "125000000",
+          "75000000"
+        ],
+        "closing_active": [
+          "400000000",
+          "125000000",
+          "75000000"
+        ],
+        "participant_count": 1,
+        "accounting": {
+          "accepted_inflows": "1000000000",
+          "active_principal": "0",
+          "sponsor_reserved": "0",
+          "failed_principal_reserved": "0",
+          "available_credits": "1000000000",
+          "pending_transfers": "0",
+          "confirmed_paid": "0"
+        }
+      },
+      "accountingAfterPayouts": {
+        "accepted_inflows": "1975000000",
+        "active_principal": "0",
+        "sponsor_reserved": "0",
+        "failed_principal_reserved": "0",
+        "available_credits": "0",
+        "pending_transfers": "0",
+        "confirmed_paid": "1975000000"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.storage_deposit",
+      "transactionHash": "9wNgcynCVEgnn14NiSVhsFnKjRQCCmdcjvbgFrUxmR81",
+      "status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+      },
+      "receipts": [
+        {
+          "id": "AL4cML8ChfQvM9kdtS1yKgTJTy9hTMrEhVXsP9HcKuXB",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+          },
+          "logs": []
+        },
+        {
+          "id": "3Z7MJpzLRic1HNyV4TLm2W6DFq1tifxWAyvmRvhnBZZA",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.storage_deposit",
+      "transactionHash": "F3PH2KBxUVnGdL3CL5yWwBK13xekX5uYbghjXcWvmGoT",
+      "status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+      },
+      "receipts": [
+        {
+          "id": "6gvKPoQxQXvQaYjhhuvCyBbGiksUHudbqtq4h8KTvv1R",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+          },
+          "logs": []
+        },
+        {
+          "id": "9XTii6UuDsMfCkqTqvRrBBQe7bfAaCJ5kw33EEXPZ4gR",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.storage_deposit",
+      "transactionHash": "H4q2xMgzqyz9tsJt5t1rSdRt6js9GDM8xstYnTsRgP8J",
+      "status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+      },
+      "receipts": [
+        {
+          "id": "8611JQF8kBnjbteoUzA4vn2sXp2zKnDEC8nEwMo7CpkS",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+          },
+          "logs": []
+        },
+        {
+          "id": "3dY7omiYTso5bzokD1GNYwshDhesLFKzRgJKJQtm1HcG",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.storage_deposit",
+      "transactionHash": "B4NgrfQDJXKdomU9W24Xd7re26jt5aaqkiVNtRmQ5Cum",
+      "status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+      },
+      "receipts": [
+        {
+          "id": "4YdMeDcjdjwjYx6zZksMaWxK9wNyTmTgYobxAL2d2GwP",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+          },
+          "logs": []
+        },
+        {
+          "id": "4mFH8z2cbEHi3HxvXmjuyEY6KQKgR7RoLZftEzn5B4jo",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.create_campaign",
+      "transactionHash": "CynZq6qrXpnUpvpWLN8pXxMxzdQRcHdnLo43x7ognQfv",
+      "status": {
+        "SuccessValue": "eyJpZCI6IjEiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjEiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJJbmNvbXBsZXRlIGFjY2Vzc2libGUgbWFrZXIgZGF5Iiwic3VtbWFyeSI6IkdlbnVpbmUgTkVBUiB0ZXN0bmV0IHZlcmlmaWNhdGlvbiIsImRldGFpbCI6Ik9uZSBtaXNzaW5nIGVzc2VudGlhbCBidWRnZXQgcHJldmVudHMgYWxsIGFsbG9jYXRpb25zLiIsImRhb0lkIjoiYWxsdG9nZXRoZXItbXcza2ZlbWsuc3B1dG5pa3YyLnRlc3RuZXQiLCJ0b2tlbklkIjoidGVzdHVzZC5hdC1tdzNrcWYway50ZXN0bmV0IiwidG9rZW5EZWNpbWFscyI6NiwidG9rZW5TeW1ib2wiOiJ0ZXN0VVNEIiwiZGVhZGxpbmVNcyI6IjE3OTM4ODU2NjQ0MTQiLCJwYXJ0aWNpcGFudExpbWl0IjoxMjgsIm1hdGNoUnVsZSI6Im9uZS10by1vbmUtY2FwcGVkLXYxIiwic2V0dGxlbWVudFJ1bGUiOiJhbGwtbGVncy12MSIsImxlZ3MiOlt7ImxlZ0lkIjowLCJ0aXRsZSI6IlZlbnVlIiwicHVycG9zZSI6IldvcmtzaG9wIHNwYWNlIiwiYmVuZWZpY2lhcnkiOiJ2ZW51ZS5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiNjAwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMjAwMDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIyMDAwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI0MDAwMDAwMDAifSx7ImxlZ0lkIjoxLCJ0aXRsZSI6IkVxdWlwbWVudCIsInB1cnBvc2UiOiJTaGFyZWQgdG9vbHMiLCJiZW5lZmljaWFyeSI6ImVxdWlwbWVudC5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMjUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMTI1MDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIxMjUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiIxMjUwMDAwMDAifSx7ImxlZ0lkIjoyLCJ0aXRsZSI6IkFjY2Vzc2liaWxpdHkiLCJwdXJwb3NlIjoiRXNzZW50aWFsIGFjY2VzcyIsImJlbmVmaWNpYXJ5IjoiYWNjZXNzLmF0LW13M2txZjBrLnRlc3RuZXQiLCJidWRnZXQiOiIxNTAwMDAwMDAiLCJkZWNsYXJlZFNwb25zb3JDYXAiOiI3NTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiNzUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI3NTAwMDAwMCJ9XX0sInRlcm1zX2hhc2giOiJiODM1ZmExNzYzOGRjY2RmYjBkMDhhMDVlZjFkOWE5NWNjM2UwMzRhZTkyNDFjMmFlYzlhMDk3ZDE3ZjlhNzA2Iiwic3RhdGUiOiJBd2FpdGluZ0Z1bmRpbmciLCJjcmVhdGVkX2F0X21zIjoiMTc5Mzg4NTU3NTQ2NyIsImZpbmFsaXplZF9hdF9tcyI6bnVsbCwiZmFpbHVyZV9yZWFzb24iOm51bGwsImFjdGl2ZSI6WyIwIiwiMCIsIjAiXSwiY2xvc2luZ19hY3RpdmUiOm51bGwsInBhcnRpY2lwYW50X2NvdW50IjowLCJhY2NvdW50aW5nIjp7ImFjY2VwdGVkX2luZmxvd3MiOiIwIiwiYWN0aXZlX3ByaW5jaXBhbCI6IjAiLCJzcG9uc29yX3Jlc2VydmVkIjoiMCIsImZhaWxlZF9wcmluY2lwYWxfcmVzZXJ2ZWQiOiIwIiwiYXZhaWxhYmxlX2NyZWRpdHMiOiIwIiwicGVuZGluZ190cmFuc2ZlcnMiOiIwIiwiY29uZmlybWVkX3BhaWQiOiIwIn19"
+      },
+      "receipts": [
+        {
+          "id": "C2MVuqW9GGnEV8efNMmzZgBYybhJh9xUpLxqYsCFPoWQ",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJpZCI6IjEiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjEiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJJbmNvbXBsZXRlIGFjY2Vzc2libGUgbWFrZXIgZGF5Iiwic3VtbWFyeSI6IkdlbnVpbmUgTkVBUiB0ZXN0bmV0IHZlcmlmaWNhdGlvbiIsImRldGFpbCI6Ik9uZSBtaXNzaW5nIGVzc2VudGlhbCBidWRnZXQgcHJldmVudHMgYWxsIGFsbG9jYXRpb25zLiIsImRhb0lkIjoiYWxsdG9nZXRoZXItbXcza2ZlbWsuc3B1dG5pa3YyLnRlc3RuZXQiLCJ0b2tlbklkIjoidGVzdHVzZC5hdC1tdzNrcWYway50ZXN0bmV0IiwidG9rZW5EZWNpbWFscyI6NiwidG9rZW5TeW1ib2wiOiJ0ZXN0VVNEIiwiZGVhZGxpbmVNcyI6IjE3OTM4ODU2NjQ0MTQiLCJwYXJ0aWNpcGFudExpbWl0IjoxMjgsIm1hdGNoUnVsZSI6Im9uZS10by1vbmUtY2FwcGVkLXYxIiwic2V0dGxlbWVudFJ1bGUiOiJhbGwtbGVncy12MSIsImxlZ3MiOlt7ImxlZ0lkIjowLCJ0aXRsZSI6IlZlbnVlIiwicHVycG9zZSI6IldvcmtzaG9wIHNwYWNlIiwiYmVuZWZpY2lhcnkiOiJ2ZW51ZS5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiNjAwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMjAwMDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIyMDAwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI0MDAwMDAwMDAifSx7ImxlZ0lkIjoxLCJ0aXRsZSI6IkVxdWlwbWVudCIsInB1cnBvc2UiOiJTaGFyZWQgdG9vbHMiLCJiZW5lZmljaWFyeSI6ImVxdWlwbWVudC5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMjUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMTI1MDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIxMjUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiIxMjUwMDAwMDAifSx7ImxlZ0lkIjoyLCJ0aXRsZSI6IkFjY2Vzc2liaWxpdHkiLCJwdXJwb3NlIjoiRXNzZW50aWFsIGFjY2VzcyIsImJlbmVmaWNpYXJ5IjoiYWNjZXNzLmF0LW13M2txZjBrLnRlc3RuZXQiLCJidWRnZXQiOiIxNTAwMDAwMDAiLCJkZWNsYXJlZFNwb25zb3JDYXAiOiI3NTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiNzUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI3NTAwMDAwMCJ9XX0sInRlcm1zX2hhc2giOiJiODM1ZmExNzYzOGRjY2RmYjBkMDhhMDVlZjFkOWE5NWNjM2UwMzRhZTkyNDFjMmFlYzlhMDk3ZDE3ZjlhNzA2Iiwic3RhdGUiOiJBd2FpdGluZ0Z1bmRpbmciLCJjcmVhdGVkX2F0X21zIjoiMTc5Mzg4NTU3NTQ2NyIsImZpbmFsaXplZF9hdF9tcyI6bnVsbCwiZmFpbHVyZV9yZWFzb24iOm51bGwsImFjdGl2ZSI6WyIwIiwiMCIsIjAiXSwiY2xvc2luZ19hY3RpdmUiOm51bGwsInBhcnRpY2lwYW50X2NvdW50IjowLCJhY2NvdW50aW5nIjp7ImFjY2VwdGVkX2luZmxvd3MiOiIwIiwiYWN0aXZlX3ByaW5jaXBhbCI6IjAiLCJzcG9uc29yX3Jlc2VydmVkIjoiMCIsImZhaWxlZF9wcmluY2lwYWxfcmVzZXJ2ZWQiOiIwIiwiYXZhaWxhYmxlX2NyZWRpdHMiOiIwIiwicGVuZGluZ190cmFuc2ZlcnMiOiIwIiwiY29uZmlybWVkX3BhaWQiOiIwIn19"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"campaign_created\",\"data\":[{\"campaign_id\":\"1\",\"terms_hash\":\"b835fa17638dccdfb0d08a05ef1d9a95cc3e034ae9241c2aec9a097d17f9a706\",\"storage_yocto\":\"2924080000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "FjEM83bxqJLfo1hPRKgiWC17B72D22EvctKVSCC3bLot",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer",
+      "transactionHash": "67VKM3QWw3UTmo3NRMKQWjxP4BBfUxsUStTn7ThmBeGa",
+      "status": {
+        "SuccessValue": ""
+      },
+      "receipts": [
+        {
+          "id": "52463xoEwHxLT8C7HMXMxJQzvA5SAJtudC2AY2MEh56P",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"amount\":\"400000000\",\"memo\":\"Dedicated testnet sponsor reserve\"}]}"
+          ]
+        },
+        {
+          "id": "Gz9aXsAZFSDpZGuRWxwDKqvxxsG5qNjuay6M7YqPuQU8",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "alltogether-mw3kfemk.sputnikv2.testnet.add_proposal",
+      "transactionHash": "GFtBbDeev4YYLCBhkP9X2wE3yHk1tP8SZptZyV5tozjU",
+      "status": {
+        "SuccessValue": "MA=="
+      },
+      "receipts": [
+        {
+          "id": "EhLgV4amfWTu2XMuxudJZFDbDhM6N5dYZxH7DXuSmPW8",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": "MA=="
+          },
+          "logs": []
+        },
+        {
+          "id": "6kCPW1QGTK9gr3rG6ex5QiR7eo3Kei2ULaWY45QnBCnT",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "alltogether-mw3kfemk.sputnikv2.testnet.act_proposal",
+      "transactionHash": "BUW1oUWASKgugYvYcPJrwmg7VFYaQie1VYvk9khaPmND",
+      "status": {
+        "SuccessValue": ""
+      },
+      "receipts": [
+        {
+          "id": "DXu4zxSsgxHRZifamSUCh3w6iasRQ7RWPt8jCoXs8ase",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "BAJcmtSYefa9tdtRjJSVoUTiv1asXEPSPqkEdaEmVdE2",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "qH5qybHtJjXzgfEuaz1krWeQz4DMcMmCwk212uJWRXF"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"400000000\",\"memo\":\"AllTogether campaign 1\"}]}"
+          ]
+        },
+        {
+          "id": "8TAAi4rohoCLhPuwNkQJstDYn6sBNTmtqHHqqcMCudU5",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"1\",\"sender_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"action\":\"sponsor\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "Cet5EXziawYGk2ootcGMjrP5eFfk3RJYR5LT8WaThTFK",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "qH5qybHtJjXzgfEuaz1krWeQz4DMcMmCwk212uJWRXF",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjQwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "G9XVdCmvY3j96dbdMkihskUdQgE2fsm2aDTmSLVnQQvt",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FLrEiuwUUcnM8ZqdkLLUXePyevDMPALnwVYMA1EgoejH",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FYiRUeSNBNfLN2mZJwEKk2oDoQd7rB3kzTjS5fN5C8BS",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessReceiptId": "DKELbRzVNRn3fYsjjUhy6RDzQE7hvf3YBF9MhhofLQXh"
+          },
+          "logs": []
+        },
+        {
+          "id": "DKELbRzVNRn3fYsjjUhy6RDzQE7hvf3YBF9MhhofLQXh",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CLGRLZpMPspayRzsJ3s1eV9MAi7k1j8UDYn7DkNQP48y",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FjCbRSj8XyrkEkcWoFgPZGfdmy7ujHfRjVMf3oGL4KyL",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3Z6DDs5xdboDAHwP5LEDvYD7kHtC3pgpsp3cntHEXwf5",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "BxgVUWBx7iruYsfstt4NniJsEAfRWfUVES6NsBSC3M1U",
+      "status": {
+        "SuccessValue": "IjQwMDAwMDAwMCI="
+      },
+      "receipts": [
+        {
+          "id": "5NTz34RH6rtmWsaWTkKUgXNmyVhLkmJynuXMMWSZ2iFZ",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "39cPaqvnEguAzKHZJxH7yNPVzkSsV4145z5EKDMNp2NC"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "DGCViKqrBf2fckL31ajmJgh2519avnWHGzm2UEihuyV2",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"1\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "2iSYA8h3DbB82AHHNu7aG8awTtAcZZMrfwT4QpjZodYy",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "39cPaqvnEguAzKHZJxH7yNPVzkSsV4145z5EKDMNp2NC",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjQwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "caPVdbgrvmWr64ayCJ5N9TY8R6Ay1Ss9ysyRTkNNWb8",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FfaZVwM6dy2JqYVEQvdNiUGPExrUqwY4LuyohTagQbCR",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "6ESPHrEc8oUiF3jVa1Jzm3xiSi68m5AeeCy9sWW1TbkB",
+      "status": {
+        "SuccessValue": "IjEyNTAwMDAwMCI="
+      },
+      "receipts": [
+        {
+          "id": "3xQ2Zo36KPg7zSaaLxLtNi3ALHoyJeF3nmdqyw1aCDRY",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "4BD8uVWHvEVa81HtR8cQR93aAzpKPujoYPTMyb9VNLNz"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"125000000\"}]}"
+          ]
+        },
+        {
+          "id": "HLNBqJeVfe95weNx3bM3WeXcu1HhMxw9zxSEo3YD82qK",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"1\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"125000000\"}]}"
+          ]
+        },
+        {
+          "id": "FFmg76TDVVJWosxDmqymmL4rDsVHd4mSHYAxgNitabLC",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "4BD8uVWHvEVa81HtR8cQR93aAzpKPujoYPTMyb9VNLNz",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEyNTAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "2hWwbnidnynyGE9okNhkaiuZMpGPCeiKo1vxs5kdrGcd",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "4N9s9p6Z6XZTTQuFoXH47LSez8PSo2iH3QfTwaqWsSMy",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "5qizrnjJy6g19ffcWEThFnz4NyDHniJGpKdtvASiA29z",
+      "status": {
+        "SuccessValue": "IjUwMDAwMDAwIg=="
+      },
+      "receipts": [
+        {
+          "id": "3nX3L46Y8XzTYBGPjCatEjdCfDDFSMXEge8gA7W97NEC",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "3bEb23ECYY9b1UbXEFFwPU4faUvve53JfgUPTx77NJWa"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"50000000\"}]}"
+          ]
+        },
+        {
+          "id": "3KKzL8KiXKhRF2FL2TuCc9CwrrkecJkUvmKFihXpfign",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"1\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"50000000\"}]}"
+          ]
+        },
+        {
+          "id": "HpeNPjEFuUEmqjACAVmmAXDZmAZUNsENRRd5GYY8eDxi",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3bEb23ECYY9b1UbXEFFwPU4faUvve53JfgUPTx77NJWa",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjUwMDAwMDAwIg=="
+          },
+          "logs": []
+        },
+        {
+          "id": "7i4fmNcXXTjC1JhRrmGwW17yPeS9bKrGi3b4nKeCPBAE",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "24ad9rmkJeaeJfBNpT6V6QyoR9PdWKwUhC1c2RrLdKqN",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "7AFg7cdQGH9L1BoB2EC5ampti7EVaFSZZ1PSJs1u1Kks",
+      "status": {
+        "SuccessValue": "IjAi"
+      },
+      "receipts": [
+        {
+          "id": "9Tid5kSTBso9NqMk8KBA78UiS6GuSgLHYoiAiWtmWhYX",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "J3jDDHPKP6ZKwxMm6RUScJ35SxZ8AoFxqJjAM81oaYTZ"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"1\"}]}"
+          ]
+        },
+        {
+          "id": "Bf4U9GeHu4pah5dEVWVbzrgr5Z2zLosGk18vpJHi11w3",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEi"
+          },
+          "logs": []
+        },
+        {
+          "id": "12WTEQAzqYgqVhj57e8v4rM7a4AUScnJRoA9NRZHrsbD",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "J3jDDHPKP6ZKwxMm6RUScJ35SxZ8AoFxqJjAM81oaYTZ",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"at-mw3kqf0k.testnet\",\"amount\":\"1\",\"memo\":\"refund\"}]}"
+          ]
+        },
+        {
+          "id": "9R6Qk7K3sc21H5nTnHcvUzonrryR1swT5jZS64gf8jT9",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3JF5gxso1ezpfFVtrLufKmThT42WVjNJNWNFm7YGZsgF",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "3xgKgMxVyfHR7dbkVrz7ep7fn8VFQyXHo9ujNFDTyumL",
+      "status": {
+        "SuccessValue": "IjAi"
+      },
+      "receipts": [
+        {
+          "id": "89yMqn2snPy7D9pQb7TDn8MkLiTQwMPVpmqCUcaupKwS",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "FyL38FFgJ47kjNh8GKQPtMpFdwf6uEqDuiENKmf9vJ2W"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"1\"}]}"
+          ]
+        },
+        {
+          "id": "FPfSP4y2ZE14UzPZfeeKzcKgmL9knDvGMz3RDUG48x1k",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEi"
+          },
+          "logs": []
+        },
+        {
+          "id": "8rQxty1r3RyDbiwYQPHS7qcMRvdCXEs4TF4jS7gDaRgc",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FyL38FFgJ47kjNh8GKQPtMpFdwf6uEqDuiENKmf9vJ2W",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"at-mw3kqf0k.testnet\",\"amount\":\"1\",\"memo\":\"refund\"}]}"
+          ]
+        },
+        {
+          "id": "HrU7AyCwuoQJURvHRWUPBPEQ5hUKKxSNukE2PB31AX3U",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "GMUKEARHmH3qqBr2oT6JZrWAyp81k8WYDMh2amBTz2vu",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.finalize",
+      "transactionHash": "9JdyuJzn5MqmsjJzC3Sx5VGTusmGviwY62PrPMZcooYd",
+      "status": {
+        "SuccessValue": "eyJpZCI6IjEiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjEiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJJbmNvbXBsZXRlIGFjY2Vzc2libGUgbWFrZXIgZGF5Iiwic3VtbWFyeSI6IkdlbnVpbmUgTkVBUiB0ZXN0bmV0IHZlcmlmaWNhdGlvbiIsImRldGFpbCI6Ik9uZSBtaXNzaW5nIGVzc2VudGlhbCBidWRnZXQgcHJldmVudHMgYWxsIGFsbG9jYXRpb25zLiIsImRhb0lkIjoiYWxsdG9nZXRoZXItbXcza2ZlbWsuc3B1dG5pa3YyLnRlc3RuZXQiLCJ0b2tlbklkIjoidGVzdHVzZC5hdC1tdzNrcWYway50ZXN0bmV0IiwidG9rZW5EZWNpbWFscyI6NiwidG9rZW5TeW1ib2wiOiJ0ZXN0VVNEIiwiZGVhZGxpbmVNcyI6IjE3OTM4ODU2NjQ0MTQiLCJwYXJ0aWNpcGFudExpbWl0IjoxMjgsIm1hdGNoUnVsZSI6Im9uZS10by1vbmUtY2FwcGVkLXYxIiwic2V0dGxlbWVudFJ1bGUiOiJhbGwtbGVncy12MSIsImxlZ3MiOlt7ImxlZ0lkIjowLCJ0aXRsZSI6IlZlbnVlIiwicHVycG9zZSI6IldvcmtzaG9wIHNwYWNlIiwiYmVuZWZpY2lhcnkiOiJ2ZW51ZS5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiNjAwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMjAwMDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIyMDAwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI0MDAwMDAwMDAifSx7ImxlZ0lkIjoxLCJ0aXRsZSI6IkVxdWlwbWVudCIsInB1cnBvc2UiOiJTaGFyZWQgdG9vbHMiLCJiZW5lZmljaWFyeSI6ImVxdWlwbWVudC5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMjUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMTI1MDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIxMjUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiIxMjUwMDAwMDAifSx7ImxlZ0lkIjoyLCJ0aXRsZSI6IkFjY2Vzc2liaWxpdHkiLCJwdXJwb3NlIjoiRXNzZW50aWFsIGFjY2VzcyIsImJlbmVmaWNpYXJ5IjoiYWNjZXNzLmF0LW13M2txZjBrLnRlc3RuZXQiLCJidWRnZXQiOiIxNTAwMDAwMDAiLCJkZWNsYXJlZFNwb25zb3JDYXAiOiI3NTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiNzUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI3NTAwMDAwMCJ9XX0sInRlcm1zX2hhc2giOiJiODM1ZmExNzYzOGRjY2RmYjBkMDhhMDVlZjFkOWE5NWNjM2UwMzRhZTkyNDFjMmFlYzlhMDk3ZDE3ZjlhNzA2Iiwic3RhdGUiOiJGYWlsZWQiLCJjcmVhdGVkX2F0X21zIjoiMTc5Mzg4NTU3NTQ2NyIsImZpbmFsaXplZF9hdF9tcyI6IjE3OTM4ODU2NzUwMjkiLCJmYWlsdXJlX3JlYXNvbiI6IklOQ09NUExFVEVfQlVER0VUUyIsImFjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI1MDAwMDAwMCJdLCJjbG9zaW5nX2FjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI1MDAwMDAwMCJdLCJwYXJ0aWNpcGFudF9jb3VudCI6MSwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiOTc1MDAwMDAwIiwiYWN0aXZlX3ByaW5jaXBhbCI6IjAiLCJzcG9uc29yX3Jlc2VydmVkIjoiMCIsImZhaWxlZF9wcmluY2lwYWxfcmVzZXJ2ZWQiOiI1NzUwMDAwMDAiLCJhdmFpbGFibGVfY3JlZGl0cyI6IjQwMDAwMDAwMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+      },
+      "receipts": [
+        {
+          "id": "APShmtQj5SnNk94JiByppmwt9xEZbkdUir5DmaZg2mAW",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJpZCI6IjEiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjEiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJJbmNvbXBsZXRlIGFjY2Vzc2libGUgbWFrZXIgZGF5Iiwic3VtbWFyeSI6IkdlbnVpbmUgTkVBUiB0ZXN0bmV0IHZlcmlmaWNhdGlvbiIsImRldGFpbCI6Ik9uZSBtaXNzaW5nIGVzc2VudGlhbCBidWRnZXQgcHJldmVudHMgYWxsIGFsbG9jYXRpb25zLiIsImRhb0lkIjoiYWxsdG9nZXRoZXItbXcza2ZlbWsuc3B1dG5pa3YyLnRlc3RuZXQiLCJ0b2tlbklkIjoidGVzdHVzZC5hdC1tdzNrcWYway50ZXN0bmV0IiwidG9rZW5EZWNpbWFscyI6NiwidG9rZW5TeW1ib2wiOiJ0ZXN0VVNEIiwiZGVhZGxpbmVNcyI6IjE3OTM4ODU2NjQ0MTQiLCJwYXJ0aWNpcGFudExpbWl0IjoxMjgsIm1hdGNoUnVsZSI6Im9uZS10by1vbmUtY2FwcGVkLXYxIiwic2V0dGxlbWVudFJ1bGUiOiJhbGwtbGVncy12MSIsImxlZ3MiOlt7ImxlZ0lkIjowLCJ0aXRsZSI6IlZlbnVlIiwicHVycG9zZSI6IldvcmtzaG9wIHNwYWNlIiwiYmVuZWZpY2lhcnkiOiJ2ZW51ZS5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiNjAwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMjAwMDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIyMDAwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI0MDAwMDAwMDAifSx7ImxlZ0lkIjoxLCJ0aXRsZSI6IkVxdWlwbWVudCIsInB1cnBvc2UiOiJTaGFyZWQgdG9vbHMiLCJiZW5lZmljaWFyeSI6ImVxdWlwbWVudC5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMjUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiMTI1MDAwMDAwIiwic3BvbnNvckFsbG9jYXRpb24iOiIxMjUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiIxMjUwMDAwMDAifSx7ImxlZ0lkIjoyLCJ0aXRsZSI6IkFjY2Vzc2liaWxpdHkiLCJwdXJwb3NlIjoiRXNzZW50aWFsIGFjY2VzcyIsImJlbmVmaWNpYXJ5IjoiYWNjZXNzLmF0LW13M2txZjBrLnRlc3RuZXQiLCJidWRnZXQiOiIxNTAwMDAwMDAiLCJkZWNsYXJlZFNwb25zb3JDYXAiOiI3NTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiNzUwMDAwMDAiLCJjb21tdW5pdHlUYXJnZXQiOiI3NTAwMDAwMCJ9XX0sInRlcm1zX2hhc2giOiJiODM1ZmExNzYzOGRjY2RmYjBkMDhhMDVlZjFkOWE5NWNjM2UwMzRhZTkyNDFjMmFlYzlhMDk3ZDE3ZjlhNzA2Iiwic3RhdGUiOiJGYWlsZWQiLCJjcmVhdGVkX2F0X21zIjoiMTc5Mzg4NTU3NTQ2NyIsImZpbmFsaXplZF9hdF9tcyI6IjE3OTM4ODU2NzUwMjkiLCJmYWlsdXJlX3JlYXNvbiI6IklOQ09NUExFVEVfQlVER0VUUyIsImFjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI1MDAwMDAwMCJdLCJjbG9zaW5nX2FjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI1MDAwMDAwMCJdLCJwYXJ0aWNpcGFudF9jb3VudCI6MSwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiOTc1MDAwMDAwIiwiYWN0aXZlX3ByaW5jaXBhbCI6IjAiLCJzcG9uc29yX3Jlc2VydmVkIjoiMCIsImZhaWxlZF9wcmluY2lwYWxfcmVzZXJ2ZWQiOiI1NzUwMDAwMDAiLCJhdmFpbGFibGVfY3JlZGl0cyI6IjQwMDAwMDAwMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"campaign_finalized\",\"data\":[{\"campaign_id\":\"1\",\"state\":\"Failed\",\"closing_active\":[\"400000000\",\"125000000\",\"50000000\"]}]}"
+          ]
+        },
+        {
+          "id": "9vuZ8XxhVFYBmo791ZA3uSN2ae2hfNezuhwGGS2E6chU",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.materialize_refund",
+      "transactionHash": "CTVJmzxWBpV3A7ErLZzF5WutNJHWVU7MLTUwzycJLaEt",
+      "status": {
+        "SuccessValue": "eyJpZCI6IjE6cmVmdW5kOmF0LW13M2txZjBrLnRlc3RuZXQ6LSIsImNhbXBhaWduX2lkIjoiMSIsImtpbmQiOiJyZWZ1bmQiLCJvd25lciI6ImF0LW13M2txZjBrLnRlc3RuZXQiLCJyZWNpcGllbnQiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwibGVnX2lkIjpudWxsLCJhdmFpbGFibGUiOiI1NzUwMDAwMDAiLCJwZW5kaW5nIjoiMCIsInBhaWQiOiIwIiwibm9uY2UiOiIwIiwibGFzdF9hdHRlbXB0IjpudWxsfQ=="
+      },
+      "receipts": [
+        {
+          "id": "CJ1ZE6CGXujxQWTc2V171dr8ykskiwAvv45G1hwdRtRX",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJpZCI6IjE6cmVmdW5kOmF0LW13M2txZjBrLnRlc3RuZXQ6LSIsImNhbXBhaWduX2lkIjoiMSIsImtpbmQiOiJyZWZ1bmQiLCJvd25lciI6ImF0LW13M2txZjBrLnRlc3RuZXQiLCJyZWNpcGllbnQiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwibGVnX2lkIjpudWxsLCJhdmFpbGFibGUiOiI1NzUwMDAwMDAiLCJwZW5kaW5nIjoiMCIsInBhaWQiOiIwIiwibm9uY2UiOiIwIiwibGFzdF9hdHRlbXB0IjpudWxsfQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"refund_materialized\",\"data\":[{\"campaign_id\":\"1\",\"amount\":\"575000000\",\"credit_id\":\"1:refund:at-mw3kqf0k.testnet:-\"}]}"
+          ]
+        },
+        {
+          "id": "Fbq46SmqRduPUvBDfvCKGaRMXhMTgaLXinApndYeRxjf",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "3NQWis9GQtr7kuzbK24U53BhdmKPXwxPUqea3qeicR7m",
+      "status": {
+        "SuccessValue": "dHJ1ZQ=="
+      },
+      "receipts": [
+        {
+          "id": "HW4358LUearVM5MoFKdT15PmQJ92Gvk1eSWh3UB56F5c",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "2MAFZwk5yQDHurTuqsLAGfFGsoGFhrhzSYaAJCoiKLRJ"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"1:refund:at-mw3kqf0k.testnet:-\",\"nonce\":\"1\",\"amount\":\"575000000\",\"recipient\":\"at-mw3kqf0k.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "4JuHAeUnTqV9MmiQK2HnL4rTTruV85pWAkC9maHrnHc9",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"at-mw3kqf0k.testnet\",\"amount\":\"575000000\",\"memo\":\"AllTogether 1:refund:at-mw3kqf0k.testnet:- #1\"}]}"
+          ]
+        },
+        {
+          "id": "BXkQoVpoS9WrqwgYvaXmWe8wo4uuXFiBfathbXnKiSz6",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "2MAFZwk5yQDHurTuqsLAGfFGsoGFhrhzSYaAJCoiKLRJ",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "dHJ1ZQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"1:refund:at-mw3kqf0k.testnet:-\",\"nonce\":\"1\",\"amount\":\"575000000\",\"success\":true}]}"
+          ]
+        },
+        {
+          "id": "8oJGtiqSxy9GCWWnJLgjLYCn7ZAZz45c1h2iro1HJjqZ",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "62EmBdZGZm3dAnepmMbRCXskCdSEXt9YLwm1N8RgZcZB",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "AixgMy9jv6GwYMrBkMfW3ZvzH9WEJTitdUdXYnNqGP7H",
+      "status": {
+        "SuccessValue": "dHJ1ZQ=="
+      },
+      "receipts": [
+        {
+          "id": "5E9eQGm6urbvaRHowoBc5NW6KaJBnMKrp2c5hMS1k5xH",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "CABu3sPtF7dq9YjPSDobiZfmXN1jWkPPrN1qiAiWLAXr"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"1:sponsor_refund:alltogether-mw3kfemk.sputnikv2.testnet:-\",\"nonce\":\"1\",\"amount\":\"400000000\",\"recipient\":\"alltogether-mw3kfemk.sputnikv2.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "98zDQqySLkAnbKYMaerpFLAy8FE8rwMwz8a4QD6AzbdD",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"amount\":\"400000000\",\"memo\":\"AllTogether 1:sponsor_refund:alltogether-mw3kfemk.sputnikv2.testnet:- #1\"}]}"
+          ]
+        },
+        {
+          "id": "6MEt6DU43MpGftm3MbzeZwcZg9AvVfkgR4rKVBbqmpxC",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CABu3sPtF7dq9YjPSDobiZfmXN1jWkPPrN1qiAiWLAXr",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "dHJ1ZQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"1:sponsor_refund:alltogether-mw3kfemk.sputnikv2.testnet:-\",\"nonce\":\"1\",\"amount\":\"400000000\",\"success\":true}]}"
+          ]
+        },
+        {
+          "id": "3JL352A5LZrjP4ipeqaJ9fzXcBusg9qLZX5srDPQWwgD",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "7DRCanPM6J494HJomDyf2S39vspwrsxL2GQPK3GxyjLj",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.create_campaign",
+      "transactionHash": "EkDt7HM5oBczpsxXTgKEDTZzTFBa3L3LDGz3TjMnhebP",
+      "status": {
+        "SuccessValue": "eyJpZCI6IjIiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjIiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJDb21wbGV0ZSBhY2Nlc3NpYmxlIG1ha2VyIGRheSIsInN1bW1hcnkiOiJHZW51aW5lIE5FQVIgdGVzdG5ldCB2ZXJpZmljYXRpb24iLCJkZXRhaWwiOiJPbmUgbWlzc2luZyBlc3NlbnRpYWwgYnVkZ2V0IHByZXZlbnRzIGFsbCBhbGxvY2F0aW9ucy4iLCJkYW9JZCI6ImFsbHRvZ2V0aGVyLW13M2tmZW1rLnNwdXRuaWt2Mi50ZXN0bmV0IiwidG9rZW5JZCI6InRlc3R1c2QuYXQtbXcza3FmMGsudGVzdG5ldCIsInRva2VuRGVjaW1hbHMiOjYsInRva2VuU3ltYm9sIjoidGVzdFVTRCIsImRlYWRsaW5lTXMiOiIxNzkzODg1Nzg1MzI1IiwicGFydGljaXBhbnRMaW1pdCI6MTI4LCJtYXRjaFJ1bGUiOiJvbmUtdG8tb25lLWNhcHBlZC12MSIsInNldHRsZW1lbnRSdWxlIjoiYWxsLWxlZ3MtdjEiLCJsZWdzIjpbeyJsZWdJZCI6MCwidGl0bGUiOiJWZW51ZSIsInB1cnBvc2UiOiJXb3Jrc2hvcCBzcGFjZSIsImJlbmVmaWNpYXJ5IjoidmVudWUuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjYwMDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjIwMDAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMjAwMDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNDAwMDAwMDAwIn0seyJsZWdJZCI6MSwidGl0bGUiOiJFcXVpcG1lbnQiLCJwdXJwb3NlIjoiU2hhcmVkIHRvb2xzIiwiYmVuZWZpY2lhcnkiOiJlcXVpcG1lbnQuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjI1MDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjEyNTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMTI1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiMTI1MDAwMDAwIn0seyJsZWdJZCI6MiwidGl0bGUiOiJBY2Nlc3NpYmlsaXR5IiwicHVycG9zZSI6IkVzc2VudGlhbCBhY2Nlc3MiLCJiZW5lZmljaWFyeSI6ImFjY2Vzcy5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMTUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiNzUwMDAwMDAiLCJzcG9uc29yQWxsb2NhdGlvbiI6Ijc1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNzUwMDAwMDAifV19LCJ0ZXJtc19oYXNoIjoiOTY2YTdhYjkyZDAzMWZkMTE4ZjJjMmFkNWExOWU0YzY5YTgxOTkwYzc5YzYxMGUxM2I1OTY0MjcxMGE1YWZkMSIsInN0YXRlIjoiQXdhaXRpbmdGdW5kaW5nIiwiY3JlYXRlZF9hdF9tcyI6IjE3OTM4ODU2OTY2NDgiLCJmaW5hbGl6ZWRfYXRfbXMiOm51bGwsImZhaWx1cmVfcmVhc29uIjpudWxsLCJhY3RpdmUiOlsiMCIsIjAiLCIwIl0sImNsb3NpbmdfYWN0aXZlIjpudWxsLCJwYXJ0aWNpcGFudF9jb3VudCI6MCwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiMCIsImFjdGl2ZV9wcmluY2lwYWwiOiIwIiwic3BvbnNvcl9yZXNlcnZlZCI6IjAiLCJmYWlsZWRfcHJpbmNpcGFsX3Jlc2VydmVkIjoiMCIsImF2YWlsYWJsZV9jcmVkaXRzIjoiMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+      },
+      "receipts": [
+        {
+          "id": "7KawUPrDDCzQAW9VjCjGp3SGGQVW7QZt2eEcnMCqgDK4",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJpZCI6IjIiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjIiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJDb21wbGV0ZSBhY2Nlc3NpYmxlIG1ha2VyIGRheSIsInN1bW1hcnkiOiJHZW51aW5lIE5FQVIgdGVzdG5ldCB2ZXJpZmljYXRpb24iLCJkZXRhaWwiOiJPbmUgbWlzc2luZyBlc3NlbnRpYWwgYnVkZ2V0IHByZXZlbnRzIGFsbCBhbGxvY2F0aW9ucy4iLCJkYW9JZCI6ImFsbHRvZ2V0aGVyLW13M2tmZW1rLnNwdXRuaWt2Mi50ZXN0bmV0IiwidG9rZW5JZCI6InRlc3R1c2QuYXQtbXcza3FmMGsudGVzdG5ldCIsInRva2VuRGVjaW1hbHMiOjYsInRva2VuU3ltYm9sIjoidGVzdFVTRCIsImRlYWRsaW5lTXMiOiIxNzkzODg1Nzg1MzI1IiwicGFydGljaXBhbnRMaW1pdCI6MTI4LCJtYXRjaFJ1bGUiOiJvbmUtdG8tb25lLWNhcHBlZC12MSIsInNldHRsZW1lbnRSdWxlIjoiYWxsLWxlZ3MtdjEiLCJsZWdzIjpbeyJsZWdJZCI6MCwidGl0bGUiOiJWZW51ZSIsInB1cnBvc2UiOiJXb3Jrc2hvcCBzcGFjZSIsImJlbmVmaWNpYXJ5IjoidmVudWUuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjYwMDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjIwMDAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMjAwMDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNDAwMDAwMDAwIn0seyJsZWdJZCI6MSwidGl0bGUiOiJFcXVpcG1lbnQiLCJwdXJwb3NlIjoiU2hhcmVkIHRvb2xzIiwiYmVuZWZpY2lhcnkiOiJlcXVpcG1lbnQuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjI1MDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjEyNTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMTI1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiMTI1MDAwMDAwIn0seyJsZWdJZCI6MiwidGl0bGUiOiJBY2Nlc3NpYmlsaXR5IiwicHVycG9zZSI6IkVzc2VudGlhbCBhY2Nlc3MiLCJiZW5lZmljaWFyeSI6ImFjY2Vzcy5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMTUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiNzUwMDAwMDAiLCJzcG9uc29yQWxsb2NhdGlvbiI6Ijc1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNzUwMDAwMDAifV19LCJ0ZXJtc19oYXNoIjoiOTY2YTdhYjkyZDAzMWZkMTE4ZjJjMmFkNWExOWU0YzY5YTgxOTkwYzc5YzYxMGUxM2I1OTY0MjcxMGE1YWZkMSIsInN0YXRlIjoiQXdhaXRpbmdGdW5kaW5nIiwiY3JlYXRlZF9hdF9tcyI6IjE3OTM4ODU2OTY2NDgiLCJmaW5hbGl6ZWRfYXRfbXMiOm51bGwsImZhaWx1cmVfcmVhc29uIjpudWxsLCJhY3RpdmUiOlsiMCIsIjAiLCIwIl0sImNsb3NpbmdfYWN0aXZlIjpudWxsLCJwYXJ0aWNpcGFudF9jb3VudCI6MCwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiMCIsImFjdGl2ZV9wcmluY2lwYWwiOiIwIiwic3BvbnNvcl9yZXNlcnZlZCI6IjAiLCJmYWlsZWRfcHJpbmNpcGFsX3Jlc2VydmVkIjoiMCIsImF2YWlsYWJsZV9jcmVkaXRzIjoiMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"campaign_created\",\"data\":[{\"campaign_id\":\"2\",\"terms_hash\":\"966a7ab92d031fd118f2c2ad5a19e4c69a81990c79c610e13b59642710a5afd1\",\"storage_yocto\":\"2924080000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "GXm9qNCjWGs8CeAEUF6VKa39abrYRM32EhDNKsC9k58t",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer",
+      "transactionHash": "39HjFP6XwQ7P7B544B6FQjazD2my3usA2ZZxLYQsspmb",
+      "status": {
+        "SuccessValue": ""
+      },
+      "receipts": [
+        {
+          "id": "DvSbfPNUfKjmUUyALSLWPuFV5p95VZcDsUULDfZaf9tV",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"amount\":\"400000000\",\"memo\":\"Dedicated testnet sponsor reserve\"}]}"
+          ]
+        },
+        {
+          "id": "Ej7icxnY1R7K2wwPRpQvQAWkCxTc8ntybJHkLnsPUh3R",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "alltogether-mw3kfemk.sputnikv2.testnet.add_proposal",
+      "transactionHash": "2u3BmzJGR6yZ8Gv7n3fSnM1gWrgb9tfgfegqt15stcEC",
+      "status": {
+        "SuccessValue": "MQ=="
+      },
+      "receipts": [
+        {
+          "id": "qanLzRtiwQVcsBdHX9undXbut1kRN8dzbQuND9V3tW4",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": "MQ=="
+          },
+          "logs": []
+        },
+        {
+          "id": "AkKFSJnG8rubhSbUKXKT8QqvAxSfzfC192EqvryfkwXe",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "alltogether-mw3kfemk.sputnikv2.testnet.act_proposal",
+      "transactionHash": "37xjj4AGYABEYF6kM2TVaWu3nwFEowgJwPPbqN6eQMfx",
+      "status": {
+        "SuccessValue": ""
+      },
+      "receipts": [
+        {
+          "id": "5VZXsovEZxjxUkoDJy7RjX2WamVqsJnfpabXqNZhe2a8",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "N2pLRF7VJFtRCtV3xzGznuwckX31eSynVsF5vAHTQEr",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "J8xodqFvmV6XnFtYz1Gy3gp3RxYQUQ4kTCFJejtdL7Wd"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"400000000\",\"memo\":\"AllTogether campaign 2\"}]}"
+          ]
+        },
+        {
+          "id": "DXtjcJuH4FRna1BDA5kxrJumwrfxFLjRovyqMQeM9WaX",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"2\",\"sender_id\":\"alltogether-mw3kfemk.sputnikv2.testnet\",\"action\":\"sponsor\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "J3ByogHo3bfKQzWHGzXTe3jc9cekcF27gjU2jwznYbjz",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "J8xodqFvmV6XnFtYz1Gy3gp3RxYQUQ4kTCFJejtdL7Wd",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjQwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "8i22WidJDfzpnp6ppNKkoxV7tjtYMQ2HYFSVsDQJrmpa",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "9H6KRKwRNaj3qkfEmvFzokp2m5d1stGJWbNbGPcwCLXu",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "HFd81ohsYf4kM6X5APp7CZaksiURPK6wBMtd2SoL3m21",
+          "executor": "alltogether-mw3kfemk.sputnikv2.testnet",
+          "status": {
+            "SuccessReceiptId": "BePSf4o72iCg4jbuUqTqdQ8vzLRS6WCw5ztzLLVSKEMM"
+          },
+          "logs": []
+        },
+        {
+          "id": "BePSf4o72iCg4jbuUqTqdQ8vzLRS6WCw5ztzLLVSKEMM",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "SaiNbkKsoFVGndXYRFLBU8SQ8q9zthsqXX6UW1hKw8u",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "5TizhM8sjBWc8KprEBQYREEGGmefRzGsThu7tSvrEKtc",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "5JQc7fRphLeY7kKfyoHwPWSwqNMs7dUUQscnSTWQZew2",
+          "executor": "at-mw3kfemk.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "DH7TLL2Ww19VsmQWVJQL8vaztcwHMdG3UZPoCubfLMmJ",
+      "status": {
+        "SuccessValue": "IjQwMDAwMDAwMCI="
+      },
+      "receipts": [
+        {
+          "id": "2uoG7gEJqCbUbgfx78nhkWmrWFRiCEX2YtcqrQJCkRib",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "7o6DxoMjSVyojrSF18QAqwqKr4n51vRqpaTLyYbvyxWe"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "6j3Eta4yZyHMKJBLfvWcKHyVP6aDT8UHPrVAmxjwu1L4",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"2\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"400000000\"}]}"
+          ]
+        },
+        {
+          "id": "6JfXHezS5aFcvc9ReCh2q9kBsLMor4EyF9HnWQEyJMp5",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "7o6DxoMjSVyojrSF18QAqwqKr4n51vRqpaTLyYbvyxWe",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjQwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "6dZWwykQQsTBy5pu1JeJ8RWXSNgTCndLhK43dHw3twE6",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "9rPX9hsWuEyGusDhinW3jfjW9VRWiPb9me86mr5AUCBF",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "8iaHLY1kb4mNr8VvEjerzqfKbRnqQKgZsR2z1bLdYw2F",
+      "status": {
+        "SuccessValue": "IjEyNTAwMDAwMCI="
+      },
+      "receipts": [
+        {
+          "id": "91Lyvppa397VSYgsDemTrPNDZsjaY7zC8UWufxvytF4z",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "HjgSWBaCc4nwXorMf3GAY7By9xBsMEp1azSguzvjftuu"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"125000000\"}]}"
+          ]
+        },
+        {
+          "id": "EWCJjz8jrLjKiVfb4ZB4D2J9C2B6fZA8UY4vsUbHqyKm",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"2\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"125000000\"}]}"
+          ]
+        },
+        {
+          "id": "BuTQnJqLz5SixipxG9N1f5sR2M71mQUp74Yu37d4HQYq",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "HjgSWBaCc4nwXorMf3GAY7By9xBsMEp1azSguzvjftuu",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEyNTAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "AVp9RTyYeQvaoPjLXbJkT1vPFKkxFSPtnBFbwY62MGE2",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "Aqaqke771tqZaX52iDLo6YtGw2hmqMS9FTHmJ186rMur",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "JBzQF5B5mbTc49fLLsg9vuetqAys7fQ7RKHHowb5CR8E",
+      "status": {
+        "SuccessValue": "Ijc1MDAwMDAwIg=="
+      },
+      "receipts": [
+        {
+          "id": "9Ff2brkDPuLKhPofqpiDn5k4SHUjt3TCLaRcXLQeEuna",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "2iNMu3gzn8pDt1UeZgBfEtepsAAy7uqvUwngDoEpqHH4"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"75000000\"}]}"
+          ]
+        },
+        {
+          "id": "5iLKiRimVnvoUoMpPCeA6FndBerBYyrCoWbDF4TxBzT4",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"funds_accepted\",\"data\":[{\"campaign_id\":\"2\",\"sender_id\":\"at-mw3kqf0k.testnet\",\"action\":\"pledge\",\"amount\":\"75000000\"}]}"
+          ]
+        },
+        {
+          "id": "K7K193fb6Eo4gtkcm79feu17uXohDaw9zGxQLmACW4M",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "2iNMu3gzn8pDt1UeZgBfEtepsAAy7uqvUwngDoEpqHH4",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "Ijc1MDAwMDAwIg=="
+          },
+          "logs": []
+        },
+        {
+          "id": "4pVn5mvbsqZFhFX1ssqHKctt7KCwrf8USCK5NRtMnfda",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3VT2ZEe8Mwdb2QjZxR9UFxJ6fKFAEYQZmEkssisCAd6J",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "7k5gNuschFGfwrVUic1Us3Zrkn7kgLrm9ZLRtDyd4dGR",
+      "status": {
+        "SuccessValue": "IjAi"
+      },
+      "receipts": [
+        {
+          "id": "9p4YQkhBYQAgMeLBB2u5igAGfXKYtYESzQWNpQHQV8Rh",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "CSqfF7yoFrsnEiwWiADT5WTGiwzCEg7j9Uc7vrzznfT6"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"1\"}]}"
+          ]
+        },
+        {
+          "id": "13xCEncs2ViAMhY5pSmUUhYvifsuudKePEJoiSvNmSsG",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEi"
+          },
+          "logs": []
+        },
+        {
+          "id": "88X8yJYXrq7HKEXSm7k3HsCARW62jNTTZZQvf2MvouzV",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CSqfF7yoFrsnEiwWiADT5WTGiwzCEg7j9Uc7vrzznfT6",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"at-mw3kqf0k.testnet\",\"amount\":\"1\",\"memo\":\"refund\"}]}"
+          ]
+        },
+        {
+          "id": "9UtyXr37GPN3UppZvVknko4BrMoLMMcUFYjFvu2q9mp6",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "GRfHCdpWKWAyrh58nzTCXSF3hdYZadQfp2aBzT2rZhLx",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.ft_transfer_call",
+      "transactionHash": "C8rDj6nt39XcLM8LNymYDfH6H4HbtgNAjyZZsKJhjWcB",
+      "status": {
+        "SuccessValue": "IjAi"
+      },
+      "receipts": [
+        {
+          "id": "pfeZ14GnqRdJkQYBgHgJgfZHf6YFYbFT3mqBTj4kEe1",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "DpaVzV8BNWNhduF46qdpqD4UxhVDZGDSANaEHPajxqip"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"at-mw3kqf0k.testnet\",\"new_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"amount\":\"1\"}]}"
+          ]
+        },
+        {
+          "id": "8Nwpda15MFkE3fSrTQAQFGoZitJpHNHghRbdykB4oQaF",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjEi"
+          },
+          "logs": []
+        },
+        {
+          "id": "639VpbUE4RMBqHyvNAFNAtDcvhCe5LUQErE7pGfvCny3",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "DpaVzV8BNWNhduF46qdpqD4UxhVDZGDSANaEHPajxqip",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"at-mw3kqf0k.testnet\",\"amount\":\"1\",\"memo\":\"refund\"}]}"
+          ]
+        },
+        {
+          "id": "HB1LHYnJEYi2Y5ivWedY5pcymWFrDSm3ugrcfkB4Nm6y",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "Ccsvc7Q7d1jDthBWxzDwhD7gf3rLEA3uvNf8xYdXTYxX",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.finalize",
+      "transactionHash": "GPfEh7Jx6vDwo3ptQLrYBytjGvmMYctVTbMRY5eviCS6",
+      "status": {
+        "SuccessValue": "eyJpZCI6IjIiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjIiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJDb21wbGV0ZSBhY2Nlc3NpYmxlIG1ha2VyIGRheSIsInN1bW1hcnkiOiJHZW51aW5lIE5FQVIgdGVzdG5ldCB2ZXJpZmljYXRpb24iLCJkZXRhaWwiOiJPbmUgbWlzc2luZyBlc3NlbnRpYWwgYnVkZ2V0IHByZXZlbnRzIGFsbCBhbGxvY2F0aW9ucy4iLCJkYW9JZCI6ImFsbHRvZ2V0aGVyLW13M2tmZW1rLnNwdXRuaWt2Mi50ZXN0bmV0IiwidG9rZW5JZCI6InRlc3R1c2QuYXQtbXcza3FmMGsudGVzdG5ldCIsInRva2VuRGVjaW1hbHMiOjYsInRva2VuU3ltYm9sIjoidGVzdFVTRCIsImRlYWRsaW5lTXMiOiIxNzkzODg1Nzg1MzI1IiwicGFydGljaXBhbnRMaW1pdCI6MTI4LCJtYXRjaFJ1bGUiOiJvbmUtdG8tb25lLWNhcHBlZC12MSIsInNldHRsZW1lbnRSdWxlIjoiYWxsLWxlZ3MtdjEiLCJsZWdzIjpbeyJsZWdJZCI6MCwidGl0bGUiOiJWZW51ZSIsInB1cnBvc2UiOiJXb3Jrc2hvcCBzcGFjZSIsImJlbmVmaWNpYXJ5IjoidmVudWUuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjYwMDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjIwMDAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMjAwMDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNDAwMDAwMDAwIn0seyJsZWdJZCI6MSwidGl0bGUiOiJFcXVpcG1lbnQiLCJwdXJwb3NlIjoiU2hhcmVkIHRvb2xzIiwiYmVuZWZpY2lhcnkiOiJlcXVpcG1lbnQuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjI1MDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjEyNTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMTI1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiMTI1MDAwMDAwIn0seyJsZWdJZCI6MiwidGl0bGUiOiJBY2Nlc3NpYmlsaXR5IiwicHVycG9zZSI6IkVzc2VudGlhbCBhY2Nlc3MiLCJiZW5lZmljaWFyeSI6ImFjY2Vzcy5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMTUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiNzUwMDAwMDAiLCJzcG9uc29yQWxsb2NhdGlvbiI6Ijc1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNzUwMDAwMDAifV19LCJ0ZXJtc19oYXNoIjoiOTY2YTdhYjkyZDAzMWZkMTE4ZjJjMmFkNWExOWU0YzY5YTgxOTkwYzc5YzYxMGUxM2I1OTY0MjcxMGE1YWZkMSIsInN0YXRlIjoiU3VjY2VlZGVkIiwiY3JlYXRlZF9hdF9tcyI6IjE3OTM4ODU2OTY2NDgiLCJmaW5hbGl6ZWRfYXRfbXMiOiIxNzkzODg1Nzk2MjkwIiwiZmFpbHVyZV9yZWFzb24iOm51bGwsImFjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI3NTAwMDAwMCJdLCJjbG9zaW5nX2FjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI3NTAwMDAwMCJdLCJwYXJ0aWNpcGFudF9jb3VudCI6MSwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiMTAwMDAwMDAwMCIsImFjdGl2ZV9wcmluY2lwYWwiOiIwIiwic3BvbnNvcl9yZXNlcnZlZCI6IjAiLCJmYWlsZWRfcHJpbmNpcGFsX3Jlc2VydmVkIjoiMCIsImF2YWlsYWJsZV9jcmVkaXRzIjoiMTAwMDAwMDAwMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+      },
+      "receipts": [
+        {
+          "id": "7h6LCRbydzktUWRXVgdbotskEwQnGgycT4dRydL73KhL",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJpZCI6IjIiLCJ0ZXJtcyI6eyJzY2hlbWFWZXJzaW9uIjoxLCJkb21haW4iOiJhbGx0b2dldGhlci9uZWFyLXRlc3RuZXQvdjEiLCJlc2Nyb3dJZCI6ImVzY3Jvdy5hdC1tdzNrcWYway50ZXN0bmV0IiwiY2FtcGFpZ25JZCI6IjIiLCJvcmdhbml6ZXIiOiJhdC1tdzNrcWYway50ZXN0bmV0IiwidGl0bGUiOiJDb21wbGV0ZSBhY2Nlc3NpYmxlIG1ha2VyIGRheSIsInN1bW1hcnkiOiJHZW51aW5lIE5FQVIgdGVzdG5ldCB2ZXJpZmljYXRpb24iLCJkZXRhaWwiOiJPbmUgbWlzc2luZyBlc3NlbnRpYWwgYnVkZ2V0IHByZXZlbnRzIGFsbCBhbGxvY2F0aW9ucy4iLCJkYW9JZCI6ImFsbHRvZ2V0aGVyLW13M2tmZW1rLnNwdXRuaWt2Mi50ZXN0bmV0IiwidG9rZW5JZCI6InRlc3R1c2QuYXQtbXcza3FmMGsudGVzdG5ldCIsInRva2VuRGVjaW1hbHMiOjYsInRva2VuU3ltYm9sIjoidGVzdFVTRCIsImRlYWRsaW5lTXMiOiIxNzkzODg1Nzg1MzI1IiwicGFydGljaXBhbnRMaW1pdCI6MTI4LCJtYXRjaFJ1bGUiOiJvbmUtdG8tb25lLWNhcHBlZC12MSIsInNldHRsZW1lbnRSdWxlIjoiYWxsLWxlZ3MtdjEiLCJsZWdzIjpbeyJsZWdJZCI6MCwidGl0bGUiOiJWZW51ZSIsInB1cnBvc2UiOiJXb3Jrc2hvcCBzcGFjZSIsImJlbmVmaWNpYXJ5IjoidmVudWUuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjYwMDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjIwMDAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMjAwMDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNDAwMDAwMDAwIn0seyJsZWdJZCI6MSwidGl0bGUiOiJFcXVpcG1lbnQiLCJwdXJwb3NlIjoiU2hhcmVkIHRvb2xzIiwiYmVuZWZpY2lhcnkiOiJlcXVpcG1lbnQuYXQtbXcza3FmMGsudGVzdG5ldCIsImJ1ZGdldCI6IjI1MDAwMDAwMCIsImRlY2xhcmVkU3BvbnNvckNhcCI6IjEyNTAwMDAwMCIsInNwb25zb3JBbGxvY2F0aW9uIjoiMTI1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiMTI1MDAwMDAwIn0seyJsZWdJZCI6MiwidGl0bGUiOiJBY2Nlc3NpYmlsaXR5IiwicHVycG9zZSI6IkVzc2VudGlhbCBhY2Nlc3MiLCJiZW5lZmljaWFyeSI6ImFjY2Vzcy5hdC1tdzNrcWYway50ZXN0bmV0IiwiYnVkZ2V0IjoiMTUwMDAwMDAwIiwiZGVjbGFyZWRTcG9uc29yQ2FwIjoiNzUwMDAwMDAiLCJzcG9uc29yQWxsb2NhdGlvbiI6Ijc1MDAwMDAwIiwiY29tbXVuaXR5VGFyZ2V0IjoiNzUwMDAwMDAifV19LCJ0ZXJtc19oYXNoIjoiOTY2YTdhYjkyZDAzMWZkMTE4ZjJjMmFkNWExOWU0YzY5YTgxOTkwYzc5YzYxMGUxM2I1OTY0MjcxMGE1YWZkMSIsInN0YXRlIjoiU3VjY2VlZGVkIiwiY3JlYXRlZF9hdF9tcyI6IjE3OTM4ODU2OTY2NDgiLCJmaW5hbGl6ZWRfYXRfbXMiOiIxNzkzODg1Nzk2MjkwIiwiZmFpbHVyZV9yZWFzb24iOm51bGwsImFjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI3NTAwMDAwMCJdLCJjbG9zaW5nX2FjdGl2ZSI6WyI0MDAwMDAwMDAiLCIxMjUwMDAwMDAiLCI3NTAwMDAwMCJdLCJwYXJ0aWNpcGFudF9jb3VudCI6MSwiYWNjb3VudGluZyI6eyJhY2NlcHRlZF9pbmZsb3dzIjoiMTAwMDAwMDAwMCIsImFjdGl2ZV9wcmluY2lwYWwiOiIwIiwic3BvbnNvcl9yZXNlcnZlZCI6IjAiLCJmYWlsZWRfcHJpbmNpcGFsX3Jlc2VydmVkIjoiMCIsImF2YWlsYWJsZV9jcmVkaXRzIjoiMTAwMDAwMDAwMCIsInBlbmRpbmdfdHJhbnNmZXJzIjoiMCIsImNvbmZpcm1lZF9wYWlkIjoiMCJ9fQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"campaign_finalized\",\"data\":[{\"campaign_id\":\"2\",\"state\":\"Succeeded\",\"closing_active\":[\"400000000\",\"125000000\",\"75000000\"]}]}"
+          ]
+        },
+        {
+          "id": "8SpXvgyKdpSKfB83oYenAUUsRumWr4xSTuqZLH2MUr5Y",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "5CEvpEaTD7923nR8sBAXpxucy4seoCSgyZBTyuLy6DH5",
+      "status": {
+        "SuccessValue": "dHJ1ZQ=="
+      },
+      "receipts": [
+        {
+          "id": "483JZ36U6A3FTdXQFCLCVdsnGNa45kPogvexXKt3YmZi",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "ELJ74MTfDvaXFaMjf1Kiq4rwhXey8UxaWWr4mABz2aWc"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"2:beneficiary:venue.at-mw3kqf0k.testnet:0\",\"nonce\":\"1\",\"amount\":\"600000000\",\"recipient\":\"venue.at-mw3kqf0k.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "EqyHonsLrE3LBdHC7WvpU4JTYi1yWo9YBbvTmWC58b1L",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"venue.at-mw3kqf0k.testnet\",\"amount\":\"600000000\",\"memo\":\"AllTogether 2:beneficiary:venue.at-mw3kqf0k.testnet:0 #1\"}]}"
+          ]
+        },
+        {
+          "id": "6Lr64i6aw9k83xA8rdi95nKJskViceydq15zM9UcxDQY",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "ELJ74MTfDvaXFaMjf1Kiq4rwhXey8UxaWWr4mABz2aWc",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "dHJ1ZQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"2:beneficiary:venue.at-mw3kqf0k.testnet:0\",\"nonce\":\"1\",\"amount\":\"600000000\",\"success\":true}]}"
+          ]
+        },
+        {
+          "id": "B9RY644XrKSSiiYMSGaaasAH9kQaAJvT5kxwU6Tmqo6X",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "AeXt9AEHF25UtxFi1h6camdTuKZwCHXw8Zoy8ooR8CuW",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "GDYg1v7CNReqh38P5kYyMFk3tq86dnVXU5pjxZiH7bp1",
+      "status": {
+        "SuccessValue": "ZmFsc2U="
+      },
+      "receipts": [
+        {
+          "id": "HRLR7nPQv3Err5iv3Uc8wcsd6fUHreJoVnKxAU2QRizU",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "HV4Mb1K2LxJA9FLvNvUyrryWJuNGjhA1eKkUoGmQs4oX"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"2:beneficiary:equipment.at-mw3kqf0k.testnet:1\",\"nonce\":\"1\",\"amount\":\"250000000\",\"recipient\":\"equipment.at-mw3kqf0k.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "ARidNbiQ17gvJLnfgqQ35Vn86uMWBtLvA8nu9Mopr8SB",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: The account equipment.at-mw3kqf0k.testnet is not registered"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "7qhzsGyKxd5mQAausBQH2Tn4rSzaSwyGiVtQL3brtXCD",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "GyMM9AHqoFXq215ZnXYEWP8LHZ5QVWe6CzZTYbbRYBUp",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "HV4Mb1K2LxJA9FLvNvUyrryWJuNGjhA1eKkUoGmQs4oX",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "ZmFsc2U="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"2:beneficiary:equipment.at-mw3kqf0k.testnet:1\",\"nonce\":\"1\",\"amount\":\"250000000\",\"success\":false}]}"
+          ]
+        },
+        {
+          "id": "GKgJgJg4ik7WNQwuHqiYcysJyKkD4YHgYn1MV8txsVPR",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "FHBecFMgPZPD9xECGREwrmhE8uZVq1Qck3zVa79iunNR",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "testusd.at-mw3kqf0k.testnet.storage_deposit",
+      "transactionHash": "8tReVgrwWUj26pKMfgPyGj4mEupUwLPn9KBxixMAKzNu",
+      "status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+      },
+      "receipts": [
+        {
+          "id": "ArhKCzzwFCTCmmbRQNrh1rVAAmUG8CQr7jWvKVHt5U11",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEyNTAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiIwIn0="
+          },
+          "logs": []
+        },
+        {
+          "id": "F3hKNb24MEKfUEebxaHcYr3URxh7MMMsRpWH3Vogz2HN",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "FtFwZ5X5gV4AkZiuDRjyH9ogqf5t2L4xjxCwo9XZ9h7Y",
+      "status": {
+        "SuccessValue": "dHJ1ZQ=="
+      },
+      "receipts": [
+        {
+          "id": "4s4PTLvCDA4fmJbxzY8gQy7VMVh24gcEkEzJi2mhEd3b",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "4fRvhimkKB7TLwHK8HHQHxW3P7FKcS4qBsZPvaMBZD8H"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"2:beneficiary:equipment.at-mw3kqf0k.testnet:1\",\"nonce\":\"2\",\"amount\":\"250000000\",\"recipient\":\"equipment.at-mw3kqf0k.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "2YnNtTtJ1L2PdqzCqF12Ko61khBkEMpxFCJDDmbgvRPL",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"equipment.at-mw3kqf0k.testnet\",\"amount\":\"250000000\",\"memo\":\"AllTogether 2:beneficiary:equipment.at-mw3kqf0k.testnet:1 #2\"}]}"
+          ]
+        },
+        {
+          "id": "8N8f8wvL3eBFXZ1nXJevfbcLHX8EcFf7keZR8USLBygq",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "4fRvhimkKB7TLwHK8HHQHxW3P7FKcS4qBsZPvaMBZD8H",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "dHJ1ZQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"2:beneficiary:equipment.at-mw3kqf0k.testnet:1\",\"nonce\":\"2\",\"amount\":\"250000000\",\"success\":true}]}"
+          ]
+        },
+        {
+          "id": "GMj7xfbWuyGx7CpFT8Vtp33FHEYrQs6my9xYKQX99cxs",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "BJY5Y32BLe7XwczdsDiiQa7bbAPBDjHu9wSv79GHcEnY",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    },
+    {
+      "label": "escrow.at-mw3kqf0k.testnet.claim_credit",
+      "transactionHash": "8WTHjRHTz1gBDWrgVhTVo78scNrfkTFF6pmU42DpNR4c",
+      "status": {
+        "SuccessValue": "dHJ1ZQ=="
+      },
+      "receipts": [
+        {
+          "id": "AW96gKadFqpWP7LCit9HaSE9Vw7SLggyKrm6yV8Z9wjD",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessReceiptId": "CnVSJsrQFpBCZz28yDJD5hfXqoQQ6qcBQCfkUngirEkR"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_started\",\"data\":[{\"credit_id\":\"2:beneficiary:access.at-mw3kqf0k.testnet:2\",\"nonce\":\"1\",\"amount\":\"150000000\",\"recipient\":\"access.at-mw3kqf0k.testnet\"}]}"
+          ]
+        },
+        {
+          "id": "9nvAj1bCkngUjS3FdX9WK42mh8WRLsuudcZgmbopc8LG",
+          "executor": "testusd.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"escrow.at-mw3kqf0k.testnet\",\"new_owner_id\":\"access.at-mw3kqf0k.testnet\",\"amount\":\"150000000\",\"memo\":\"AllTogether 2:beneficiary:access.at-mw3kqf0k.testnet:2 #1\"}]}"
+          ]
+        },
+        {
+          "id": "k8QBPXmdTCDSP8nXQQeuX79XbkoNPcoZ4pAuytBrQsT",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CnVSJsrQFpBCZz28yDJD5hfXqoQQ6qcBQCfkUngirEkR",
+          "executor": "escrow.at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": "dHJ1ZQ=="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"alltogether\",\"version\":\"1.0.0\",\"event\":\"transfer_resolved\",\"data\":[{\"credit_id\":\"2:beneficiary:access.at-mw3kqf0k.testnet:2\",\"nonce\":\"1\",\"amount\":\"150000000\",\"success\":true}]}"
+          ]
+        },
+        {
+          "id": "Ek6zXLizJmBe1xP3GAvh9s6Dj8sMwaaQsMaqpPPDC5Tr",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3DyMRdiLvaifYszWjQ91b4DDhXe4XUqTVBqxReRnZ8Fm",
+          "executor": "at-mw3kqf0k.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ]
+    }
+  ]
+}

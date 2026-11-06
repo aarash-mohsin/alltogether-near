@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-05T22:26:13.610Z",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:19087/api/health",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:19087/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:19088/health",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:19088/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:19091/health",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:19092/health",
+      "status": 200
+    },
+    {
+      "port": 19091,
+      "status": "Ready",
+      "worker_enabled": true
+    },
+    {
+      "port": 19092,
+      "status": "Ready",
+      "worker_enabled": true
+    }
+  ],
+  "status": "passed",
+  "process_logs": [
+    "AllTogether local ledger: http://127.0.0.1:19087 (local demo; no blockchain transactions)\n",
+    "ArchivePass local API listening at http://127.0.0.1:19088; operator token supplied by environment or data/app/operator-token.\n",
+    "ArchivePass keeper-a.archivepass.testnet keeper at http://127.0.0.1:19091 (local); separate local directory, not independent infrastructure.\n",
+    "ArchivePass keeper-b.archivepass.testnet keeper at http://127.0.0.1:19092 (local); separate local directory, not independent infrastructure.\n"
+  ],
+  "finished_at": "2026-11-05T22:26:14.067Z"
+}

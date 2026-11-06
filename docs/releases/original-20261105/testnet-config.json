@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-05T13:29:42.613Z",
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+  "escrowId": "escrow.at-mw3kqf0k.testnet",
+  "tokenId": "testusd.at-mw3kqf0k.testnet",
+  "ownerId": "at-mw3kqf0k.testnet",
+  "councilId": "at-mw3kfemk.testnet",
+  "beneficiaries": [
+    "venue.at-mw3kqf0k.testnet",
+    "equipment.at-mw3kqf0k.testnet",
+    "access.at-mw3kqf0k.testnet"
+  ]
+}

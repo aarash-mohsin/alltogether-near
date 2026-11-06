@@ -1,0 +1,28 @@
+[package]
+name = "alltogether-escrow"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[workspace]
+members = ["test-token"]
+resolver = "2"
+
+[dependencies]
+near-sdk = { version = "=5.30.0", default-features = false }
+near-contract-standards = "=5.30.0"
+serde_json = "1.0"
+
+[dev-dependencies]
+near-sdk = { version = "=5.30.0", default-features = false, features = ["unit-testing"] }
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+panic = "abort"
+overflow-checks = true
+

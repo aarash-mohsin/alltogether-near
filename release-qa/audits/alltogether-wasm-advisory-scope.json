@@ -1,0 +1,17 @@
+{
+  "crypto-bigint": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "warning: nothing to print.\n\nTo find dependencies that require specific target platforms, try to use option `--target all` first, and then narrow your search scope accordingly.\n"
+  },
+  "unsafe-libyaml": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "warning: nothing to print.\n\nTo find dependencies that require specific target platforms, try to use option `--target all` first, and then narrow your search scope accordingly.\n"
+  },
+  "wee_alloc": {
+    "exitCode": 101,
+    "stdout": "",
+    "stderr": "error: package ID specification `wee_alloc` did not match any packages\n"
+  }
+}

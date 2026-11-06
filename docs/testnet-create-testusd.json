@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-11-05T13:29:29.335Z",
+  "network": "testnet",
+  "accountId": "testusd.at-mw3kqf0k.testnet",
+  "transactionHash": "9feFcurKBXraCyAAvrWx7jMw7iSsao16UGuhsqh9uUuF",
+  "status": {
+    "SuccessValue": ""
+  },
+  "transactionOutcome": {
+    "block_hash": "CCEkkCU4cCePGK5C4jAaVvpGe7BJ3YBdEFPsijD6UvrX",
+    "id": "9feFcurKBXraCyAAvrWx7jMw7iSsao16UGuhsqh9uUuF",
+    "outcome": {
+      "executor_id": "at-mw3kqf0k.testnet",
+      "gas_burnt": 824947687500,
+      "logs": [],
+      "metadata": {
+        "gas_profile": null,
+        "version": 1
+      },
+      "receipt_ids": [
+        "6t4Jk3qmALFcg3JWC8Xcqhcmt6TiHtt9g4a3wDurVwfi"
+      ],
+      "status": {
+        "SuccessReceiptId": "6t4Jk3qmALFcg3JWC8Xcqhcmt6TiHtt9g4a3wDurVwfi"
+      },
+      "tokens_burnt": "82494768750000000000"
+    },
+    "proof": []
+  },
+  "receipts": [
+    {
+      "block_hash": "6tkLoTZr99SaZ5sFUmLLULkjP5dXXJVX9ukTM1S4gyH2",
+      "id": "6t4Jk3qmALFcg3JWC8Xcqhcmt6TiHtt9g4a3wDurVwfi",
+      "outcome": {
+        "executor_id": "testusd.at-mw3kqf0k.testnet",
+        "gas_burnt": 7524947687500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null,
+            null,
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [
+          "EMQQnt67cN2VKwQoqnSxpAEgFPvckgbqpyKDmi2k75Fj"
+        ],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "7032494768750000000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "HVsDQ2iFQjvEHyHLUr9iv7tQNK2Ymob1bxAC2MJkgiop"
+        }
+      ]
+    },
+    {
+      "block_hash": "4t3EoeDyQY5rUJkSLtC66JWqMR1AXSGU5zRnVqtpWGdE",
+      "id": "EMQQnt67cN2VKwQoqnSxpAEgFPvckgbqpyKDmi2k75Fj",
+      "outcome": {
+        "executor_id": "at-mw3kqf0k.testnet",
+        "gas_burnt": 223182562500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "0"
+      },
+      "proof": []
+    }
+  ]
+}

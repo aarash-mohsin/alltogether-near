@@ -1,0 +1,37 @@
+{
+  "name": "alltogether",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node server/main.ts",
+    "build": "node scripts/build.mjs",
+    "typecheck": "node scripts/typecheck.mjs",
+    "test": "node scripts/test.mjs",
+    "seed": "node scripts/seed.mjs",
+    "scenario": "node scripts/scenario.mjs",
+    "test:contract": "node scripts/contract.mjs test",
+    "build:contract": "node scripts/contract.mjs build",
+    "backup": "node scripts/backup.mjs",
+    "restore": "node scripts/restore.mjs",
+    "test:release": "node --test tests/release/operations.test.mjs"
+  },
+  "dependencies": {
+    "@hot-labs/near-connect": "0.12.0",
+    "near-api-js": "7.4.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.6"
+  }
+}

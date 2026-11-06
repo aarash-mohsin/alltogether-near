@@ -1,0 +1,616 @@
+{
+  "started_at": "2026-11-05T22:25:16.356Z",
+  "run": "C:\\CryptoProject\\release-qa\\fresh-1793917516356",
+  "projects": {
+    "alltogether": {
+      "install": {
+        "code": 0,
+        "log": "alltogether-install.log"
+      },
+      "build": {
+        "code": 0,
+        "log": "alltogether-build.log"
+      },
+      "audit": {
+        "code": 0,
+        "log": "alltogether-audit.log"
+      },
+      "before": {
+        "ok": true,
+        "data": {
+          "items": [
+            {
+              "id": "1",
+              "terms": {
+                "schemaVersion": 1,
+                "domain": "alltogether/local/v1",
+                "escrowId": "escrow.alltogether.testnet",
+                "campaignId": "1",
+                "organizer": "organizer.alltogether.testnet",
+                "title": "Seeded example · one essential missing",
+                "summary": "Three essentials. One shared commitment.",
+                "detail": "Fund the venue, equipment and accessibility together. Funding does not guarantee supplier delivery.",
+                "daoId": "community.alltogether.testnet",
+                "tokenId": "testusd.alltogether.testnet",
+                "tokenDecimals": 6,
+                "tokenSymbol": "testUSD",
+                "deadlineMs": "1793917401552",
+                "participantLimit": 128,
+                "matchRule": "one-to-one-capped-v1",
+                "settlementRule": "all-legs-v1",
+                "legs": [
+                  {
+                    "legId": 0,
+                    "title": "Venue",
+                    "purpose": "An accessible room for the community.",
+                    "beneficiary": "venue.alltogether.testnet",
+                    "budget": "600000000",
+                    "declaredSponsorCap": "200000000",
+                    "sponsorAllocation": "200000000",
+                    "communityTarget": "400000000"
+                  },
+                  {
+                    "legId": 1,
+                    "title": "Equipment",
+                    "purpose": "Tools and shared workshop materials.",
+                    "beneficiary": "equipment.alltogether.testnet",
+                    "budget": "250000000",
+                    "declaredSponsorCap": "125000000",
+                    "sponsorAllocation": "125000000",
+                    "communityTarget": "125000000"
+                  },
+                  {
+                    "legId": 2,
+                    "title": "Accessibility",
+                    "purpose": "Access support so everyone can take part.",
+                    "beneficiary": "access.alltogether.testnet",
+                    "budget": "150000000",
+                    "declaredSponsorCap": "75000000",
+                    "sponsorAllocation": "75000000",
+                    "communityTarget": "75000000"
+                  }
+                ]
+              },
+              "termsHash": "8c953e41c70b71ccadb1219dfb2e172ae5bd104464db004f5f5f66718726fa75",
+              "state": "Failed",
+              "createdAt": "1793917221552",
+              "legs": [
+                {
+                  "legId": 0,
+                  "active": "400000000",
+                  "provisionalMatch": "200000000",
+                  "closingActive": "400000000"
+                },
+                {
+                  "legId": 1,
+                  "active": "125000000",
+                  "provisionalMatch": "125000000",
+                  "closingActive": "125000000"
+                },
+                {
+                  "legId": 2,
+                  "active": "50000000",
+                  "provisionalMatch": "50000000",
+                  "closingActive": "50000000"
+                }
+              ],
+              "accounting": {
+                "acceptedInflows": "975000000",
+                "activePrincipal": "0",
+                "sponsorReserved": "0",
+                "failedPrincipalReserved": "575000000",
+                "availableCredits": "400000000",
+                "pendingTransfers": "0",
+                "confirmedPaid": "0"
+              },
+              "participantCount": 1,
+              "credits": [
+                {
+                  "id": "1:sponsor_refund:community.alltogether.testnet:-",
+                  "campaignId": "1",
+                  "kind": "sponsor_refund",
+                  "owner": "community.alltogether.testnet",
+                  "recipient": "community.alltogether.testnet",
+                  "available": "400000000",
+                  "pending": "0",
+                  "paid": "0"
+                }
+              ],
+              "attempts": [],
+              "fixture": true,
+              "proposal": {
+                "id": "1",
+                "campaignId": "1",
+                "daoId": "community.alltogether.testnet",
+                "status": "Approved",
+                "termsHash": "8c953e41c70b71ccadb1219dfb2e172ae5bd104464db004f5f5f66718726fa75",
+                "observedAt": "1793917221552",
+                "executionEvidence": {
+                  "kind": "local",
+                  "reference": "local-5"
+                }
+              },
+              "sponsorEvidence": {
+                "kind": "local",
+                "reference": "local-5"
+              },
+              "failureReason": "INCOMPLETE_BUDGETS",
+              "finalizedAt": "1793917521552"
+            },
+            {
+              "id": "2",
+              "terms": {
+                "schemaVersion": 1,
+                "domain": "alltogether/local/v1",
+                "escrowId": "escrow.alltogether.testnet",
+                "campaignId": "2",
+                "organizer": "organizer.alltogether.testnet",
+                "title": "Seeded example · every budget funded",
+                "summary": "Three essentials. One shared commitment.",
+                "detail": "Fund the venue, equipment and accessibility together. Funding does not guarantee supplier delivery.",
+                "daoId": "community.alltogether.testnet",
+                "tokenId": "testusd.alltogether.testnet",
+                "tokenDecimals": 6,
+                "tokenSymbol": "testUSD",
+                "deadlineMs": "1793917401552",
+                "participantLimit": 128,
+                "matchRule": "one-to-one-capped-v1",
+                "settlementRule": "all-legs-v1",
+                "legs": [
+                  {
+                    "legId": 0,
+                    "title": "Venue",
+                    "purpose": "An accessible room for the community.",
+                    "beneficiary": "venue.alltogether.testnet",
+                    "budget": "600000000",
+                    "declaredSponsorCap": "200000000",
+                    "sponsorAllocation": "200000000",
+                    "communityTarget": "400000000"
+                  },
+                  {
+                    "legId": 1,
+                    "title": "Equipment",
+                    "purpose": "Tools and shared workshop materials.",
+                    "beneficiary": "equipment.alltogether.testnet",
+                    "budget": "250000000",
+                    "declaredSponsorCap": "125000000",
+                    "sponsorAllocation": "125000000",
+                    "communityTarget": "125000000"
+                  },
+                  {
+                    "legId": 2,
+                    "title": "Accessibility",
+                    "purpose": "Access support so everyone can take part.",
+                    "beneficiary": "access.alltogether.testnet",
+                    "budget": "150000000",
+                    "declaredSponsorCap": "75000000",
+                    "sponsorAllocation": "75000000",
+                    "communityTarget": "75000000"
+                  }
+                ]
+              },
+              "termsHash": "2df1981c4f287065fd7ff1a8f4e736ea31a5d58b02d38a36cb917911a37f4a7a",
+              "state": "Succeeded",
+              "createdAt": "1793917221552",
+              "legs": [
+                {
+                  "legId": 0,
+                  "active": "400000000",
+                  "provisionalMatch": "200000000",
+                  "closingActive": "400000000"
+                },
+                {
+                  "legId": 1,
+                  "active": "125000000",
+                  "provisionalMatch": "125000000",
+                  "closingActive": "125000000"
+                },
+                {
+                  "legId": 2,
+                  "active": "75000000",
+                  "provisionalMatch": "75000000",
+                  "closingActive": "75000000"
+                }
+              ],
+              "accounting": {
+                "acceptedInflows": "1000000000",
+                "activePrincipal": "0",
+                "sponsorReserved": "0",
+                "failedPrincipalReserved": "0",
+                "availableCredits": "1000000000",
+                "pendingTransfers": "0",
+                "confirmedPaid": "0"
+              },
+              "participantCount": 1,
+              "credits": [
+                {
+                  "id": "2:beneficiary:access.alltogether.testnet:2",
+                  "campaignId": "2",
+                  "kind": "beneficiary",
+                  "owner": "access.alltogether.testnet",
+                  "recipient": "access.alltogether.testnet",
+                  "legId": 2,
+                  "available": "150000000",
+                  "pending": "0",
+                  "paid": "0"
+                },
+                {
+                  "id": "2:beneficiary:equipment.alltogether.testnet:1",
+                  "campaignId": "2",
+                  "kind": "beneficiary",
+                  "owner": "equipment.alltogether.testnet",
+                  "recipient": "equipment.alltogether.testnet",
+                  "legId": 1,
+                  "available": "250000000",
+                  "pending": "0",
+                  "paid": "0"
+                },
+                {
+                  "id": "2:beneficiary:venue.alltogether.testnet:0",
+                  "campaignId": "2",
+                  "kind": "beneficiary",
+                  "owner": "venue.alltogether.testnet",
+                  "recipient": "venue.alltogether.testnet",
+                  "legId": 0,
+                  "available": "600000000",
+                  "pending": "0",
+                  "paid": "0"
+                }
+              ],
+              "attempts": [],
+              "fixture": true,
+              "proposal": {
+                "id": "2",
+                "campaignId": "2",
+                "daoId": "community.alltogether.testnet",
+                "status": "Approved",
+                "termsHash": "2df1981c4f287065fd7ff1a8f4e736ea31a5d58b02d38a36cb917911a37f4a7a",
+                "observedAt": "1793917221552",
+                "executionEvidence": {
+                  "kind": "local",
+                  "reference": "local-13"
+                }
+              },
+              "sponsorEvidence": {
+                "kind": "local",
+                "reference": "local-13"
+              },
+              "finalizedAt": "1793917521552"
+            },
+            {
+              "id": "3",
+              "terms": {
+                "schemaVersion": 1,
+                "domain": "alltogether/local/v1",
+                "escrowId": "escrow.alltogether.testnet",
+                "campaignId": "3",
+                "organizer": "organizer.alltogether.testnet",
+                "title": "An accessible maker day",
+                "summary": "Three essentials. One shared commitment.",
+                "detail": "Fund the venue, equipment and accessibility together. Funding does not guarantee supplier delivery.",
+                "daoId": "community.alltogether.testnet",
+                "tokenId": "testusd.alltogether.testnet",
+                "tokenDecimals": 6,
+                "tokenSymbol": "testUSD",
+                "deadlineMs": "1793917701552",
+                "participantLimit": 128,
+                "matchRule": "one-to-one-capped-v1",
+                "settlementRule": "all-legs-v1",
+                "legs": [
+                  {
+                    "legId": 0,
+                    "title": "Venue",
+                    "purpose": "An accessible room for the community.",
+                    "beneficiary": "venue.alltogether.testnet",
+                    "budget": "600000000",
+                    "declaredSponsorCap": "200000000",
+                    "sponsorAllocation": "200000000",
+                    "communityTarget": "400000000"
+                  },
+                  {
+                    "legId": 1,
+                    "title": "Equipment",
+                    "purpose": "Tools and shared workshop materials.",
+                    "beneficiary": "equipment.alltogether.testnet",
+                    "budget": "250000000",
+                    "declaredSponsorCap": "125000000",
+                    "sponsorAllocation": "125000000",
+                    "communityTarget": "125000000"
+                  },
+                  {
+                    "legId": 2,
+                    "title": "Accessibility",
+                    "purpose": "Access support so everyone can take part.",
+                    "beneficiary": "access.alltogether.testnet",
+                    "budget": "150000000",
+                    "declaredSponsorCap": "75000000",
+                    "sponsorAllocation": "75000000",
+                    "communityTarget": "75000000"
+                  }
+                ]
+              },
+              "termsHash": "dd34bd32b81b990fac7ec0fe53839e164a30c70821221482931659827c44c12c",
+              "state": "AwaitingFunding",
+              "createdAt": "1793917521584",
+              "legs": [
+                {
+                  "legId": 0,
+                  "active": "0",
+                  "provisionalMatch": "0"
+                },
+                {
+                  "legId": 1,
+                  "active": "0",
+                  "provisionalMatch": "0"
+                },
+                {
+                  "legId": 2,
+                  "active": "0",
+                  "provisionalMatch": "0"
+                }
+              ],
+              "accounting": {
+                "acceptedInflows": "0",
+                "activePrincipal": "0",
+                "sponsorReserved": "0",
+                "failedPrincipalReserved": "0",
+                "availableCredits": "0",
+                "pendingTransfers": "0",
+                "confirmedPaid": "0"
+              },
+              "participantCount": 0,
+              "credits": [],
+              "attempts": [],
+              "fixture": true
+            }
+          ]
+        },
+        "source": {
+          "mode": "local",
+          "network": "local",
+          "observedAt": "1793917521692",
+          "stale": false
+        }
+      },
+      "static_http": 200,
+      "backup": {
+        "project": "alltogether",
+        "output": ".release-backups\\stopped",
+        "files": 1,
+        "manifest_sha256": "2dae0642be83656d5310f64bc066dad54850a8b1e3949f8783e76ac64e47be1d",
+        "note": "No operator token, environment file or wallet credential was copied. Keep ledger backups private."
+      },
+      "restore": {
+        "project": "alltogether",
+        "dest": ".release-restores\\recovered",
+        "files": 1,
+        "manifest_sha256": "2dae0642be83656d5310f64bc066dad54850a8b1e3949f8783e76ac64e47be1d",
+        "operator_token_restored": false
+      },
+      "verified_files": [
+        {
+          "path": "alltogether.sqlite",
+          "kind": "sqlite",
+          "size": 143360,
+          "sha256": "fbb9bb7abf83345edfa18d8ba87375307c9203d1a619fe52d695c33296e2be72",
+          "schema": {
+            "kind": "alltogether",
+            "user_version": 1,
+            "version": null
+          }
+        }
+      ],
+      "state_exactly_preserved": true,
+      "comparison_excludes": [
+        "source.observedAt"
+      ],
+      "health": {
+        "ok": true,
+        "data": {
+          "storage": "ok",
+          "mode": "local",
+          "schemaVersion": 1,
+          "worker": {
+            "enabled": true,
+            "running": false,
+            "startedAt": "1793917522020",
+            "lastPollAt": "1793917522020",
+            "lastSuccessfulPollAt": "1793917522020",
+            "lastError": null,
+            "lastProcessedCount": 0
+          },
+          "pending": {
+            "count": 0,
+            "oldestCreatedAt": null,
+            "oldestAgeMs": null
+          }
+        },
+        "source": {
+          "mode": "local",
+          "network": "local",
+          "observedAt": "1793917522051",
+          "stale": false
+        }
+      },
+      "status": "passed"
+    },
+    "archivepass": {
+      "install": {
+        "code": 0,
+        "log": "archivepass-install.log"
+      },
+      "build": {
+        "code": 0,
+        "log": "archivepass-build.log"
+      },
+      "audit": {
+        "code": 0,
+        "log": "archivepass-audit.log"
+      },
+      "before": {
+        "items": [
+          {
+            "asset_id": "5fb9411c-1137-49f5-a49a-8bbe94cdf9fa",
+            "mode": "local",
+            "network_domain": "archivepass-local-v1",
+            "contract_id": "local:5fb9411c-1137-49f5-a49a-8bbe94cdf9fa",
+            "token_id": "archive",
+            "protocol_version": "archivepass-v1",
+            "manifest": {
+              "title": "Public stewardship field guide",
+              "filename": "stewardship-guide.txt",
+              "media_type": "text/plain",
+              "license_note": "CC0-1.0",
+              "schema": "archivepass-manifest-v1",
+              "version_id": "v1",
+              "size_bytes": "2937",
+              "chunk_size": 1024,
+              "chunk_count": 3,
+              "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+              "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+              "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
+            },
+            "policy": {
+              "service_origin": "1793917648172000000",
+              "period_duration": "120000000000",
+              "max_provider_rate": "1000000000000000000000",
+              "max_slot_spend": "2000000000000000000000",
+              "fund_expiry": "1794003928172000000",
+              "refund_beneficiary": "refund.archivepass.testnet",
+              "eligible_providers": [
+                "keeper-a.archivepass.testnet",
+                "keeper-b.archivepass.testnet"
+              ],
+              "max_nonterminal_commitments": 16,
+              "max_total_commitments": 256,
+              "max_pending_payouts": 8
+            },
+            "owner_id": "alice.archivepass.testnet",
+            "owner_epoch": "0",
+            "transfer_call_pending": null,
+            "reserve_expired": false,
+            "providers": [
+              {
+                "provider_id": "keeper-a.archivepass.testnet",
+                "label": "Keeper A",
+                "endpoint": "http://127.0.0.1:19091",
+                "enabled": true
+              },
+              {
+                "provider_id": "keeper-b.archivepass.testnet",
+                "label": "Keeper B",
+                "endpoint": "http://127.0.0.1:19092",
+                "enabled": true
+              }
+            ],
+            "credits": [],
+            "created_at": "1793917528221000000",
+            "observed_at": "1793917528351000000",
+            "deployment": {
+              "code_hash": null,
+              "key_status": "local",
+              "verified_at": null
+            },
+            "ledger": {
+              "principal_in": "10000000000000000000000",
+              "available_upkeep": "8000000000000000000000",
+              "reserved_upkeep": "2000000000000000000000",
+              "earned_credit": "0",
+              "refund_credit": "0",
+              "pending_payments": "0",
+              "principal_paid": "0",
+              "conservation_residual": "0",
+              "operations_funded": "1000000000000000000000000",
+              "security_deposits": "2"
+            }
+          }
+        ],
+        "next_cursor": null
+      },
+      "static_http": 200,
+      "asset_id": "5fb9411c-1137-49f5-a49a-8bbe94cdf9fa",
+      "backup": {
+        "project": "archivepass",
+        "output": ".release-backups\\stopped",
+        "files": 6,
+        "manifest_sha256": "92aecd9cd328dd3de8de2bc36e2fe3796e961eac6e249f490370acf79e450831",
+        "note": "No operator token, environment file or wallet credential was copied. Keep ledger backups private."
+      },
+      "restore": {
+        "project": "archivepass",
+        "dest": ".release-restores\\recovered",
+        "files": 6,
+        "manifest_sha256": "92aecd9cd328dd3de8de2bc36e2fe3796e961eac6e249f490370acf79e450831",
+        "operator_token_restored": false
+      },
+      "verified_files": [
+        {
+          "path": "app/archivepass.sqlite",
+          "kind": "sqlite",
+          "size": 102400,
+          "sha256": "dc54320bd0e1d1e68c432e878afea019a3d1c44397347d143af721961b26ba87",
+          "schema": {
+            "kind": "app",
+            "user_version": 0,
+            "version": 1
+          }
+        },
+        {
+          "path": "app/blobs/613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "kind": "blob",
+          "size": 2937,
+          "sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4"
+        },
+        {
+          "path": "keeper-a/blobs/613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "kind": "blob",
+          "size": 2937,
+          "sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4"
+        },
+        {
+          "path": "keeper-a/keeper.sqlite",
+          "kind": "sqlite",
+          "size": 36864,
+          "sha256": "5a5759f59e5986208e430f967c712db306e41963d9f22859fd0a080c6d3a57f0",
+          "schema": {
+            "kind": "keeper",
+            "user_version": 1,
+            "version": null
+          }
+        },
+        {
+          "path": "keeper-b/blobs/613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "kind": "blob",
+          "size": 2937,
+          "sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4"
+        },
+        {
+          "path": "keeper-b/keeper.sqlite",
+          "kind": "sqlite",
+          "size": 36864,
+          "sha256": "b77312281f254a00ad6f458dff986c2de57e06ada9a955eaf55d7288126958ed",
+          "schema": {
+            "kind": "keeper",
+            "user_version": 1,
+            "version": null
+          }
+        }
+      ],
+      "state_exactly_preserved": true,
+      "comparison_excludes": [
+        "items[].observed_at"
+      ],
+      "health": {
+        "status": "ok",
+        "mode": "local",
+        "version": "archivepass-v1",
+        "now": "1793917530368000000"
+      },
+      "operator_credential_regenerated": true,
+      "restored_keeper_downloads_verified": 2,
+      "status": "passed"
+    }
+  },
+  "finished_at": "2026-11-05T22:25:30.590Z",
+  "status": "passed"
+}

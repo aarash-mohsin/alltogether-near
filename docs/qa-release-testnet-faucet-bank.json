@@ -1,0 +1,85 @@
+{
+  "accountId": "at-rel-bank-mw3qu6so.testnet",
+  "httpStatus": 200,
+  "result": {
+    "final_execution_status": "EXECUTED_OPTIMISTIC",
+    "receipts_outcome": [
+      {
+        "block_hash": "DkCiEKXhjrnV6Ud3ytVMEn8MkqwxNCNouvqGYLsckwCn",
+        "id": "DNXD3fdu9Ttg2rMMTPDsfePDJp2UuPjNMCFYgmneUYKr",
+        "outcome": {
+          "executor_id": "at-rel-bank-mw3qu6so.testnet",
+          "gas_burnt": 7524947687500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "8Gax2qQxvjVY418GU9mx6xT4YiNdiGagftSNtfY5b3mD"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7032494768750000000000"
+        },
+        "proof": []
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "10000000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:91mUWh5Z1KcT7EZvFNxwegjCaLWZhS3tr5hhuUUiH6MR"
+          }
+        }
+      ],
+      "hash": "GG4jZe3nDeHT6EPTenmDBFdRcP3w7wPAsVASxhyB6P7N",
+      "nonce": 51910170664755,
+      "priority_fee": 0,
+      "public_key": "ed25519:AvD69JGCj9Ae461SUK9Tv9Jq1unSFkB7feaE2jjJkvjS",
+      "receiver_id": "at-rel-bank-mw3qu6so.testnet",
+      "signature": "ed25519:2XwYhYkMQvhSjRwZ3PP6YMHQWgksnyb6XWwCH85mKYGbjshZPWj5QRCeM43En9zqs22mCVDcFS41EsH4MYk6zcQC",
+      "signer_id": "testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "9bmLBzuR7rMop65P9nqgAJaaTLaRuFvqmjtGcovbVBSQ",
+      "id": "GG4jZe3nDeHT6EPTenmDBFdRcP3w7wPAsVASxhyB6P7N",
+      "outcome": {
+        "executor_id": "testnet",
+        "gas_burnt": 824947687500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "DNXD3fdu9Ttg2rMMTPDsfePDJp2UuPjNMCFYgmneUYKr"
+        ],
+        "status": {
+          "SuccessReceiptId": "DNXD3fdu9Ttg2rMMTPDsfePDJp2UuPjNMCFYgmneUYKr"
+        },
+        "tokens_burnt": "82494768750000000000"
+      },
+      "proof": []
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "network": "testnet",
+  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+  "creationReturnValue": "",
+  "creationTransactionReceiptCaptured": false,
+  "note": "Initial script saved the decoded empty return value, not a transaction receipt. Actual DAO state and subsequent governance receipts are independently verified in testnet-dao.json and testnet-scenario.json."
+}

@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-11-05T13:29:38.248Z",
+  "network": "testnet",
+  "accountId": "equipment.at-mw3kqf0k.testnet",
+  "transactionHash": "NdXe2GW5Gf6BJmtK7z4XhpRgLGYMuyRxXyRm7nqUXjc",
+  "status": {
+    "SuccessValue": ""
+  },
+  "transactionOutcome": {
+    "block_hash": "7urQ3mS976p3bVkYBTKMhhLRhR8jM6s31GU2LGprUznD",
+    "id": "NdXe2GW5Gf6BJmtK7z4XhpRgLGYMuyRxXyRm7nqUXjc",
+    "outcome": {
+      "executor_id": "at-mw3kqf0k.testnet",
+      "gas_burnt": 824947687500,
+      "logs": [],
+      "metadata": {
+        "gas_profile": null,
+        "version": 1
+      },
+      "receipt_ids": [
+        "5pyP8GTicJr73LSAP8xQpxox5gkqsgdiBNbrcPwokZgq"
+      ],
+      "status": {
+        "SuccessReceiptId": "5pyP8GTicJr73LSAP8xQpxox5gkqsgdiBNbrcPwokZgq"
+      },
+      "tokens_burnt": "82494768750000000000"
+    },
+    "proof": []
+  },
+  "receipts": [
+    {
+      "block_hash": "BrGWPuTj2C7oCWzjWh28UTcSDQc9etz7XGuBdZjFDTfP",
+      "id": "5pyP8GTicJr73LSAP8xQpxox5gkqsgdiBNbrcPwokZgq",
+      "outcome": {
+        "executor_id": "equipment.at-mw3kqf0k.testnet",
+        "gas_burnt": 7524947687500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null,
+            null,
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [
+          "H978a1vxmjGhfMrRNFYbY6swiU5MNz5CzR3Hn9AQjJa5"
+        ],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "7032494768750000000000"
+      },
+      "proof": []
+    },
+    {
+      "block_hash": "6KNUw2SrHSWhr64x88dA4BYPYYSn2u3MfNKo5mLiuDds",
+      "id": "H978a1vxmjGhfMrRNFYbY6swiU5MNz5CzR3Hn9AQjJa5",
+      "outcome": {
+        "executor_id": "at-mw3kqf0k.testnet",
+        "gas_burnt": 223182562500,
+        "logs": [],
+        "metadata": {
+          "contracts": [
+            null
+          ],
+          "gas_profile": [],
+          "version": 4
+        },
+        "receipt_ids": [],
+        "status": {
+          "SuccessValue": ""
+        },
+        "tokens_burnt": "0"
+      },
+      "proof": []
+    }
+  ]
+}
