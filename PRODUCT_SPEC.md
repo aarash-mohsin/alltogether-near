@@ -2,8 +2,6 @@
 
 Version: 1.0 · Specification date: 5 November 2026 · Track: Social Money
 
-Project root: `C:\CryptoProject\alltogether`
-
 Status: approved concept translated into an implementation contract; this document does not assert that software, a deployment, funded accounts, or wallet credentials already exist. The next deliverable is an implementation plan, followed by implementation and verification.
 
 ## 1. Product promise
@@ -340,7 +338,7 @@ At 360 px width, stack budget cards and keep primary actions reachable without h
 
 Prefer React and TypeScript for the browser when dependencies are accessible. Keep monetary domain logic independent of UI framework. Use a Node-based local service with a durable transactional store and a separate Rust NEAR contract. Pin versions actually verified in the environment rather than inventing compatible versions in this specification.
 
-Environment facts verified by the coordinating engineer during specification: Node 24.22.1 with working built-in `node:sqlite`; bundled pnpm 11.25; Rust 1.99.1 GNU native compilation; installed `wasm32-unknown-unknown` target; and cargo-near 0.22.0. `C:\CryptoProject\scripts\with-rust.ps1` activates the workspace-local Rust toolchain without changing system PATH. Dependency-registry access requires the environment's reviewed escalation path. Use SQLite transactions for local persistence; a storage fallback is unnecessary unless an actual later incompatibility is demonstrated. Contract build and tests are therefore required, not optional tooling aspirations. Testnet account credentials and funding are still unconfirmed.
+Environment facts verified by the coordinating engineer during specification: Node 24.22.1 with working built-in `node:sqlite`; bundled pnpm 11.25; Rust 1.99.1 GNU native compilation; installed `wasm32-unknown-unknown` target; and cargo-near 0.22.0. a workspace-local toolchain script activates the workspace-local Rust toolchain without changing system PATH. Dependency-registry access requires the environment's reviewed escalation path. Use SQLite transactions for local persistence; a storage fallback is unnecessary unless an actual later incompatibility is demonstrated. Contract build and tests are therefore required, not optional tooling aspirations. Testnet account credentials and funding are still unconfirmed.
 
 Recommended boundaries inside this project only:
 
@@ -358,7 +356,7 @@ alltogether/
   docs/                threat model, deployment and verified evidence
 ```
 
-Implementation may adjust this layout for a compact toolchain while preserving boundaries. ArchivePass is a separate project at `C:\CryptoProject\archivepass`: no shared escrow, state database, contract, package identity, or claims ledger. The two READMEs should name each other for the hackathon's independence disclosure.
+Implementation may adjust this layout for a compact toolchain while preserving boundaries. ArchivePass is a separate project in its own repository: no shared escrow, state database, contract, package identity, or claims ledger. The two READMEs should name each other for the hackathon's independence disclosure.
 
 ### 9.2 Adapter contract
 
