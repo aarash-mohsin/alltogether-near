@@ -127,7 +127,7 @@ The testnet scripts are only for creating a **new, dedicated** testnet setup. Th
 - **Contracts:** Rust, [near-sdk](https://github.com/near/near-sdk-rs) 5.30, near-contract-standards (NEP-141 / NEP-145)
 - **App:** TypeScript, React 19, Vite, Node.js 24 (built-in SQLite), [near-api-js](https://github.com/near/near-api-js) 7.4, [@hot-labs/near-connect](https://www.npmjs.com/package/@hot-labs/near-connect)
 - **On chain:** NEAR testnet, Sputnik DAO v2
-- **AI tools:** OpenAI Codex was used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
+- **AI tools:** OpenAI Codex with OpenAI's GPT-6 Astra model, used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
 
 The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/Cargo.lock`.
 
