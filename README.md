@@ -1,5 +1,7 @@
 # AllTogether
 
+[![CI](https://github.com/aarash-mohsin/alltogether-near/actions/workflows/ci.yml/badge.svg)](https://github.com/aarash-mohsin/alltogether-near/actions/workflows/ci.yml)
+
 **Fund the whole community plan, or nobody gets stranded.**
 
 A community event needs a venue, equipment and access passes. If only the venue gets funded, the money is wasted and the people who gave it are stuck. AllTogether lets a community fund a plan made of up to three essential budgets with one deadline. Every budget has to reach its own target. If they all do, every beneficiary is paid. If any one falls short, every contributor gets their money back, and so does the DAO that offered matching funds.
