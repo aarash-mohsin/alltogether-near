@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  app:
+    name: App tests, typecheck and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+      - run: pnpm test
+
+  contract:
+    name: Rust contract tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: contract
+      - run: cargo test --workspace --locked
+        working-directory: contract
+
+  wasm:
+    name: Committed WASM matches the deployed code hash
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Compare NEAR code hashes
+        run: |
+          node --input-type=module -e '
+          import { readFileSync } from "node:fs";
+          import { createHash } from "node:crypto";
+          const A = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+          const b58 = (buf) => { let n = BigInt("0x" + buf.toString("hex")), s = ""; while (n > 0n) { s = A[Number(n % 58n)] + s; n /= 58n; } return s; };
+          const codeHash = (path) => b58(createHash("sha256").update(readFileSync(path)).digest());
+          const config = JSON.parse(readFileSync("docs/testnet-config.json", "utf8"));
+          const checks = [[config.artifacts.escrow.path, config.artifacts.escrow.codeHash], [config.artifacts.token.path, config.artifacts.token.codeHash]];
+          let failed = false;
+          for (const [path, expected] of checks) {
+            const actual = codeHash(path);
+            console.log(path, actual, actual === expected ? "matches" : "DOES NOT MATCH " + expected);
+            if (actual !== expected) failed = true;
+          }
+          if (failed) process.exit(1);
+          '
