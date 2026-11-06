@@ -26,43 +26,50 @@ All accounts hold valueless test assets.
 
 | Component | Account |
 |---|---|
-| Escrow contract | [`escrow.at-rel-owner-mw3qu2g0.testnet`](https://testnet.nearblocks.io/address/escrow.at-rel-owner-mw3qu2g0.testnet) |
-| Test token (testUSD) | [`testusd.at-rel-owner-mw3qu2g0.testnet`](https://testnet.nearblocks.io/address/testusd.at-rel-owner-mw3qu2g0.testnet) |
-| Sputnik DAO | [`alltogether-mw3kfemk.sputnikv2.testnet`](https://testnet.nearblocks.io/address/alltogether-mw3kfemk.sputnikv2.testnet) |
+| Escrow contract | [`escrow.at-rel-owner-mw4f9xmq.testnet`](https://testnet.nearblocks.io/address/escrow.at-rel-owner-mw4f9xmq.testnet) |
+| Test token (testUSD) | [`testusd.at-rel-owner-mw4f9xmq.testnet`](https://testnet.nearblocks.io/address/testusd.at-rel-owner-mw4f9xmq.testnet) |
+| Sputnik DAO | [`alltogether-mw4f9nmo.sputnikv2.testnet`](https://testnet.nearblocks.io/address/alltogether-mw4f9nmo.sputnikv2.testnet) |
 
-Two complete plans were run on testnet, one that failed and one that succeeded:
+**The escrow and the token have no access keys.** Each was created, deployed and initialized in one transaction with no key added ([escrow](https://testnet.nearblocks.io/txns/2aawQQojN5pQfPr42jtDXZTfYMgadyH18uTREy55Gd2a), [token](https://testnet.nearblocks.io/txns/97yDkmrvh9amNGeD8L9Z66P8i2sW3j6EnkhLKAgzetEx)). Nobody can change their code, and the escrow has no owner or admin methods.
+
+Two complete plans were run on this deployment, one that failed and one that succeeded:
 
 | Step | Transaction |
 |---|---|
-| DAO proposal to sponsor plan 2 | [`93FNRoVm…`](https://testnet.nearblocks.io/txns/93FNRoVm38bovEygFc9nPG5Pe84e55oRXDApAj7EbLpP) |
-| DAO council approves it | [`6mToimmu…`](https://testnet.nearblocks.io/txns/6mToimmu7QEMweYGnwpc1bntniau5QwMw8bL1NsJBNk5) |
-| A pledge to plan 2 | [`2pPE4EmR…`](https://testnet.nearblocks.io/txns/2pPE4EmRTwpxqWCZvFvkvEv6iTefz1zaPrkjHYVat18a) |
-| An overfilled pledge returned by the resolver | [`5nyJp88V…`](https://testnet.nearblocks.io/txns/5nyJp88Vhiw9YuVkkV7vx6EbQEyxiFXNCTEEEx6LBNFs) |
-| Plan 2 finalized as successful | [`AwCNq6e6…`](https://testnet.nearblocks.io/txns/AwCNq6e6jvR8ipriczbxwmPFuRwvJyeNdUYXqn61v8re) |
-| Payout fails for an unregistered beneficiary; credit restored | [`BuERa6Ef…`](https://testnet.nearblocks.io/txns/BuERa6EfFHxGuNaTSxCfknRS6fkbozHqNPXLwyJc47uU) |
-| Retry after registration pays exactly once | [`9tdmwDDh…`](https://testnet.nearblocks.io/txns/9tdmwDDheWMo1fasb31VFh2yVVKpdUhpRJSbR25L9Y32) |
-| Plan 1 finalized as failed | [`4ycGwY1b…`](https://testnet.nearblocks.io/txns/4ycGwY1bcwGXqM4o2qmNxJMsQ2VVdBscQgsfwhkkV79L) |
-| Contributor refund paid | [`ATuzvbdn…`](https://testnet.nearblocks.io/txns/ATuzvbdn1gJmWYM2yryP6MQRyThggh1MxVooKKBG5LbE) |
-| DAO reserve returned | [`BGc6A2E2…`](https://testnet.nearblocks.io/txns/BGc6A2E2DBbEA3j1A9havggD5uMGtvhCXWbqxi7DNpXX) |
+| DAO proposal to sponsor plan 2 | [`62Dyu3UP…`](https://testnet.nearblocks.io/txns/62Dyu3UP5QdADHD5LxsMwKTsDojKrPXjkDsDCb47kWum) |
+| DAO council approves it; the matching reserve moves into the escrow | [`HoGqStqe…`](https://testnet.nearblocks.io/txns/HoGqStqefefHq5GLmPfLaEtUr9CC7wPZitPQ6WYXLFc6) |
+| A pledge to plan 2 | [`6C9DkvQz…`](https://testnet.nearblocks.io/txns/6C9DkvQzfYqvjC8LzT6Q2PQfuexEJQkGwPumqZjZXxKm) |
+| An overfilled pledge returned by the resolver | [`CD6cLKuf…`](https://testnet.nearblocks.io/txns/CD6cLKufN95QiVQn438NQ5ewh95qJzgxncunkGgZTCYq) |
+| Plan 2 finalized as successful | [`AtdnRfPM…`](https://testnet.nearblocks.io/txns/AtdnRfPMoTq4ehnXTypfBayxxRtZHc9iCbyWPMHf8npY) |
+| Payout fails for an unregistered beneficiary; credit restored | [`Aw4mZTr9…`](https://testnet.nearblocks.io/txns/Aw4mZTr9toPVVwJgkNNt1YKXDhZiw6D2pKt4voGfn45r) |
+| Retry after registration pays exactly once | [`9qNLhsxt…`](https://testnet.nearblocks.io/txns/9qNLhsxtxnGp9fycqfjLrHLcD88osrDfuhti52yJKL5K) |
+| Plan 1 finalized as failed | [`8jz4fuQh…`](https://testnet.nearblocks.io/txns/8jz4fuQhgRMms4ZvkpeKaXnLGi26UEJDgaGCMgQKHVAf) |
+| Contributor refund paid | [`GTnRSSUc…`](https://testnet.nearblocks.io/txns/GTnRSSUcWKMomXKvKC3YYw6Yq4qDTiwFHoMpNTu3T4VB) |
+| DAO reserve returned | [`GV2bAfi9…`](https://testnet.nearblocks.io/txns/GV2bAfi9KtgHK3LumPJ6eTHGAYnkgF7MauZdWhniiWmR) |
 
-All 51 transactions of that run are in [`docs/qa-release-testnet.json`](docs/qa-release-testnet.json).
+All 52 transactions of that run, including the DAO's creation, are in [`docs/qa-release-testnet.json`](docs/qa-release-testnet.json), summarized in [`docs/RELEASE_TESTNET.md`](docs/RELEASE_TESTNET.md).
 
 ### Check the contract yourself
 
 These read-only calls need no wallet. They query the public testnet RPC (`e30=` is `{}` in base64):
 
 ```sh
+# Access keys on the escrow; expect "keys": []
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_access_key_list","finality":"final","account_id":"escrow.at-rel-owner-mw4f9xmq.testnet"}}'
+
 # Totals across all plans: accepted and paid principal, custody, pending transfers
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet","method_name":"get_accounting","args_base64":"e30="}}'
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw4f9xmq.testnet","method_name":"get_accounting","args_base64":"e30="}}'
 
 # All plans and their outcomes
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet","method_name":"list_campaigns","args_base64":"e30="}}'
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"escrow.at-rel-owner-mw4f9xmq.testnet","method_name":"list_campaigns","args_base64":"e30="}}'
 
 # Deployed code hash; should be DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_account","finality":"final","account_id":"escrow.at-rel-owner-mw3qu2g0.testnet"}}'
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_account","finality":"final","account_id":"escrow.at-rel-owner-mw4f9xmq.testnet"}}'
 ```
 
-`result.result` in the first two responses is a byte array of JSON text. testUSD has 6 decimals, so `"2145000000"` means 2,145 testUSD. On 6 November 2026, `accepted_inflows` and `confirmed_paid` were both 2,145 testUSD, with nothing left in custody or pending. The deployed code hash matches the WASM committed at `contract/target/near/alltogether_escrow.wasm` (SHA-256 `b6adf23a…c5e7`).
+`result.result` in the second and third responses is a byte array of JSON text. testUSD has 6 decimals, so `"1975000000"` means 1,975 testUSD. After the release run, `accepted_inflows` and `confirmed_paid` were both 1,975 testUSD, with nothing left in custody or pending. The deployed code hash matches the WASM committed at `contract/target/near/alltogether_escrow.wasm` (SHA-256 `b6adf23a…c5e7`); CI checks this on every push.
+
+Earlier deployments of the same contracts, including the wallet-controller test run, are listed in the [evidence index](docs/EVIDENCE_INDEX.md).
 
 ## Run it locally
 
@@ -119,8 +126,7 @@ The testnet scripts are only for creating a **new, dedicated** testnet setup. Th
 
 ## Known limitations
 
-- **Testnet only**, with a valueless test token. There is no mainnet deployment.
-- **The escrow contract is still upgradable.** Its deployment key is kept for development, so it is not yet locked or audited.
+- **Testnet only**, with a valueless test token. There is no mainnet deployment, and the contracts have not had an external audit.
 - **Signing in the Live workspace has been tested only through an SDK wallet adapter.** Opening and closing the external wallet picker was checked in the browser, but logging in with a real wallet and approving a transaction there has not been tested yet.
 - A successful plan proves the money was raised and paid out, not that the venue or supplier delivered.
 
@@ -135,7 +141,7 @@ The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/
 
 ## Development history
 
-The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the DAO, contracts and accounts were created on 5 November 2026 (see [`docs/qa-release-testnet-setup.json`](docs/qa-release-testnet-setup.json) and the explorer links above).
+The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the first deployment was made on 5 November 2026, and the current keyless one on 6 November 2026 (see the [evidence index](docs/EVIDENCE_INDEX.md) and the explorer links above).
 
 ## License
 

@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-11-05T16:12:48.724Z",
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+  "councilId": "at-mw3kfemk.testnet",
+  "ownerId": "at-rel-owner-mw3qu2g0.testnet",
+  "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
+  "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+  "beneficiaries": [
+    "venue.at-rel-owner-mw3qu2g0.testnet",
+    "equipment.at-rel-owner-mw3qu2g0.testnet",
+    "access.at-rel-owner-mw3qu2g0.testnet"
+  ],
+  "actors": {
+    "owner": "at-rel-owner-mw3qu2g0.testnet",
+    "alice": "alice.at-rel-owner-mw3qu2g0.testnet",
+    "bob": "bob.at-rel-owner-mw3qu2g0.testnet",
+    "controller": "controller.at-rel-owner-mw3qu2g0.testnet",
+    "venue": "venue.at-rel-owner-mw3qu2g0.testnet",
+    "equipment": "equipment.at-rel-owner-mw3qu2g0.testnet",
+    "access": "access.at-rel-owner-mw3qu2g0.testnet"
+  },
+  "expectedEscrowCodeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
+  "expectedTokenCodeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy",
+  "upgradeAuthority": "prototype_full_access_keys_retained",
+  "credentialSlots": {
+    "owner": "release-owner",
+    "bank": "release-bank",
+    "council": "demo-root",
+    "token": "release-token",
+    "escrow": "release-escrow",
+    "alice": "release-alice",
+    "bob": "release-bob",
+    "controller": "release-controller",
+    "venue": "release-venue",
+    "equipment": "release-equipment",
+    "access": "release-access"
+  },
+  "artifacts": {
+    "escrow": {
+      "path": "contract/target/near/alltogether_escrow.wasm",
+      "bytes": 247749,
+      "sha256": "b6adf23a9f3bcc080787943147108d428cb0a4f16eb232a8db01d5fdb5b7c5e7",
+      "codeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS"
+    },
+    "token": {
+      "path": "contract/target/near/alltogether_test_usd/alltogether_test_usd.wasm",
+      "bytes": 174930,
+      "sha256": "7d6caab3eeac77685b2b6e385e265b9c6daed02edc2af120698a5a929da3d514",
+      "codeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy"
+    }
+  },
+  "faucetStorageQuote": {
+    "remaining_flag_bytes": "17664",
+    "maximum_flag_records_bytes": "17408",
+    "state_margin_bytes": "256",
+    "current_storage_usage": "175401",
+    "required_account_balance": "1930650000000000000000000"
+  },
+  "tokenMetadata": {
+    "spec": "ft-1.0.0",
+    "name": "AllTogether Test Dollars (no monetary value)",
+    "symbol": "testUSD",
+    "icon": null,
+    "reference": null,
+    "reference_hash": null,
+    "decimals": 6
+  },
+  "escrowConfig": {
+    "dao_id": "alltogether-mw3kfemk.sputnikv2.testnet",
+    "token_id": "testusd.at-rel-owner-mw3qu2g0.testnet",
+    "token_decimals": 6,
+    "token_symbol": "testUSD",
+    "participant_limit": 128,
+    "max_legs": 3,
+    "domain": "alltogether/near-testnet/v1",
+    "network": "testnet",
+    "version": "0.1.0",
+    "transfer_gas_tgas": 25,
+    "callback_gas_tgas": 20
+  }
+}

@@ -1,35 +1,33 @@
 {
-  "recordedAt": "2026-11-05T16:12:48.724Z",
+  "recordedAt": "2026-11-06T03:37:00.401Z",
   "network": "testnet",
-  "rpc": "https://testnet-rpc.intea.rs",
-  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
-  "councilId": "at-mw3kfemk.testnet",
-  "ownerId": "at-rel-owner-mw3qu2g0.testnet",
-  "tokenId": "testusd.at-rel-owner-mw3qu2g0.testnet",
-  "escrowId": "escrow.at-rel-owner-mw3qu2g0.testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+  "councilId": "at-rel-council-mw4f9nmo.testnet",
+  "ownerId": "at-rel-owner-mw4f9xmq.testnet",
+  "tokenId": "testusd.at-rel-owner-mw4f9xmq.testnet",
+  "escrowId": "escrow.at-rel-owner-mw4f9xmq.testnet",
   "beneficiaries": [
-    "venue.at-rel-owner-mw3qu2g0.testnet",
-    "equipment.at-rel-owner-mw3qu2g0.testnet",
-    "access.at-rel-owner-mw3qu2g0.testnet"
+    "venue.at-rel-owner-mw4f9xmq.testnet",
+    "equipment.at-rel-owner-mw4f9xmq.testnet",
+    "access.at-rel-owner-mw4f9xmq.testnet"
   ],
   "actors": {
-    "owner": "at-rel-owner-mw3qu2g0.testnet",
-    "alice": "alice.at-rel-owner-mw3qu2g0.testnet",
-    "bob": "bob.at-rel-owner-mw3qu2g0.testnet",
-    "controller": "controller.at-rel-owner-mw3qu2g0.testnet",
-    "venue": "venue.at-rel-owner-mw3qu2g0.testnet",
-    "equipment": "equipment.at-rel-owner-mw3qu2g0.testnet",
-    "access": "access.at-rel-owner-mw3qu2g0.testnet"
+    "owner": "at-rel-owner-mw4f9xmq.testnet",
+    "alice": "alice.at-rel-owner-mw4f9xmq.testnet",
+    "bob": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "controller": "controller.at-rel-owner-mw4f9xmq.testnet",
+    "venue": "venue.at-rel-owner-mw4f9xmq.testnet",
+    "equipment": "equipment.at-rel-owner-mw4f9xmq.testnet",
+    "access": "access.at-rel-owner-mw4f9xmq.testnet"
   },
   "expectedEscrowCodeHash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
   "expectedTokenCodeHash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy",
-  "upgradeAuthority": "prototype_full_access_keys_retained",
+  "upgradeAuthority": "none_keyless_accounts",
   "credentialSlots": {
     "owner": "release-owner",
     "bank": "release-bank",
-    "council": "demo-root",
-    "token": "release-token",
-    "escrow": "release-escrow",
+    "council": "release-council",
     "alice": "release-alice",
     "bob": "release-bob",
     "controller": "release-controller",
@@ -55,8 +53,8 @@
     "remaining_flag_bytes": "17664",
     "maximum_flag_records_bytes": "17408",
     "state_margin_bytes": "256",
-    "current_storage_usage": "175401",
-    "required_account_balance": "1930650000000000000000000"
+    "current_storage_usage": "175319",
+    "required_account_balance": "1929830000000000000000000"
   },
   "tokenMetadata": {
     "spec": "ft-1.0.0",
@@ -68,8 +66,8 @@
     "decimals": 6
   },
   "escrowConfig": {
-    "dao_id": "alltogether-mw3kfemk.sputnikv2.testnet",
-    "token_id": "testusd.at-rel-owner-mw3qu2g0.testnet",
+    "dao_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "token_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
     "token_decimals": 6,
     "token_symbol": "testUSD",
     "participant_limit": 128,

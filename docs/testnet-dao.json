@@ -1,8 +1,8 @@
 {
   "network": "testnet",
   "rpc": "https://test.rpc.fastnear.com",
-  "rootAccount": "at-mw3kfemk.testnet",
-  "daoId": "alltogether-mw3kfemk.sputnikv2.testnet",
+  "rootAccount": "at-rel-council-mw4f9nmo.testnet",
+  "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
   "factory": "sputnikv2.testnet",
   "codeHash": "AA4nA45vauiac3jdVwJTzSdUP3oj2r1fDaPAb2mHdgcH",
   "policy": {
@@ -19,7 +19,7 @@
         "name": "council",
         "kind": {
           "Group": [
-            "at-mw3kfemk.testnet"
+            "at-rel-council-mw4f9nmo.testnet"
           ]
         },
         "permissions": [
@@ -50,6 +50,6 @@
     "purpose": "Dedicated NEAR testnet funding demonstration; test assets only.",
     "metadata": ""
   },
-  "observedAt": "2026-11-05T13:21:56.323Z",
+  "observedAt": "2026-11-06T03:36:07.297Z",
   "note": "Dedicated single-member demo council; no real funds or user wallets."
 }

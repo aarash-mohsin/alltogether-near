@@ -1,67 +1,64 @@
-# Fresh release testnet verification
+# Keyless testnet deployment and release run
 
-The release source was deployed to **new dedicated testnet accounts**, not upgraded over the original token's incompatible faucet state. Only generated faucet funds and valueless testUSD were used. No user wallet store or mainnet was accessed.
+Run on 6 November 2026, 03:35–03:44 UTC, on NEAR testnet with valueless test assets only. Everything was created fresh for this run. The previous release deployment and its records are kept in [`releases/release-20261105/`](releases/release-20261105/).
 
-## Verified deployment
+## Deployment
 
-| Role | Public identity |
+| Role | Account |
 |---|---|
-| Token |`testusd.at-rel-owner-mw3qu2g0.testnet`|
-| Escrow |`escrow.at-rel-owner-mw3qu2g0.testnet`|
-| Creator/token initial-supply owner |`at-rel-owner-mw3qu2g0.testnet`|
-| Existing actual Sputnik DAO |`alltogether-mw3kfemk.sputnikv2.testnet`|
-| Existing dedicated council |`at-mw3kfemk.testnet`|
-| Independent contributor Alice |`alice.at-rel-owner-mw3qu2g0.testnet`|
-| Independent contributor Bob |`bob.at-rel-owner-mw3qu2g0.testnet`|
-| Separate controller-QA account |`controller.at-rel-owner-mw3qu2g0.testnet`|
+| Escrow | `escrow.at-rel-owner-mw4f9xmq.testnet` |
+| Test token (testUSD) | `testusd.at-rel-owner-mw4f9xmq.testnet` |
+| Sputnik DAO | `alltogether-mw4f9nmo.sputnikv2.testnet` |
+| DAO council (single member) | `at-rel-council-mw4f9nmo.testnet` |
+| Creator, token initial supply | `at-rel-owner-mw4f9xmq.testnet` |
+| Contributors | `alice.at-rel-owner-mw4f9xmq.testnet`, `bob.at-rel-owner-mw4f9xmq.testnet` |
+| Beneficiaries | `venue.…`, `equipment.…`, `access.at-rel-owner-mw4f9xmq.testnet` |
 
-Both new contracts were created, funded, deployed and initialized atomically. Dedicated full-access prototype keys are retained and disclosed. They are **not keyless or audited deployments**. The actual DAO code hash and configured council policy were verified before reusing its governance. Public binding and expected hashes are in `testnet-config.json` and `qa-release-testnet-config.json`; credential slot names contain no private key values.
+**The escrow and the token have no access keys.** Each was created, funded, deployed and initialized in one transaction with no AddKey action ([escrow](https://testnet.nearblocks.io/txns/2aawQQojN5pQfPr42jtDXZTfYMgadyH18uTREy55Gd2a), [token](https://testnet.nearblocks.io/txns/97yDkmrvh9amNGeD8L9Z66P8i2sW3j6EnkhLKAgzetEx)). Nobody can change their code, and the escrow has no owner or admin methods. The setup script checks that both access-key lists are empty.
 
-| Artifact | Bytes | SHA-256 | Actual code hash |
+| Artifact | Bytes | SHA-256 | Code hash |
 |---|---:|---|---|
-| Escrow |247749|`b6adf23a9f3bcc080787943147108d428cb0a4f16eb232a8db01d5fdb5b7c5e7`|`DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS`|
-| Public-faucet test token |174930|`7d6caab3eeac77685b2b6e385e265b9c6daed02edc2af120698a5a929da3d514`|`9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy`|
+| Escrow | 247,749 | `b6adf23a9f3bcc080787943147108d428cb0a4f16eb232a8db01d5fdb5b7c5e7` | `DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS` |
+| Test token | 174,930 | `7d6caab3eeac77685b2b6e385e265b9c6daed02edc2af120698a5a929da3d514` | `9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy` |
 
-Token operations were provisioned with2.5 faucet NEAR and escrow operations with3 NEAR, separately from each campaign's quoted native storage payment. The token's observed initial faucet quote required1.93065 NEAR (`175401` current storage bytes plus`17664` reserved flag/margin bytes). The quote is an actual observation, not an instruction to treat testUSD as native storage funding.
+These are the same WASM files as the previous deployment, so the code hashes are unchanged. The new DAO was [created through the `sputnikv2.testnet` factory](https://testnet.nearblocks.io/txns/87FmePFU9nx3d8p19fzpDxmUV8p1PbTAFMXa2FLZ7GKE) with the council as its only member.
 
-## Actual completed checks
+## What the run did
 
-**51 finalized transactions** are recorded across fresh native provisioning/deployments and two complete canonical flows. Full outcomes include failures and their recovery; negative exercises are not hidden as successful calls.
+52 finalized transactions, all recorded in [`qa-release-testnet.json`](qa-release-testnet.json), failures included.
 
-- Alice and Bob each began as an independent account with0.6 faucet NEAR. Each unregistered faucet attempt was rejected, then the account registered itself and claimed exactly1000 testUSD through the public fixed-recipient faucet. Duplicate attempts were rejected without additional minting. Neither participant received an owner token transfer.
-- The new DAO token treasury was registered and prefunded with800 testUSD from the token creator's initial supply. The public faucet was not used to spoof DAO governance.
-- A normally storage-funded creation naming the escrow as a beneficiary failed onchain with `ESCROW_BENEFICIARY_FORBIDDEN`. Campaign count and storage usage were unchanged; the first later valid campaign received ID1.
-- Each canonical campaign used an actual new Sputnik FunctionCall proposal and the verified council's actual approval. Approval alone left the campaign awaiting funding; the accepted400 testUSD transfer-call reserve opened it.
-- Overfill and late one-base-unit contributions were actually returned through the token resolver. Finalized calls reported zero tokens used, and the contributor's token balance was unchanged.
-- The equipment beneficiary was deliberately unregistered. Its actual outgoing FT transfer failed; the private callback restored the same250 testUSD credit with zero pending. After registration, a new attempt paid exactly once, leaving nonce2 and a successful final attempt.
-- At each quiescent close, actual token custody equaled recorded outstanding book liabilities, principal conservation held, and no transfer remained pending.
+- **Contributors got tokens on their own.** Alice and Bob each tried the public faucet before registering (rejected), registered, claimed exactly 1,000 testUSD, and were rejected on a second claim.
+- **The DAO was funded** with 800 testUSD from the token's initial supply.
+- **Bad input was rejected on chain.** A plan naming the escrow as its own beneficiary failed with `ESCROW_BENEFICIARY_FORBIDDEN` and left no state behind.
+- **Each plan was sponsored through a real DAO vote.** The council created a `FunctionCall` proposal (IDs 0 and 1) and approved it, which transferred the 400 testUSD matching reserve into the escrow. Approval alone did not open the plan; the transfer did.
+- **Overfilled and late pledges were returned** by the token's resolver, with nothing used.
+- **A failed payout was recovered.** The equipment beneficiary was left unregistered on purpose. Its payout failed, the callback restored the 250 testUSD credit, and after registration a new attempt paid exactly once.
 
-| Campaign | Community contributions per leg | Actual result |
+| Plan | Pledges per budget | Result |
 |---|---|---|
-|1 / incomplete |400 /125 /50 testUSD|Zero beneficiary entitlements; Alice525 and Bob50 refunded;400 returned to DAO|
-|2 / complete |400 /125 /75 testUSD|Beneficiary rights600 /250 /150 allocated together and paid; equipment failure recovered without duplication|
+| 1, incomplete | 400 / 125 / 50 testUSD | Failed. No beneficiary paid; Alice refunded 525 and Bob 50; the DAO's 400 returned |
+| 2, complete | 400 / 125 / 75 testUSD | Succeeded. Beneficiaries paid 600 / 250 / 150 together, including the recovered payout |
 
-The failure refunded every575 contributor testUSD. The successful plan used600 contributor testUSD plus400 sponsor testUSD. Across both campaigns, accepted and paid principal each totaled1975 testUSD; custody and all pending liabilities were zero at the recorded completion. Alice held600, Bob800 and the DAO400 testUSD after those flows. These are historical observations; subsequent parent controller QA can legitimately create new activity.
+At the end, 1,975 testUSD had been accepted and 1,975 paid. Custody, credits and pending transfers were all zero, and the app's Live testnet reader reported the books as `Matched`.
 
-## Evidence and reproducibility
+## Records
 
-- `qa-release-testnet-setup.json`: native provisioning, actual atomic deployments, metadata/configuration, native faucet quote and retained-key checks.
-- `qa-release-testnet-config.json`: public release binding, artifact identities, actors and private credential **slot names only**.
-- `qa-release-testnet.json`: full finalized transaction/receipt outcomes, checks, two scenarios and point-in-time final balances/accounting.
-- `qa-release-testnet-progress.json`: durable progress plus pending-submission identity, written after every action.
-- `qa-release-testnet-review.json`: independent read-only recheck of actual proposal IDs/actions, all six paid fixed credits, artifact hashes and current storage quote.
-- `releases/original-20261105/`: copied original public deployment/config/scenario/proposal records before the release binding changed. Original root `deployment*.json` and `testnet-scenario.json` were not overwritten.
+| File | Contents |
+|---|---|
+| `qa-release-testnet-setup.json` | Faucet accounts, DAO creation, keyless contract deployment, metadata and checks |
+| `qa-release-testnet-config.json`, `testnet-config.json` | Public binding: account IDs, expected code hashes, artifact hashes. Key files are referenced by slot name only |
+| `qa-release-testnet.json` | All 52 transactions with full outcomes, the two scenarios and the final accounting |
+| `qa-release-testnet-progress.json` | Progress log written after every action |
+| `qa-release-testnet-review.json` | Independent read-only recheck of the DAO proposals, the paid credits and the artifact hashes |
+| `testnet-dao.json` | The new DAO's code hash, policy and config |
+| `qa-release-testnet-faucet-*.json` | Faucet responses for the council, owner and bank accounts |
 
-Commands:
+To run the same flow on another fresh setup, use a checkout with no `docs/qa-release-testnet-progress.json` and an empty `.secrets/`:
 
-```powershell
+```sh
 node scripts/qa-release-testnet.mjs setup
 node scripts/qa-release-testnet.mjs flow
 node scripts/qa-release-testnet-review.mjs
 ```
 
-The first two are signed fixture setup and monetary workflows, not replay buttons. Completed flows are preserved without repeating transactions. An interrupted monetary run must be reconciled from saved outcomes and current state; the script refuses blind replay. Setup resume is explicit and refuses unresolved submissions. Generated dedicated keys are saved before a faucet request and never included in public receipts. A completely new checkout/run needs new dedicated accounts and preserved evidence, not deletion or upgrade of an old token.
-
-Proposal handling in the prepared script uses `add_proposal`'s actual returned ID and checks the exact proposer/token receiver/action/message before a future vote, avoiding a race-prone `get_last_proposal_id` guess. The already executed run was independently checked afterward: actual returned proposal IDs2 and3 matched the exact approved400-token funding actions and immutable campaign hashes. No unrelated proposal was approved. The read-only review command checks this again without signing.
-
-This work establishes real deployment, governance, token resolver and payout recovery evidence. It does **not** itself establish third-party wallet connector approval behavior, browser accessibility, backup restoration, public hosting, worst-case gas or an external audit. Parent release QA records those separate gates and the new wallet controller's real-transaction tests.
+The scripts refuse to replay a completed run or to repeat an unresolved submission. Generated keys go to the ignored `.secrets/` folder and never appear in the records.
