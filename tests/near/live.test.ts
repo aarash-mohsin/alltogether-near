@@ -92,6 +92,18 @@ test('contributor records add up per named account',()=>{
   for(const r of records)assert.ok(r.contributions.every(c=>/^[1-9A-HJ-NP-Za-km-z]{43,44}$/.test(c.tx)));
 });
 
+test('reputation tiers follow completed plans backed and organized',()=>{
+  const by=Object.fromEntries(contributorRecords(clone()).map(r=>[r.account_id,r]));
+  // araash.testnet organized plan 3 and backed it; it completed: 1 + 2 = 3, trusted.
+  assert.equal(by['araash.testnet'].score,3);assert.equal(by['araash.testnet'].tier,'trusted');
+  assert.equal(by['alice.at-rel-owner-mw4f9xmq.testnet'].tier,'backer');
+  // The release organizer published plans 1, 2 and 4 and backed none; plan 2 completed.
+  const org=by['at-rel-owner-mw4f9xmq.testnet'];assert.equal(org.organized,3);assert.equal(org.organized_completed,1);assert.equal(org.tier,'backer');
+  // Without any completed plan an account stays new.
+  const s=clone();for(const p of s.plans)if(p.campaign.state==='Succeeded')p.campaign.state='Failed';
+  assert.ok(contributorRecords(s).every(r=>r.tier==='new'));
+});
+
 test('the plan CSV lists every pledge, the DAO match, the outcome and the payouts',()=>{
   const lines=planCsv(clone(),'2').trim().split('\n');
   assert.equal(lines[0],'time_utc,event,account,budget,amount_testUSD,transaction');

@@ -22,6 +22,7 @@ Code references are to `contract/src/lib.rs` unless noted. Rust tests are in `co
 | 14 | Anyone can try it from their own wallet | testUSD `demo_faucet` (1,000 testUSD once per account), `storage_deposit`, `ft_transfer_call` (`site/src/App.tsx`) | — | verify: "A plan is open for your pledge", "Anyone can claim testUSD to try it"; plan 3 was published and pledged to from Meteor Wallet ([`Aqf6PhoM…`](https://testnet.nearblocks.io/txns/Aqf6PhoMuWvwUpivLyTpXySF8KcRtWMXJivxu4SCMzdG), [`H6eJSekj…`](https://testnet.nearblocks.io/txns/H6eJSekjDgASaShMDV5GBzJkeXrRB1sb7dVwzpV2cUJz)) |
 | 15 | Each named account has a public record: plans backed, completed, refunded | `shared/live.ts` `contributorRecords` (pledge events + `get_account_campaign`) | `tests/near/live.test.ts` ("contributor records add up") | **People** tab on the hosted page |
 | 16 | Every plan has a public history and a CSV of every pledge, refund and payout | `shared/live.ts` `readHistory`, `planCsv` | `tests/near/live.test.ts` ("the plan CSV lists…") | Plan pages and **Download CSV** on the hosted page |
+| 17 | Reputation comes from finished work: completed plans backed (1 point) and organized (2 points) give each named account a tier, which unlocks starting a plan from the page and is written into its DAO proposal | `shared/live.ts` `contributorRecords`, `tierOf`; `site/src/App.tsx` `StartPlan`, `fileProposal` | `tests/near/live.test.ts` ("reputation tiers…") | **People** and **Start a plan** tabs; the gate is the page's, the escrow stays open to every account |
 
 ## What we do not claim
 

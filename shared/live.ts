@@ -164,16 +164,29 @@ export interface Contribution {campaign_id:string;title:string;state:NearCampaig
 export interface ContributorRecord {
   account_id:string;backed:number;succeeded:number;failed:number;open:number;
   pledged:string;paid_to_beneficiaries:string;refunded:string;refund_waiting:string;
+  /** Plans this account published as organizer, and how many of them completed. */
+  organized:number;organized_completed:number;
+  /** Reputation: completed plans backed + 2 per completed plan organized. */
+  score:number;tier:Tier;
   contributions:Contribution[];
 }
+export type Tier='new'|'backer'|'trusted';
+export const TIERS:Record<Tier,{label:string;rule:string;unlocks:string}>={
+  new:{label:'New',rule:'No completed plan yet',unlocks:'Pledge to any open plan'},
+  backer:{label:'Backer',rule:'Backed or organized a plan that completed',unlocks:'Start a plan and file its DAO match proposal from this page'},
+  trusted:{label:'Trusted organizer',rule:'Reputation 3 or more: each completed plan backed counts 1, each completed plan organized counts 2',unlocks:'Everything above; plans you start are marked as coming from a trusted organizer for the DAO council'},
+};
+export const tierOf=(score:number):Tier=>score>=3?'trusted':score>=1?'backer':'new';
 /** A named account's record across every plan, rebuilt from pledge events and live positions. */
 export function contributorRecords(state:LiveState):ContributorRecord[]{
   const byAccount=new Map<string,ContributorRecord>();
+  const blank=(id:string):ContributorRecord=>({account_id:id,backed:0,succeeded:0,failed:0,open:0,pledged:'0',paid_to_beneficiaries:'0',refunded:'0',refund_waiting:'0',organized:0,organized_completed:0,score:0,tier:'new',contributions:[]});
+  for(const p of state.plans){const id=p.campaign.terms.organizer;const r=byAccount.get(id)??blank(id);r.organized++;if(p.campaign.state==='Succeeded')r.organized_completed++;byAccount.set(id,r);}
   for(const e of state.events){
     if(e.event!=='funds_accepted'||e.data.action!=='pledge')continue;
     const plan=state.plans.find(p=>p.campaign.id===e.data.campaign_id);if(!plan)continue;
     const id=e.data.sender_id as string;
-    const r=byAccount.get(id)??{account_id:id,backed:0,succeeded:0,failed:0,open:0,pledged:'0',paid_to_beneficiaries:'0',refunded:'0',refund_waiting:'0',contributions:[]};
+    const r=byAccount.get(id)??blank(id);
     const leg=e.leg??0;
     r.contributions.push({campaign_id:plan.campaign.id,title:plan.campaign.terms.title,state:plan.campaign.state,leg,leg_title:plan.campaign.terms.legs[leg]?.title??`Budget ${leg+1}`,amount:String(e.data.amount),tx:e.tx,at:e.at});
     byAccount.set(id,r);
@@ -198,8 +211,9 @@ export function contributorRecords(state:LiveState):ContributorRecord[]{
     }
     r.pledged=pledged.toString();r.paid_to_beneficiaries=paid.toString();r.refunded=refunded.toString();r.refund_waiting=waiting.toString();
     r.contributions.sort((a,b)=>BigInt(b.at)>BigInt(a.at)?1:-1);
+    r.score=r.succeeded+2*r.organized_completed;r.tier=tierOf(r.score);
   }
-  return [...byAccount.values()].sort((a,b)=>b.backed-a.backed||a.account_id.localeCompare(b.account_id));
+  return [...byAccount.values()].sort((a,b)=>b.score-a.score||b.backed-a.backed||a.account_id.localeCompare(b.account_id));
 }
 
 /** CSV of one plan: every pledge, refund and payout with its transaction. */

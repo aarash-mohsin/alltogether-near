@@ -1,7 +1,7 @@
 {
- "observed_at": "2026-11-07T07:45:49.272Z",
+ "observed_at": "2026-11-07T08:40:50.118Z",
  "chain_id": "testnet",
- "block_time_ms": "1794037544431",
+ "block_time_ms": "1794040845131",
  "escrow": {
   "code_hash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
   "keys": [],

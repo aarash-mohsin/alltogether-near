@@ -27,7 +27,8 @@ Built for the **Social Money** track of the NEAR Hackathon. The matching funds c
 | Open a plan whose deadline has passed | **Finalize** and **Pay** buttons: anyone can finalize, and each payout can only go to its fixed beneficiary |
 | Open plan #1 | A plan where one budget was 25 testUSD short: no beneficiary was paid, both contributors and the DAO got exactly their money back |
 | Open plan #2's history | A payout that failed (the beneficiary wasn't registered with the token), the credit restored, and the retry paying exactly once |
-| Open **People** | Each named account's record: plans backed, completed, refunded, with every pledge's transaction |
+| Open **People** | Each named account's record and reputation tier (New, Backer, Trusted organizer): plans organized and backed, completed, refunded, with every pledge's transaction |
+| Open **Start a plan** and connect a wallet | Reputation-based access: an account that backed or organized a completed plan can publish a plan and file its DAO match proposal from the page (`create_campaign` + `add_proposal`). The proposal carries the organizer's record, so the council sees it when it votes. A new account is asked to back a plan first |
 | Open **DAO** | What Sputnik DAO already does and what AllTogether adds, and all 4 proposals with their votes and the transaction that executed each |
 | Open **Verify**, or run `pnpm install && npm run verify` | 18 checks computed live from testnet RPC, ending `18 passed, 0 failed` |
 | Run `pnpm test` | 77 application tests, including tampered-state tests that make every verify check fail |
@@ -35,7 +36,7 @@ Built for the **Social Money** track of the NEAR Hackathon. The matching funds c
 
 ## Sputnik DAO: what already exists, what AllTogether adds
 
-AllTogether leaves the DAO alone. It uses a stock Sputnik DAO v2 and adds the funding rules in a separate, keyless escrow.
+AllTogether leaves the DAO alone. It uses a stock Sputnik DAO v2 and adds the funding rules in a separate, keyless escrow. (Trezu, the NEAR treasury app, lists mainnet DAOs from `sputnik-dao.near` only, so this testnet DAO doesn't appear there; any mainnet Sputnik DAO that sponsors plans would.)
 
 | Already in Sputnik DAO, used as is | Added by AllTogether (`contract/src/lib.rs`) |
 |---|---|
@@ -46,6 +47,7 @@ AllTogether leaves the DAO alone. It uses a stock Sputnik DAO v2 and adds the fu
 | Proposal expiry | Exact contributor refunds (`materialize_refund`); over-target and late pledges returned by the token resolver |
 | | Separate, retryable payouts with a nonce (`claim_credit`, `on_transfer_result`) that pay exactly once |
 | | The public board, per-account records and a CSV per plan (`site/`, from chain events) |
+| | Reputation from finished work: a tier per named account, which unlocks starting a plan and is written into the DAO proposal |
 
 ```mermaid
 flowchart LR

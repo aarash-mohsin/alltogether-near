@@ -1,9 +1,9 @@
 import {useCallback,useEffect,useMemo,useState} from 'react';
 import type {ReactNode} from 'react';
-import {DAO,ESCROW,TOKEN,contributorRecords,explorerAccount,explorerTx,planCsv,readLive,reserveOf,runChecks,targetOf,timeOf,usd,view} from '../../shared/live.ts';
-import type {ChainEvent,Check,ContributorRecord,LivePlan,LiveState} from '../../shared/live.ts';
+import {DAO,ESCROW,TOKEN,TIERS,contributorRecords,explorerAccount,explorerTx,planCsv,readLive,reserveOf,runChecks,targetOf,timeOf,usd,view} from '../../shared/live.ts';
+import type {ChainEvent,Check,ContributorRecord,LivePlan,LiveState,Tier} from '../../shared/live.ts';
 import type {NearCampaign,NearCredit} from '../../shared/near.ts';
-import {formatAmount,parseDisplayAmount} from '../../shared/amounts.ts';
+import {deriveLeg,formatAmount,isAccountId,parseDisplayAmount} from '../../shared/amounts.ts';
 import {call,connect,connectedAccount,disconnect} from './wallet.ts';
 import escrowWasmUrl from '../../contract/target/near/alltogether_escrow.wasm?url';
 import tokenWasmUrl from '../../contract/target/near/alltogether_test_usd/alltogether_test_usd.wasm?url';
@@ -11,8 +11,8 @@ import tokenWasmUrl from '../../contract/target/near/alltogether_test_usd/alltog
 const REPO='https://github.com/aarash-mohsin/alltogether-near';
 const RAW=`https://raw.githubusercontent.com/aarash-mohsin/alltogether-near/main/`;
 const TOKEN_STORAGE='1250000000000000000000';
-type Route={tab:'plans'|'people'|'dao'|'verify';plan:string|null};
-const TABS:[Route['tab'],string][]=[['plans','Plans'],['people','People'],['dao','DAO'],['verify','Verify']];
+type Route={tab:'plans'|'people'|'start'|'dao'|'verify';plan:string|null};
+const TABS:[Route['tab'],string][]=[['plans','Plans'],['people','People'],['start','Start a plan'],['dao','DAO'],['verify','Verify']];
 function route():Route{
   const h=location.hash.replace(/^#\/?/,'');const m=/^plan\/(\d+)$/.exec(h);
   if(m)return {tab:'plans',plan:m[1]};
@@ -30,6 +30,7 @@ function until(ms:number,now:number){const d=ms-now;if(d<=0)return 'deadline pas
 function U({v}:{v:string|bigint}){return <span className="usd">{num(v)}<small> testUSD</small></span>;}
 function Acct({id}:{id:string}){return <a className="acct" href={explorerAccount(id)} target="_blank" rel="noreferrer">{id}</a>;}
 function Tx({hash}:{hash:string}){return <a className="tx" href={explorerTx(hash)} target="_blank" rel="noreferrer">tx {shortTx(hash)}<span aria-hidden="true"> ↗</span></a>;}
+function Badge({tier}:{tier:Tier}){return tier==='new'?null:<span className={`badge ${tier}`} title={TIERS[tier].rule}>{tier==='trusted'?'★ ':''}{TIERS[tier].label}</span>;}
 function Pill({status}:{status:Check['status']|'RUN'}){return <span className={`pill ${status.toLowerCase()}`}>{status==='RUN'?<span className="dot-spin"/>:status}</span>;}
 function Bar({value,max,done}:{value:bigint;max:bigint;done?:boolean}){return <div className={`bar${done?' done':''}`} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct(value,max)}><i style={{width:`${pct(value,max)}%`}}/></div>;}
 
@@ -152,6 +153,11 @@ export default function App(){
             <p className="eyebrow">COMMUNITY FUNDING · SPUTNIK DAO MATCH · ALL OR NOTHING</p>
             <h1>Fund the whole plan, or nobody gets stranded.</h1>
             <p className="lead">A community plan needs several things at once: a venue, tools, access. AllTogether funds them together. A <b>Sputnik DAO</b> votes to match each budget, people pledge from their own wallets, and at the deadline either <b>every budget is paid</b> or <b>everyone gets their money back</b>, the DAO included.</p>
+            <div className="cta-row">
+              <a className="btn primary big" href={`#/plan/${state?.plans.find(p=>phaseOf(p.campaign,now)==='open')?.campaign.id??'4'}`}>Pledge from your wallet →</a>
+              <button className="btn ghost big" onClick={()=>document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})}>▶ Watch the 2-minute demo</button>
+              <a className="btn ghost big" href="#/verify">Check the chain</a>
+            </div>
             <p className="asset-id"><code>{ESCROW}</code> <a href={explorerAccount(ESCROW)} target="_blank" rel="noreferrer">explorer ↗</a></p>
           </div>
           <aside className="summary" aria-live="polite">
@@ -161,9 +167,11 @@ export default function App(){
             <div><small>Refunded</small><strong>{totals?<U v={totals.refunded}/>:'…'}</strong><span className="sub">to contributors and the DAO</span></div>
           </aside>
         </section>
+        <HowItWorks/>
         {loading&&!state&&<p className="muted pad">Reading the escrow, the DAO and every transaction from NEAR testnet…</p>}
         {state&&<>
           {state.plans.filter(p=>phaseOf(p.campaign,now)==='open').map(p=><Featured key={p.campaign.id} plan={p} now={now}/>)}
+          <Demo/>
           <section className="block">
             <p className="eyebrow">PUBLIC BOARD · list_campaigns</p>
             <h2>Every plan and how it ended.</h2>
@@ -173,9 +181,10 @@ export default function App(){
       </>}
 
       {r.tab==='plans'&&r.plan&&(!state?<p className="muted pad">Loading plan #{r.plan}…</p>:!plan?<p className="pad">There is no plan #{r.plan}. <a href="#/plans">Back to all plans</a></p>:
-        <PlanPage plan={plan} state={state} now={now} account={account} info={info} busy={busy} act={act} needAccount={needAccount}/>)}
+        <PlanPage plan={plan} state={state} records={records} now={now} account={account} info={info} busy={busy} act={act} needAccount={needAccount}/>)}
 
       {r.tab==='people'&&<People records={records} loading={!state}/>}
+      {r.tab==='start'&&<StartPlan state={state} records={records} account={account} busy={busy} act={act} needAccount={needAccount}/>}
       {r.tab==='dao'&&<DaoPage state={state}/>}
 
       {r.tab==='verify'&&<section className="block">
@@ -225,8 +234,8 @@ function PlanCard({plan,now}:{plan:LivePlan;now:number}){
   </a>;
 }
 
-interface PlanProps {plan:LivePlan;state:LiveState;now:number;account:string;info:WalletInfo|null;busy:string;act:(label:string,fn:()=>Promise<ReactNode>)=>Promise<void>;needAccount:()=>Promise<string>;}
-function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
+interface PlanProps {plan:LivePlan;state:LiveState;records:ContributorRecord[];now:number;account:string;info:WalletInfo|null;busy:string;act:(label:string,fn:()=>Promise<ReactNode>)=>Promise<void>;needAccount:()=>Promise<string>;}
+function PlanPage({plan,state,records,now,account,info,busy,act,needAccount}:PlanProps){
   const c=plan.campaign,phase=phaseOf(c,now);
   const[leg,setLeg]=useState(()=>{const i=c.terms.legs.findIndex((l,j)=>big(c.active[j])<big(l.communityTarget));return i<0?0:i;});
   const[amount,setAmount]=useState('100');
@@ -250,7 +259,7 @@ function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
       {c.terms.detail&&<p className="muted wide">{c.terms.detail}</p>}
       <dl className="facts">
         <div><dt>Deadline</dt><dd>{utc(Number(c.terms.deadlineMs))}<span className="muted"> · {until(Number(c.terms.deadlineMs),now)}</span></dd></div>
-        <div><dt>Organizer</dt><dd><Acct id={c.terms.organizer}/></dd></div>
+        <div><dt>Organizer</dt><dd><Acct id={c.terms.organizer}/> {(()=>{const o=records.find(x=>x.account_id===c.terms.organizer);return o?<><Badge tier={o.tier}/><span className="muted tiny"> · organized {o.organized}, {o.organized_completed} completed</span></>:null;})()}</dd></div>
         <div><dt>DAO match</dt><dd><U v={reserveOf(c)}/>{plan.proposal&&<span className="muted"> · proposal #{plan.proposal.id} {plan.proposal.status}</span>}</dd></div>
         <div><dt>Terms hash</dt><dd><code title={c.terms_hash}>{c.terms_hash.slice(0,16)}…</code></dd></div>
       </dl>
@@ -292,7 +301,9 @@ function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
             return <>Withdrew <U v={p.active}/> and sent it back to your wallet. <Tx hash={res.hash}/> <Tx hash={back.hash}/></>;
           })}>Withdraw before the deadline</button></p>)}</div>}
         </>}
-        {phase==='awaiting'&&<><h3>Waiting for the DAO</h3><p className="muted">This plan opens only when the DAO's matching reserve actually arrives in the escrow. A proposal being approved is not enough on its own.</p></>}
+        {phase==='awaiting'&&<><h3>Waiting for the DAO</h3><p className="muted">This plan opens only when the DAO's matching reserve actually arrives in the escrow. A proposal being approved is not enough on its own.</p>
+          {plan.proposal?<p className="muted">DAO proposal #{plan.proposal.id}: <b>{plan.proposal.status}</b>. The council votes on it in the DAO.</p>
+          :<button className="btn primary" disabled={Boolean(busy)} onClick={()=>void act('proposal',async()=>{const id=await needAccount();const rec=records.find(x=>x.account_id===id);const res=await fileProposal(c,rec);return <>DAO proposal #{String(res.value)} filed. The council can now vote on it. <Tx hash={res.hash}/></>;})}>{busy==='proposal'?'Waiting for wallet…':'File the DAO match proposal (1 NEAR bond)'}</button>}</>}
         {phase==='finalize'&&<><h3>Anyone can finalize</h3><p className="muted">The deadline has passed. Finalizing locks the result: if every budget reached its target, each beneficiary is owed its full budget; otherwise every contributor and the DAO get their money back.</p>
           <p className="muted">Right now: {c.terms.legs.every((l,i)=>c.active[i]===l.communityTarget)?<b className="good">every budget is full, so this plan will succeed.</b>:<b className="bad">at least one budget is short, so this plan will fail and refund.</b>}</p>
           <button className="btn primary" disabled={Boolean(busy)} onClick={()=>void act('finalize',async()=>{await needAccount();const res=await call(ESCROW,{method:'finalize',args:{campaign_id:c.id},deposit:'0'});return <>Plan #{c.id} finalized. <Tx hash={res.hash}/></>;})}>{busy==='finalize'?'Waiting for wallet…':'Finalize this plan'}</button></>}
@@ -313,7 +324,7 @@ function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
       <div className="section-head"><div><p className="eyebrow">CONTRIBUTORS · get_account_campaign</p><h2>Who backed it.</h2></div><button className="btn ghost" onClick={download}>Download CSV</button></div>
       {plan.contributors.length===0?<p className="muted">No pledges yet. Be the first.</p>:
       <div className="table-wrap"><table><thead><tr><th>Account</th>{c.terms.legs.map(l=><th key={l.legId}>{l.title}</th>)}<th>Outcome</th></tr></thead><tbody>
-        {plan.contributors.map(x=>{const refund=x.credits.find(cr=>cr.kind==='refund');return <tr key={x.account_id}><td><a href={`#/people`} onClick={()=>sessionStorage.setItem('alltogether.person',x.account_id)}>{x.account_id}</a></td>
+        {plan.contributors.map(x=>{const refund=x.credits.find(cr=>cr.kind==='refund');return <tr key={x.account_id}><td><a href={`#/people`} onClick={()=>sessionStorage.setItem('alltogether.person',x.account_id)}>{x.account_id}</a> {(()=>{const o=records.find(y=>y.account_id===x.account_id);return o?<Badge tier={o.tier}/>:null;})()}</td>
           {x.positions.map((p,i)=><td key={i}>{big(p.accepted_total)>0n?<U v={phase==='failed'?p.accepted_total:p.active}/>:<span className="muted">—</span>}</td>)}
           <td>{phase==='succeeded'?<span className="good">Paid to beneficiaries</span>:phase==='failed'?(refund&&big(refund.paid)>0n?<span>Refunded <U v={refund.paid}/></span>:<span className="muted">Refund waiting to be claimed</span>):<span className="muted">Active until the deadline</span>}</td></tr>;})}
       </tbody></table></div>}
@@ -335,13 +346,14 @@ function People({records,loading}:{records:ContributorRecord[];loading:boolean})
     <p className="eyebrow">CONTRIBUTOR RECORDS · NAMED ACCOUNTS · FROM CHAIN EVENTS</p>
     <h2>Every backer's track record.</h2>
     <p className="muted wide">A named NEAR account's history across all plans: what it backed, which plans it helped complete, and what came back from plans that failed. Rebuilt from the escrow's pledge events and each account's live position. No profile, no sign-up.</p>
+    <Reputation/>
     <form className="lookup-row" onSubmit={e=>{e.preventDefault();setOpen(query.trim().toLowerCase());}}><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="account.testnet" aria-label="Account to look up"/><button className="btn ghost">Look up</button></form>
     {query.trim()&&!found&&!loading&&<p className="muted">No pledges from <b>{query.trim()}</b> yet.</p>}
     {loading?<p className="muted">Reading pledge events…</p>:
     <div className="people">{records.map(x=><article key={x.account_id} className={`person${open===x.account_id?' open':''}`}>
       <button className="person-head" onClick={()=>setOpen(open===x.account_id?'':x.account_id)} aria-expanded={open===x.account_id}>
-        <span className="person-name">{x.account_id}</span>
-        <span className="person-stats"><span><b>{x.backed}</b> backed</span><span className="good"><b>{x.succeeded}</b> completed</span><span><b>{x.failed}</b> refunded</span>{x.open>0&&<span><b>{x.open}</b> open</span>}</span>
+        <span className="person-name">{x.account_id} <Badge tier={x.tier}/></span>
+        <span className="person-stats">{x.organized>0&&<span><b>{x.organized}</b> organized</span>}<span><b>{x.backed}</b> backed</span><span className="good"><b>{x.succeeded}</b> completed</span><span><b>{x.failed}</b> refunded</span>{x.open>0&&<span><b>{x.open}</b> open</span>}</span>
         <span className="person-money"><U v={x.paid_to_beneficiaries}/> <small className="muted">reached beneficiaries</small></span>
       </button>
       {open===x.account_id&&<div className="person-body">
@@ -382,5 +394,89 @@ function DaoPage({state}:{state:LiveState|null}){
         return <tr key={p.id}><td>{p.id}</td><td>{plan?<a href={`#/plan/${plan.campaign.id}`}>#{plan.campaign.id} {plan.campaign.terms.title}</a>:<span className="muted">—</span>}</td><td>{p.amount?<U v={p.amount}/>:<span className="muted">other</span>} {p.terms_hash&&<span className="muted tiny">terms {p.terms_hash.slice(0,10)}…</span>}</td><td>{Object.entries(p.votes).map(([who,v])=><span key={who} className="vote">{who.split('.')[0]}: {v}</span>)}</td><td><span className={`status ${p.status==='Approved'?'good':p.status==='InProgress'?'open':'bad'}`}>{p.status}</span></td><td>{exec?<Tx hash={exec.tx}/>:<span className="muted">—</span>}</td></tr>;})}
     </tbody></table></div>}
     <p className="muted tiny note">Council: <Acct id="at-rel-council-mw4f9nmo.testnet"/> · policy: a proposal passes with more than half of the council (one member on testnet) · bond 1 NEAR, returned on approval.</p>
+  </section>;
+}
+
+function HowItWorks(){
+  const steps:[string,string,string][]=[
+    ['1','An organizer publishes a plan','Up to three budgets, each with a fixed beneficiary, and one deadline. The terms are hashed and can never change.'],
+    ['2','The DAO votes to match it','A Sputnik DAO proposal sends the exact match to the escrow. The plan opens only when that money arrives.'],
+    ['3','People pledge from their wallets','Each pledge goes to one budget and quotes the terms hash. Too much, or too late, comes straight back.'],
+    ['4','One deadline decides','Every budget full: every beneficiary is paid. Any budget short: everyone is refunded, the DAO included.'],
+  ];
+  return <section className="how" aria-label="How it works">{steps.map(([n,t,d])=><div key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></div>)}</section>;
+}
+function Demo(){
+  const[ok,setOk]=useState(true);
+  if(!ok)return null;
+  return <section className="block demo" id="demo">
+    <div className="demo-text"><p className="eyebrow">THE DEMO · 2 MINUTES · REAL TESTNET DATA</p><h2>See a plan fail, a plan pay out, and the DAO vote that opened them.</h2>
+      <p className="muted">Every screen in the video is this page reading NEAR testnet. Then try it yourself: connect a wallet, claim 1,000 testUSD and pledge to the open plan.</p></div>
+    <video controls preload="none" poster="./demo-poster.jpg" src="./demo.mp4" onError={()=>setOk(false)} aria-label="AllTogether demo video, captions burned in"/>
+  </section>;
+}
+function Reputation(){
+  return <div className="rep">{(['new','backer','trusted'] as Tier[]).map(t=><div key={t} className={`rep-tier ${t}`}><p className="rep-name">{t==='new'?<span className="badge none">New</span>:<Badge tier={t}/>}</p><p><b>{TIERS[t].rule}.</b></p><p className="muted">Unlocks: {TIERS[t].unlocks}.</p></div>)}</div>;
+}
+async function fileProposal(c:NearCampaign,rec:ContributorRecord|undefined){
+  const policy=await view<any>(DAO,'get_policy');
+  const reserve=c.terms.legs.reduce((n,l)=>n+big(l.sponsorAllocation),0n).toString();
+  const inner={receiver_id:ESCROW,amount:reserve,memo:`AllTogether campaign ${c.id}`,msg:JSON.stringify({v:1,action:'sponsor',campaign_id:c.id,terms_hash:c.terms_hash})};
+  let raw='';for(const b of new TextEncoder().encode(JSON.stringify(inner)))raw+=String.fromCharCode(b);
+  const record=rec?`Organizer record (from chain events): ${rec.organized} organized, ${rec.organized_completed} completed; ${rec.succeeded} completed plans backed; tier ${TIERS[rec.tier].label}.`:'Organizer record: no plans yet.';
+  const description=`${rec?.tier==='trusted'?'[Trusted organizer] ':''}AllTogether ${c.id}: ${c.terms.title}\nTerms SHA-256: ${c.terms_hash}\nOne deadline: ${c.terms.deadlineMs}\nAll earmarked budgets must succeed.\n${c.terms.legs.map(l=>`${l.title}: ${l.budget} base units to ${l.beneficiary}`).join('\n')}\n${record}`;
+  return call(DAO,{method:'add_proposal',args:{proposal:{description,kind:{FunctionCall:{receiver_id:TOKEN,actions:[{method_name:'ft_transfer_call',args:btoa(raw),deposit:'1',gas:'100000000000000'}]}}}},deposit:policy.proposal_bond,gas:'100000000000000'});
+}
+interface LegDraft {title:string;purpose:string;beneficiary:string;budget:string;cap:string;}
+interface StartProps {state:LiveState|null;records:ContributorRecord[];account:string;busy:string;act:(label:string,fn:()=>Promise<ReactNode>)=>Promise<void>;needAccount:()=>Promise<string>;}
+function StartPlan({state,records,account,busy,act,needAccount}:StartProps){
+  const me=records.find(x=>x.account_id===account);const tier:Tier=me?.tier??'new';
+  const[title,setTitle]=useState('');const[summary,setSummary]=useState('');
+  const[deadline,setDeadline]=useState(()=>new Date(Date.now()+14*86400000).toISOString().slice(0,10));
+  const[legs,setLegs]=useState<LegDraft[]>([{title:'Venue',purpose:'',beneficiary:'',budget:'600',cap:'200'},{title:'Equipment',purpose:'',beneficiary:'',budget:'300',cap:'100'}]);
+  const[made,setMade]=useState<NearCampaign|null>(null);
+  const setLeg=(i:number,k:keyof LegDraft,v:string)=>setLegs(ls=>ls.map((l,j)=>j===i?{...l,[k]:v}:l));
+  function build(){
+    if(!title.trim()||!summary.trim())throw new Error('Give the plan a title and a one-line summary.');
+    const ms=Date.parse(deadline+'T00:00:00Z');if(!(ms>Date.now()+3600000))throw new Error('Choose a deadline in the future.');
+    return {title:title.trim(),summary:summary.trim(),detail:'',deadline_ms:String(ms),legs:legs.map((l,i)=>{
+      if(!l.title.trim())throw new Error(`Budget ${i+1} needs a title.`);
+      if(!isAccountId(l.beneficiary.trim())||l.beneficiary.trim()===ESCROW)throw new Error(`Budget ${i+1} needs a valid beneficiary account (not the escrow).`);
+      const budget=parseDisplayAmount(l.budget),cap=parseDisplayAmount(l.cap);deriveLeg(budget,cap);
+      return {title:l.title.trim(),purpose:l.purpose.trim(),beneficiary:l.beneficiary.trim(),budget,declared_sponsor_cap:cap};})};
+  }
+  return <section className="block">
+    <p className="eyebrow">REPUTATION-BASED ACCESS · FROM YOUR ON-CHAIN RECORD</p>
+    <h2>Start a plan, once you've helped one finish.</h2>
+    <p className="muted wide">Anyone can pledge. Starting a plan and asking the DAO to match it is unlocked by your track record: back or organize a plan that completes. Your record goes into the DAO proposal, so the council sees it when it votes. The gate is this page's; the escrow contract itself stays open to every account.</p>
+    <Reputation/>
+    {!account?<div className="panel gate"><h3>Connect a wallet to see your access</h3><p className="muted">Your tier comes from your account's pledges and plans on chain.</p><button className="btn primary" disabled={Boolean(busy)} onClick={()=>void act('connect',async()=>{const id=await needAccount();return <>Connected as <b>{id}</b>.</>;})}>Connect wallet</button></div>
+    :tier==='new'?<div className="panel gate"><h3>{account}: <span className="badge none">New</span></h3><p className="muted">No completed plan yet, so starting a plan is locked. Pledge to an open plan; if it completes, you become a Backer and this unlocks.</p><a className="btn primary" href={`#/plan/${state?.plans.find(p=>p.campaign.state==='Open'&&Number(p.campaign.terms.deadlineMs)>Date.now())?.campaign.id??'4'}`}>Back the open plan →</a></div>
+    :made?<div className="panel gate"><h3>Plan #{made.id} is published</h3><p className="muted">Its terms hash is <code>{made.terms_hash.slice(0,16)}…</code>. It opens when the DAO approves the match and the reserve arrives.</p><a className="btn primary" href={`#/plan/${made.id}`}>Open plan #{made.id} →</a></div>
+    :<div className="panel start">
+      <h3>{account} <Badge tier={tier}/></h3>
+      <p className="muted">{me?`${me.organized} organized (${me.organized_completed} completed) · ${me.succeeded} completed plan${me.succeeded===1?'':'s'} backed · reputation ${me.score}`:''}</p>
+      <div className="form-grid">
+        <label className="field">Plan title<input value={title} maxLength={80} onChange={e=>setTitle(e.target.value)} placeholder="Riverside Repair Café, December"/></label>
+        <label className="field">Deadline (00:00 UTC)<input type="date" value={deadline} onChange={e=>setDeadline(e.target.value)}/></label>
+        <label className="field wide-field">One-line summary<input value={summary} maxLength={500} onChange={e=>setSummary(e.target.value)} placeholder="What the community gets if every budget is funded"/></label>
+      </div>
+      {legs.map((l,i)=><div className="leg-draft" key={i}><b>Budget {i+1}</b>
+        <label className="field">Title<input value={l.title} maxLength={60} onChange={e=>setLeg(i,'title',e.target.value)}/></label>
+        <label className="field">Beneficiary account<input value={l.beneficiary} onChange={e=>setLeg(i,'beneficiary',e.target.value)} placeholder="venue.testnet"/></label>
+        <label className="field">Budget (testUSD)<input inputMode="decimal" value={l.budget} onChange={e=>setLeg(i,'budget',e.target.value)}/></label>
+        <label className="field">DAO match cap<input inputMode="decimal" value={l.cap} onChange={e=>setLeg(i,'cap',e.target.value)}/></label>
+        {legs.length>1&&<button className="link" onClick={()=>setLegs(ls=>ls.filter((_,j)=>j!==i))}>Remove</button>}</div>)}
+      {legs.length<3&&<button className="link" onClick={()=>setLegs(ls=>[...ls,{title:'Access',purpose:'',beneficiary:'',budget:'150',cap:'75'}])}>+ Add a budget</button>}
+      <p className="muted tiny">The DAO matches each budget up to its cap, at most half the budget; the community raises the rest. Your wallet signs two transactions and needs about 4 test NEAR: the plan's storage deposit (2.6 to 2.9 NEAR, kept by the escrow for the plan's records) and the DAO's 1 NEAR proposal bond, returned unless the council removes the proposal.</p>
+      <button className="btn primary" disabled={Boolean(busy)} onClick={()=>void act('publish',async()=>{
+        const input=build();const quote=await view<any>(ESCROW,'quote_campaign_storage',{leg_count:input.legs.length});
+        const res=await call(ESCROW,{method:'create_campaign',args:{input},deposit:quote.required_yocto,gas:'30000000000000'});
+        const campaign=res.value as NearCampaign;if(!campaign?.id)throw new Error('The plan was published but its id could not be read. Check the board.');
+        setMade(campaign);
+        const prop=await fileProposal(campaign,me);
+        return <>Plan #{campaign.id} published <Tx hash={res.hash}/> and DAO proposal #{String(prop.value)} filed <Tx hash={prop.hash}/>.</>;
+      })}>{busy==='publish'?'Waiting for wallet…':'Publish the plan and file the DAO proposal'}</button>
+    </div>}
   </section>;
 }
