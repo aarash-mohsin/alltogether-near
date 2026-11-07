@@ -353,7 +353,7 @@ function People({records,loading}:{records:ContributorRecord[];loading:boolean})
     <div className="people">{records.map(x=><article key={x.account_id} className={`person${open===x.account_id?' open':''}`}>
       <button className="person-head" onClick={()=>setOpen(open===x.account_id?'':x.account_id)} aria-expanded={open===x.account_id}>
         <span className="person-name">{x.account_id} <Badge tier={x.tier}/></span>
-        <span className="person-stats">{x.organized>0&&<span><b>{x.organized}</b> organized</span>}<span><b>{x.backed}</b> backed</span><span className="good"><b>{x.succeeded}</b> completed</span><span><b>{x.failed}</b> refunded</span>{x.open>0&&<span><b>{x.open}</b> open</span>}</span>
+        <span className="person-stats">{x.organized>0&&<span><b>{x.organized}</b> organized ({x.organized_completed} completed)</span>}{(x.backed>0||x.organized===0)&&<span><b>{x.backed}</b> backed</span>}{x.backed>0&&<><span className="good"><b>{x.succeeded}</b> completed</span><span><b>{x.failed}</b> refunded</span></>}{x.open>0&&<span><b>{x.open}</b> open</span>}</span>
         <span className="person-money"><U v={x.paid_to_beneficiaries}/> <small className="muted">reached beneficiaries</small></span>
       </button>
       {open===x.account_id&&<div className="person-body">
