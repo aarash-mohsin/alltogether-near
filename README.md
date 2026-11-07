@@ -19,11 +19,12 @@ Built for the **Social Money** track of the NEAR Hackathon. The matching funds c
 
 | Do | See |
 |---|---|
-| Open the [live page](https://aarash-mohsin.github.io/alltogether-live/) | The public board: 4 plans on chain, 2,900 testUSD matched by the DAO, what was paid out and what was refunded |
+| Open the [live page](https://aarash-mohsin.github.io/alltogether-live/) | The public board: 4 plans on chain, 2,900 testUSD matched by the DAO, 1,900 testUSD paid to beneficiaries and 975 refunded |
 | Open plan #4, connect a NEAR testnet wallet, click **Register** then **Claim 1,000 testUSD** | Your wallet signs `storage_deposit` and `demo_faucet` on the keyless testUSD token; your balance appears in the header |
 | Pledge 100 testUSD to one budget | Your wallet signs `ft_transfer_call` carrying the plan's terms hash. The budget's bar moves, you appear under **Who backed it**, and the pledge shows in the plan's history with its transaction |
 | Try to pledge more than a budget still needs | The page stops you; if sent anyway, the token's resolver returns the whole amount |
-| Open plan #3 (deadline passed, both budgets full) and click **Finalize** | Anyone can finalize. It succeeds, and each beneficiary is owed its full budget; **Pay** buttons send each payout to its fixed account |
+| Open plan #3 | A plan published from Meteor Wallet: both budgets filled before the deadline, anyone finalized it, and each beneficiary was paid its whole budget (pledges plus the DAO match) |
+| Open a plan whose deadline has passed | **Finalize** and **Pay** buttons: anyone can finalize, and each payout can only go to its fixed beneficiary |
 | Open plan #1 | A plan where one budget was 25 testUSD short: no beneficiary was paid, both contributors and the DAO got exactly their money back |
 | Open plan #2's history | A payout that failed (the beneficiary wasn't registered with the token), the credit restored, and the retry paying exactly once |
 | Open **People** | Each named account's record: plans backed, completed, refunded, with every pledge's transaction |
@@ -111,7 +112,7 @@ Plans 1 and 2, step by step:
 | Contributor refund paid | [`GTnRSSUc…`](https://testnet.nearblocks.io/txns/GTnRSSUcWKMomXKvKC3YYw6Yq4qDTiwFHoMpNTu3T4VB) |
 | DAO reserve returned | [`GV2bAfi9…`](https://testnet.nearblocks.io/txns/GV2bAfi9KtgHK3LumPJ6eTHGAYnkgF7MauZdWhniiWmR) |
 
-Plan 3, signed in Meteor Wallet (records in [`docs/qa-live-wallet-transactions.json`](docs/qa-live-wallet-transactions.json) and [`docs/qa-live-wallet-dao.json`](docs/qa-live-wallet-dao.json)):
+Plan 3, published and pledged from Meteor Wallet, then finalized and paid out by test accounts with `scripts/testnet-finish-plan3.mjs` (records in [`docs/qa-live-wallet-transactions.json`](docs/qa-live-wallet-transactions.json) [`docs/qa-live-wallet-dao.json`](docs/qa-live-wallet-dao.json) and [`docs/testnet-plan3-finish.json`](docs/testnet-plan3-finish.json)):
 
 | Step | Transaction |
 |---|---|
@@ -119,6 +120,8 @@ Plan 3, signed in Meteor Wallet (records in [`docs/qa-live-wallet-transactions.j
 | Wallet publishes plan 3 (two budgets) | [`Aqf6PhoM…`](https://testnet.nearblocks.io/txns/Aqf6PhoMuWvwUpivLyTpXySF8KcRtWMXJivxu4SCMzdG) |
 | DAO council approves proposal 2; the 300 testUSD match arrives | [`2ZhLPTtK…`](https://testnet.nearblocks.io/txns/2ZhLPTtKVJPSMdTt7DWGE1QY12Qf7Qz9cq6JtgHzKVzd) |
 | Wallet pledges 400 and 200 testUSD, filling both budgets | [`H6eJSekj…`](https://testnet.nearblocks.io/txns/H6eJSekjDgASaShMDV5GBzJkeXrRB1sb7dVwzpV2cUJz), [`7d3oh3t8…`](https://testnet.nearblocks.io/txns/7d3oh3t8kMQNo7qEvRkwGsSiDLfcvxrNMEiVfLHB8vzV) |
+| After the deadline, a test account finalizes it: every budget reached its target | [`7T5HcwdM…`](https://testnet.nearblocks.io/txns/7T5HcwdMoUqdmWoBsYBUb9kNht4LqoxTG74BWAdG8kZQ) |
+| A test account triggers both payouts: 600 testUSD to the venue, 300 to equipment | [`J1hcCtti…`](https://testnet.nearblocks.io/txns/J1hcCtti33PQrurSZEnJEyLtacoZBNkr9hDZwwM98BNM), [`EmPsRHi4…`](https://testnet.nearblocks.io/txns/EmPsRHi4d1Kk4qTJ4AevtZaK17bW4hou4mBaBZuyTTmp) |
 
 Plan 4, the open judging plan (`node scripts/testnet-judging-plan.mjs`, records in [`docs/testnet-judging-plan.json`](docs/testnet-judging-plan.json)):
 

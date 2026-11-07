@@ -1,7 +1,7 @@
 {
- "observed_at": "2026-11-07T07:26:07.242Z",
+ "observed_at": "2026-11-07T07:45:49.272Z",
  "chain_id": "testnet",
- "block_time_ms": "1794036361054",
+ "block_time_ms": "1794037544431",
  "escrow": {
   "code_hash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
   "keys": [],
@@ -18,15 +18,15 @@
    "transfer_gas_tgas": 25,
    "callback_gas_tgas": 20
   },
-  "token_balance": "3650000000",
+  "token_balance": "2750000000",
   "accounting": {
    "accepted_inflows": "5625000000",
-   "active_principal": "1550000000",
-   "sponsor_reserved": "2100000000",
+   "active_principal": "950000000",
+   "sponsor_reserved": "1800000000",
    "failed_principal_reserved": "0",
    "available_credits": "0",
    "pending_transfers": "0",
-   "confirmed_paid": "1975000000"
+   "confirmed_paid": "2875000000"
   }
  },
  "token": {
@@ -508,24 +508,27 @@
      ]
     },
     "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
-    "state": "Open",
+    "state": "Succeeded",
     "created_at_ms": "1793940561061",
-    "finalized_at_ms": null,
+    "finalized_at_ms": "1794037456661",
     "failure_reason": null,
     "active": [
      "400000000",
      "200000000"
     ],
-    "closing_active": null,
+    "closing_active": [
+     "400000000",
+     "200000000"
+    ],
     "participant_count": 1,
     "accounting": {
      "accepted_inflows": "900000000",
-     "active_principal": "600000000",
-     "sponsor_reserved": "300000000",
+     "active_principal": "0",
+     "sponsor_reserved": "0",
      "failed_principal_reserved": "0",
      "available_credits": "0",
      "pending_transfers": "0",
-     "confirmed_paid": "0"
+     "confirmed_paid": "900000000"
     }
    },
    "proposal": {
@@ -573,8 +576,44 @@
     }
    ],
    "beneficiary_credits": [
-    null,
-    null
+    {
+     "id": "3:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+     "campaign_id": "3",
+     "kind": "beneficiary",
+     "owner": "venue.at-rel-owner-mw4f9xmq.testnet",
+     "recipient": "venue.at-rel-owner-mw4f9xmq.testnet",
+     "leg_id": 0,
+     "available": "0",
+     "pending": "0",
+     "paid": "600000000",
+     "nonce": "1",
+     "last_attempt": {
+      "nonce": "1",
+      "amount": "600000000",
+      "status": "Succeeded",
+      "created_at_ms": "1794037485303",
+      "resolved_at_ms": "1794037486268"
+     }
+    },
+    {
+     "id": "3:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+     "campaign_id": "3",
+     "kind": "beneficiary",
+     "owner": "equipment.at-rel-owner-mw4f9xmq.testnet",
+     "recipient": "equipment.at-rel-owner-mw4f9xmq.testnet",
+     "leg_id": 1,
+     "available": "0",
+     "pending": "0",
+     "paid": "300000000",
+     "nonce": "1",
+     "last_attempt": {
+      "nonce": "1",
+      "amount": "300000000",
+      "status": "Succeeded",
+      "created_at_ms": "1794037490483",
+      "resolved_at_ms": "1794037491727"
+     }
+    }
    ],
    "sponsor_refund": null
   },
@@ -1675,6 +1714,103 @@
     "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
     "action": "pledge",
     "amount": "150000000"
+   }
+  },
+  {
+   "tx": "7T5HcwdMoUqdmWoBsYBUb9kNht4LqoxTG74BWAdG8kZQ",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "finalize",
+   "args": {
+    "campaign_id": "3"
+   },
+   "leg": null,
+   "at": "1794037456661193500",
+   "block": 276602321,
+   "event": "campaign_finalized",
+   "data": {
+    "campaign_id": "3",
+    "state": "Succeeded",
+    "closing_active": [
+     "400000000",
+     "200000000"
+    ]
+   }
+  },
+  {
+   "tx": "J1hcCtti33PQrurSZEnJEyLtacoZBNkr9hDZwwM98BNM",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "3:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0"
+   },
+   "leg": null,
+   "at": "1794037485303731500",
+   "block": 276602368,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "3:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+    "nonce": "1",
+    "amount": "600000000",
+    "recipient": "venue.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "J1hcCtti33PQrurSZEnJEyLtacoZBNkr9hDZwwM98BNM",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "3:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0"
+   },
+   "leg": null,
+   "at": "1794037486268735200",
+   "block": 276602370,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "3:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+    "nonce": "1",
+    "amount": "600000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "EmPsRHi4d1Kk4qTJ4AevtZaK17bW4hou4mBaBZuyTTmp",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "3:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1794037490483732000",
+   "block": 276602377,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "3:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "1",
+    "amount": "300000000",
+    "recipient": "equipment.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "EmPsRHi4d1Kk4qTJ4AevtZaK17bW4hou4mBaBZuyTTmp",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "3:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1794037491727820300",
+   "block": 276602379,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "3:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "1",
+    "amount": "300000000",
+    "success": true
    }
   }
  ],

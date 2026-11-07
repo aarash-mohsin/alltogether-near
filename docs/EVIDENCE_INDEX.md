@@ -35,6 +35,7 @@ The current deployment was made so that nobody holds keys to the escrow or the t
 | `qa-release-testnet-faucet-*.json` | Testnet faucet responses that funded the council, owner and bank accounts |
 | `qa-live-wallet-transactions.json` | Plan 3, signed in Meteor Wallet by `araash.testnet`: token registration, demo faucet, plan creation and both pledges |
 | `qa-live-wallet-dao.json` | The DAO proposal and council approval that opened plan 3 |
+| `testnet-plan3-finish.json` | Plan 3 finalized after its deadline and both beneficiary payouts, signed by test accounts (`scripts/testnet-finish-plan3.mjs`) |
 | `testnet-judging-plan.json` | Plan 4, the open judging plan: test NEAR pooled for its storage deposit, creation, DAO treasury top-up, proposal, approval and the first pledges (`scripts/testnet-judging-plan.mjs`) |
 
 ## Previous release deployment

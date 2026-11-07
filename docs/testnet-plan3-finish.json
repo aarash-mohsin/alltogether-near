@@ -1,0 +1,30 @@
+{
+  "network": "testnet",
+  "campaignId": "3",
+  "actions": [
+    {
+      "label": "Anyone finalizes plan 3 after its deadline",
+      "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+      "method": "finalize",
+      "tx": "7T5HcwdMoUqdmWoBsYBUb9kNht4LqoxTG74BWAdG8kZQ",
+      "ok": true,
+      "at": "2026-11-07T07:44:19.226Z"
+    },
+    {
+      "label": "Pay Essential budget to venue.at-rel-owner-mw4f9xmq.testnet",
+      "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+      "method": "claim_credit",
+      "tx": "J1hcCtti33PQrurSZEnJEyLtacoZBNkr9hDZwwM98BNM",
+      "ok": true,
+      "at": "2026-11-07T07:44:48.968Z"
+    },
+    {
+      "label": "Pay Equipment to equipment.at-rel-owner-mw4f9xmq.testnet",
+      "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+      "method": "claim_credit",
+      "tx": "EmPsRHi4d1Kk4qTJ4AevtZaK17bW4hou4mBaBZuyTTmp",
+      "ok": true,
+      "at": "2026-11-07T07:44:54.358Z"
+    }
+  ]
+}

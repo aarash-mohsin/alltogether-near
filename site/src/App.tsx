@@ -234,8 +234,8 @@ function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
   const events=state.events.filter(e=>(e.data.campaign_id??String(e.data.credit_id??'').split(':')[0])===c.id&&e.event!=='transfer_started').reverse();
   const remaining=big(c.terms.legs[leg].communityTarget)-big(c.active[leg]);
   const claimable:{credit:NearCredit;label:ReactNode}[]=[
-    ...plan.beneficiary_credits.flatMap((cr,i)=>cr&&big(cr.available)>0n&&big(cr.pending)===0n?[{credit:cr,label:<>Pay <U v={cr.available}/> to {c.terms.legs[i].title} (<Acct id={cr.recipient}/>)</>}]:[]),
-    ...(plan.sponsor_refund&&big(plan.sponsor_refund.available)>0n?[{credit:plan.sponsor_refund,label:<>Return <U v={plan.sponsor_refund.available}/> to the DAO</>}]:[]),
+    ...plan.beneficiary_credits.flatMap((cr,i)=>cr&&big(cr.available)>0n&&big(cr.pending)===0n?[{credit:cr,label:<><span>Pay {num(cr.available)} testUSD to {c.terms.legs[i].title}</span><small>{cr.recipient}</small></>}]:[]),
+    ...(plan.sponsor_refund&&big(plan.sponsor_refund.available)>0n?[{credit:plan.sponsor_refund,label:<><span>Return {num(plan.sponsor_refund.available)} testUSD to the DAO</span><small>{plan.sponsor_refund.recipient}</small></>}]:[]),
   ];
   const myCredits=(mine?.credits??[]).filter(cr=>(cr.kind==='refund'||cr.kind==='withdrawal')&&big(cr.available)>0n);
   const myRefundable=phase==='failed'&&(mine?.positions??[]).some(p=>!p.refund_consumed&&big(p.active)>0n);
@@ -305,7 +305,7 @@ function PlanPage({plan,state,now,account,info,busy,act,needAccount}:PlanProps){
             const res=await call(ESCROW,{method:'materialize_refund',args:{campaign_id:c.id},deposit:'0'});
             const back=await call(ESCROW,{method:'claim_credit',args:{credit_key:`${c.id}:refund:${account}:-`},deposit:'1',gas:'120000000000000'});
             return <>Your refund is back in your wallet. <Tx hash={res.hash}/> <Tx hash={back.hash}/></>;})}>Get my refund</button>}
-          {myCredits.map(cr=><button key={cr.id} className="btn primary block" disabled={Boolean(busy)} onClick={()=>void claim(cr)}>Send my <U v={cr.available}/> back to my wallet</button>)}
+          {myCredits.map(cr=><button key={cr.id} className="btn primary block" disabled={Boolean(busy)} onClick={()=>void claim(cr)}><span>Send my {num(cr.available)} testUSD back to my wallet</span></button>)}
         </>}
       </aside>
     </div>
