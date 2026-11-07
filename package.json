@@ -19,7 +19,11 @@
     "build:contract": "node scripts/contract.mjs build",
     "backup": "node scripts/backup.mjs",
     "restore": "node scripts/restore.mjs",
-    "test:release": "node --test tests/release/operations.test.mjs"
+    "test:release": "node --test tests/release/operations.test.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev:site": "node node_modules/vite/bin/vite.js --config vite.site.config.ts",
+    "build:site": "node scripts/build-site.mjs",
+    "site:snapshot": "node scripts/site-snapshot.mjs"
   },
   "dependencies": {
     "@hot-labs/near-connect": "0.12.0",

@@ -1,0 +1,18 @@
+[
+  {
+    "network": "testnet",
+    "campaignId": "3",
+    "title": "Community Workshop",
+    "organizer": "araash.testnet",
+    "termsHash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+    "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "councilId": "at-rel-council-mw4f9nmo.testnet",
+    "proposalId": 2,
+    "reserve": "300000000",
+    "proposeTx": "63fmKqdF95tjgRuzj8mhuY8hiWzYtFPvKMNB6tiMffo1",
+    "approveTx": "2ZhLPTtKVJPSMdTt7DWGE1QY12Qf7Qz9cq6JtgHzKVzd",
+    "proposalStatus": "Approved",
+    "campaignStateAfter": "Open",
+    "at": "2026-11-06T04:57:44.423Z"
+  }
+]

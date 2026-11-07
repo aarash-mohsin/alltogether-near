@@ -1,0 +1,96 @@
+{
+  "network": "testnet",
+  "wallet": "araash.testnet (Meteor Wallet, external)",
+  "source": "FastNear tx API + RPC tx status, FINAL",
+  "campaignId": "3",
+  "transactions": [
+    {
+      "hash": "EmnktA6jJW5AXJJxFumabhMGxAvDeaSkdHcnTqrz9RfE",
+      "at_utc": "2026-11-06 04:31:44",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": "araash.testnet",
+        "registration_only": true
+      },
+      "all_receipts_succeeded": true
+    },
+    {
+      "hash": "2tGCPwk9HUThw3EmFAvjCwwpaEd6odQURELik1QzCnNL",
+      "at_utc": "2026-11-06 04:39:16",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "method": "demo_faucet",
+      "args": {},
+      "all_receipts_succeeded": true
+    },
+    {
+      "hash": "Aqf6PhoMuWvwUpivLyTpXySF8KcRtWMXJivxu4SCMzdG",
+      "at_utc": "2026-11-06 04:49:20",
+      "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+      "method": "create_campaign",
+      "args": {
+        "input": {
+          "title": "Community Workshop",
+          "summary": "A local workshop that needs both a venue and equipment",
+          "detail": "",
+          "deadline_ms": "1794026700000",
+          "legs": [
+            {
+              "title": "Essential budget",
+              "purpose": "",
+              "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+              "budget": "600000000",
+              "declared_sponsor_cap": "200000000"
+            },
+            {
+              "title": "Equipment",
+              "purpose": "",
+              "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+              "budget": "300000000",
+              "declared_sponsor_cap": "100000000"
+            }
+          ]
+        }
+      },
+      "all_receipts_succeeded": true
+    },
+    {
+      "hash": "H6eJSekjDgASaShMDV5GBzJkeXrRB1sb7dVwzpV2cUJz",
+      "at_utc": "2026-11-06 05:08:33",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "method": "ft_transfer_call",
+      "args": {
+        "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+        "amount": "400000000",
+        "memo": "AllTogether campaign 3",
+        "msg": {
+          "v": 1,
+          "action": "pledge",
+          "campaign_id": "3",
+          "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+          "leg_id": 0
+        }
+      },
+      "all_receipts_succeeded": true
+    },
+    {
+      "hash": "7d3oh3t8kMQNo7qEvRkwGsSiDLfcvxrNMEiVfLHB8vzV",
+      "at_utc": "2026-11-06 05:09:02",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "method": "ft_transfer_call",
+      "args": {
+        "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+        "amount": "200000000",
+        "memo": "AllTogether campaign 3",
+        "msg": {
+          "v": 1,
+          "action": "pledge",
+          "campaign_id": "3",
+          "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+          "leg_id": 1
+        }
+      },
+      "all_receipts_succeeded": true
+    }
+  ]
+}

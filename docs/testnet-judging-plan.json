@@ -1,0 +1,113 @@
+{
+  "network": "testnet",
+  "purpose": "Open plan for judges to pledge to from their own wallets",
+  "actions": [
+    {
+      "label": "Move 0.4494 test NEAR to the organizer",
+      "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "at-rel-owner-mw4f9xmq.testnet",
+      "tx": "HpSKFXsohwJLs7uKf3H8wBmJa7rcAPizqb38ELAVVEjn",
+      "ok": true,
+      "at": "2026-11-07T07:15:43.758Z"
+    },
+    {
+      "label": "Move 0.4521 test NEAR to the organizer",
+      "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "at-rel-owner-mw4f9xmq.testnet",
+      "tx": "EnGw7PNdAtmdPS4Xp5gvtVTWE6P86MuKacPijyvqTShi",
+      "ok": true,
+      "at": "2026-11-07T07:15:59.864Z"
+    },
+    {
+      "label": "Move 1.0451 test NEAR to the organizer",
+      "signer": "at-rel-council-mw4f9nmo.testnet",
+      "receiver": "at-rel-owner-mw4f9xmq.testnet",
+      "tx": "oSCT5FRm3akeDHrmDJCzCN5T4k1MC6K2xAB6gknDFUe",
+      "ok": true,
+      "at": "2026-11-07T07:16:16.891Z"
+    },
+    {
+      "label": "Organizer publishes the Riverside Repair Café plan",
+      "signer": "at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+      "tx": "3PKZCbaDSJcyQvN66wtQJUCZ2hcs8xsk6zYaptG5yzk5",
+      "ok": true,
+      "at": "2026-11-07T07:17:11.853Z"
+    },
+    {
+      "label": "Treasury top-up: 1700 testUSD to the DAO",
+      "signer": "at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "tx": "2XoZ3MMcsRnpjabtHUswriCvHrX3kFCSRQJYYRkHAWCb",
+      "ok": true,
+      "at": "2026-11-07T07:17:25.012Z"
+    },
+    {
+      "label": "Council member proposes the DAO match",
+      "signer": "at-rel-council-mw4f9nmo.testnet",
+      "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+      "tx": "7RLHUM9H938dU1bsCmYfD3uVHzUdnJjfxGbAPWt7DaFP",
+      "ok": true,
+      "at": "2026-11-07T07:17:38.699Z"
+    },
+    {
+      "label": "Council approves; the DAO sends the reserve to the escrow",
+      "signer": "at-rel-council-mw4f9nmo.testnet",
+      "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+      "tx": "J6SHZQDHyuG7DT4nQE5hYDasL6Zd1QVLq7bn4Vn3cWwH",
+      "ok": true,
+      "at": "2026-11-07T07:17:58.315Z"
+    },
+    {
+      "label": "alice pledges 500 testUSD to Venue",
+      "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "tx": "9nMadYH4QqdSsPosp1ba5HJrKURSvRgBJ1f2WfWzkHaa",
+      "ok": true,
+      "at": "2026-11-07T07:18:16.369Z"
+    },
+    {
+      "label": "bob pledges 300 testUSD to Tools",
+      "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "tx": "EtQz3RZj6zS63vxsF4u1tBS1ooqCzkdyRxRkyxhHLnjx",
+      "ok": true,
+      "at": "2026-11-07T07:18:31.207Z"
+    },
+    {
+      "label": "bob pledges 150 testUSD to Access",
+      "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+      "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "tx": "Gzu1ygixWPHsxPyc984T3Dxq62FaA3QB1Hw1tLKaWbok",
+      "ok": true,
+      "at": "2026-11-07T07:18:36.848Z"
+    }
+  ],
+  "campaignId": "4",
+  "termsHash": "016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73",
+  "deadlineMs": "1795132800000",
+  "proposalId": 3,
+  "state": {
+    "observedAt": "2026-11-07T07:18:37.020Z",
+    "state": "Open",
+    "active": [
+      "500000000",
+      "300000000",
+      "150000000"
+    ],
+    "targets": [
+      "2000000000",
+      "1000000000",
+      "600000000"
+    ],
+    "accounting": {
+      "accepted_inflows": "2750000000",
+      "active_principal": "950000000",
+      "sponsor_reserved": "1800000000",
+      "failed_principal_reserved": "0",
+      "available_credits": "0",
+      "pending_transfers": "0",
+      "confirmed_paid": "0"
+    }
+  }
+}

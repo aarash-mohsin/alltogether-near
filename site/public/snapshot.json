@@ -1,0 +1,1683 @@
+{
+ "observed_at": "2026-11-07T07:26:07.242Z",
+ "chain_id": "testnet",
+ "block_time_ms": "1794036361054",
+ "escrow": {
+  "code_hash": "DJ73KDw8fE818kYrR9CVMztonGUnv8nn4475fpdV21pS",
+  "keys": [],
+  "config": {
+   "dao_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+   "token_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "token_decimals": 6,
+   "token_symbol": "testUSD",
+   "participant_limit": 128,
+   "max_legs": 3,
+   "domain": "alltogether/near-testnet/v1",
+   "network": "testnet",
+   "version": "0.1.0",
+   "transfer_gas_tgas": 25,
+   "callback_gas_tgas": 20
+  },
+  "token_balance": "3650000000",
+  "accounting": {
+   "accepted_inflows": "5625000000",
+   "active_principal": "1550000000",
+   "sponsor_reserved": "2100000000",
+   "failed_principal_reserved": "0",
+   "available_credits": "0",
+   "pending_transfers": "0",
+   "confirmed_paid": "1975000000"
+  }
+ },
+ "token": {
+  "code_hash": "9Sc4vjKHWKwB7BYVPRzsfzkiHS9NhebDCM459Yz4fgqy",
+  "keys": [],
+  "faucet": {
+   "enabled": true,
+   "amount": "1000000000",
+   "claimed": false,
+   "remainingAccounts": 253
+  }
+ },
+ "plans": [
+  {
+   "campaign": {
+    "id": "1",
+    "terms": {
+     "schemaVersion": 1,
+     "domain": "alltogether/near-testnet/v1",
+     "escrowId": "escrow.at-rel-owner-mw4f9xmq.testnet",
+     "campaignId": "1",
+     "organizer": "at-rel-owner-mw4f9xmq.testnet",
+     "title": "Release incomplete accessible workshop",
+     "summary": "Actual Sputnik and independent-faucet contributor verification",
+     "detail": "All essential earmarked budgets must succeed together.",
+     "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+     "tokenId": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "tokenDecimals": 6,
+     "tokenSymbol": "testUSD",
+     "deadlineMs": "1793936412487",
+     "participantLimit": 128,
+     "matchRule": "one-to-one-capped-v1",
+     "settlementRule": "all-legs-v1",
+     "legs": [
+      {
+       "legId": 0,
+       "title": "Venue",
+       "purpose": "Workshop space",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declaredSponsorCap": "200000000",
+       "sponsorAllocation": "200000000",
+       "communityTarget": "400000000"
+      },
+      {
+       "legId": 1,
+       "title": "Equipment",
+       "purpose": "Shared tools",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "250000000",
+       "declaredSponsorCap": "125000000",
+       "sponsorAllocation": "125000000",
+       "communityTarget": "125000000"
+      },
+      {
+       "legId": 2,
+       "title": "Accessibility",
+       "purpose": "Essential access",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "150000000",
+       "declaredSponsorCap": "75000000",
+       "sponsorAllocation": "75000000",
+       "communityTarget": "75000000"
+      }
+     ]
+    },
+    "terms_hash": "86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347",
+    "state": "Failed",
+    "created_at_ms": "1793936296524",
+    "finalized_at_ms": "1793936422243",
+    "failure_reason": "INCOMPLETE_BUDGETS",
+    "active": [
+     "400000000",
+     "125000000",
+     "50000000"
+    ],
+    "closing_active": [
+     "400000000",
+     "125000000",
+     "50000000"
+    ],
+    "participant_count": 2,
+    "accounting": {
+     "accepted_inflows": "975000000",
+     "active_principal": "0",
+     "sponsor_reserved": "0",
+     "failed_principal_reserved": "0",
+     "available_credits": "0",
+     "pending_transfers": "0",
+     "confirmed_paid": "975000000"
+    }
+   },
+   "proposal": {
+    "id": 0,
+    "proposer": "at-rel-council-mw4f9nmo.testnet",
+    "description": "AllTogether release 1, immutable terms 86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347, all budgets required",
+    "status": "Approved",
+    "kind": {
+     "FunctionCall": {
+      "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "actions": [
+       {
+        "method_name": "ft_transfer_call",
+        "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDEiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjFcIixcInRlcm1zX2hhc2hcIjpcIjg2ZDRiM2Y5NzU0OWEzY2M1ODgxZjQ2MDYxNTI2YjNkZDlhNDZkMzcwMjk4ODMyNzNhZmU4Y2M0ZTUxMjgzNDdcIn0ifQ==",
+        "deposit": "1",
+        "gas": "100000000000000"
+       }
+      ]
+     }
+    },
+    "votes": {
+     "at-rel-council-mw4f9nmo.testnet": "Approve"
+    },
+    "submission_time": "1793936302373691942",
+    "campaign_id": "1",
+    "terms_hash": "86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347",
+    "amount": "400000000"
+   },
+   "contributors": [
+    {
+     "account_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "0",
+       "accepted_total": "400000000",
+       "refund_consumed": true
+      },
+      {
+       "active": "0",
+       "accepted_total": "125000000",
+       "refund_consumed": true
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      }
+     ],
+     "credits": [
+      {
+       "id": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-",
+       "campaign_id": "1",
+       "kind": "refund",
+       "owner": "alice.at-rel-owner-mw4f9xmq.testnet",
+       "recipient": "alice.at-rel-owner-mw4f9xmq.testnet",
+       "leg_id": null,
+       "available": "0",
+       "pending": "0",
+       "paid": "525000000",
+       "nonce": "1",
+       "last_attempt": {
+        "nonce": "1",
+        "amount": "525000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793936431352",
+        "resolved_at_ms": "1793936432445"
+       }
+      }
+     ]
+    },
+    {
+     "account_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "50000000",
+       "refund_consumed": true
+      }
+     ],
+     "credits": [
+      {
+       "id": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-",
+       "campaign_id": "1",
+       "kind": "refund",
+       "owner": "bob.at-rel-owner-mw4f9xmq.testnet",
+       "recipient": "bob.at-rel-owner-mw4f9xmq.testnet",
+       "leg_id": null,
+       "available": "0",
+       "pending": "0",
+       "paid": "50000000",
+       "nonce": "1",
+       "last_attempt": {
+        "nonce": "1",
+        "amount": "50000000",
+        "status": "Succeeded",
+        "created_at_ms": "1793936441019",
+        "resolved_at_ms": "1793936442193"
+       }
+      }
+     ]
+    }
+   ],
+   "beneficiary_credits": [
+    null,
+    null,
+    null
+   ],
+   "sponsor_refund": {
+    "id": "1:sponsor_refund:alltogether-mw4f9nmo.sputnikv2.testnet:-",
+    "campaign_id": "1",
+    "kind": "sponsor_refund",
+    "owner": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "recipient": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "leg_id": null,
+    "available": "0",
+    "pending": "0",
+    "paid": "400000000",
+    "nonce": "1",
+    "last_attempt": {
+     "nonce": "1",
+     "amount": "400000000",
+     "status": "Succeeded",
+     "created_at_ms": "1793936446533",
+     "resolved_at_ms": "1793936447655"
+    }
+   }
+  },
+  {
+   "campaign": {
+    "id": "2",
+    "terms": {
+     "schemaVersion": 1,
+     "domain": "alltogether/near-testnet/v1",
+     "escrowId": "escrow.at-rel-owner-mw4f9xmq.testnet",
+     "campaignId": "2",
+     "organizer": "at-rel-owner-mw4f9xmq.testnet",
+     "title": "Release complete accessible workshop",
+     "summary": "Actual Sputnik and independent-faucet contributor verification",
+     "detail": "All essential earmarked budgets must succeed together.",
+     "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+     "tokenId": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "tokenDecimals": 6,
+     "tokenSymbol": "testUSD",
+     "deadlineMs": "1793936570613",
+     "participantLimit": 128,
+     "matchRule": "one-to-one-capped-v1",
+     "settlementRule": "all-legs-v1",
+     "legs": [
+      {
+       "legId": 0,
+       "title": "Venue",
+       "purpose": "Workshop space",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declaredSponsorCap": "200000000",
+       "sponsorAllocation": "200000000",
+       "communityTarget": "400000000"
+      },
+      {
+       "legId": 1,
+       "title": "Equipment",
+       "purpose": "Shared tools",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "250000000",
+       "declaredSponsorCap": "125000000",
+       "sponsorAllocation": "125000000",
+       "communityTarget": "125000000"
+      },
+      {
+       "legId": 2,
+       "title": "Accessibility",
+       "purpose": "Essential access",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "150000000",
+       "declaredSponsorCap": "75000000",
+       "sponsorAllocation": "75000000",
+       "communityTarget": "75000000"
+      }
+     ]
+    },
+    "terms_hash": "ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193",
+    "state": "Succeeded",
+    "created_at_ms": "1793936454388",
+    "finalized_at_ms": "1793936584492",
+    "failure_reason": null,
+    "active": [
+     "400000000",
+     "125000000",
+     "75000000"
+    ],
+    "closing_active": [
+     "400000000",
+     "125000000",
+     "75000000"
+    ],
+    "participant_count": 2,
+    "accounting": {
+     "accepted_inflows": "1000000000",
+     "active_principal": "0",
+     "sponsor_reserved": "0",
+     "failed_principal_reserved": "0",
+     "available_credits": "0",
+     "pending_transfers": "0",
+     "confirmed_paid": "1000000000"
+    }
+   },
+   "proposal": {
+    "id": 1,
+    "proposer": "at-rel-council-mw4f9nmo.testnet",
+    "description": "AllTogether release 2, immutable terms ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193, all budgets required",
+    "status": "Approved",
+    "kind": {
+     "FunctionCall": {
+      "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "actions": [
+       {
+        "method_name": "ft_transfer_call",
+        "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDIiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjJcIixcInRlcm1zX2hhc2hcIjpcImFlOTQxODQ1MDRiM2IwNDkwMGMyN2UxYWE5OGVlMGFiMWRkYjE2NDY1NzNjNzYyYWVhYTMyN2Y3MjVkNzIxOTNcIn0ifQ==",
+        "deposit": "1",
+        "gas": "100000000000000"
+       }
+      ]
+     }
+    },
+    "votes": {
+     "at-rel-council-mw4f9nmo.testnet": "Approve"
+    },
+    "submission_time": "1793936458522577071",
+    "campaign_id": "2",
+    "terms_hash": "ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193",
+    "amount": "400000000"
+   },
+   "contributors": [
+    {
+     "account_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "400000000",
+       "accepted_total": "400000000",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      }
+     ],
+     "credits": []
+    },
+    {
+     "account_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "125000000",
+       "accepted_total": "125000000",
+       "refund_consumed": false
+      },
+      {
+       "active": "75000000",
+       "accepted_total": "75000000",
+       "refund_consumed": false
+      }
+     ],
+     "credits": []
+    }
+   ],
+   "beneficiary_credits": [
+    {
+     "id": "2:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+     "campaign_id": "2",
+     "kind": "beneficiary",
+     "owner": "venue.at-rel-owner-mw4f9xmq.testnet",
+     "recipient": "venue.at-rel-owner-mw4f9xmq.testnet",
+     "leg_id": 0,
+     "available": "0",
+     "pending": "0",
+     "paid": "600000000",
+     "nonce": "1",
+     "last_attempt": {
+      "nonce": "1",
+      "amount": "600000000",
+      "status": "Succeeded",
+      "created_at_ms": "1793936589772",
+      "resolved_at_ms": "1793936595383"
+     }
+    },
+    {
+     "id": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+     "campaign_id": "2",
+     "kind": "beneficiary",
+     "owner": "equipment.at-rel-owner-mw4f9xmq.testnet",
+     "recipient": "equipment.at-rel-owner-mw4f9xmq.testnet",
+     "leg_id": 1,
+     "available": "0",
+     "pending": "0",
+     "paid": "250000000",
+     "nonce": "2",
+     "last_attempt": {
+      "nonce": "2",
+      "amount": "250000000",
+      "status": "Succeeded",
+      "created_at_ms": "1793936623843",
+      "resolved_at_ms": "1793936624615"
+     }
+    },
+    {
+     "id": "2:beneficiary:access.at-rel-owner-mw4f9xmq.testnet:2",
+     "campaign_id": "2",
+     "kind": "beneficiary",
+     "owner": "access.at-rel-owner-mw4f9xmq.testnet",
+     "recipient": "access.at-rel-owner-mw4f9xmq.testnet",
+     "leg_id": 2,
+     "available": "0",
+     "pending": "0",
+     "paid": "150000000",
+     "nonce": "1",
+     "last_attempt": {
+      "nonce": "1",
+      "amount": "150000000",
+      "status": "Succeeded",
+      "created_at_ms": "1793936630398",
+      "resolved_at_ms": "1793936631617"
+     }
+    }
+   ],
+   "sponsor_refund": null
+  },
+  {
+   "campaign": {
+    "id": "3",
+    "terms": {
+     "schemaVersion": 1,
+     "domain": "alltogether/near-testnet/v1",
+     "escrowId": "escrow.at-rel-owner-mw4f9xmq.testnet",
+     "campaignId": "3",
+     "organizer": "araash.testnet",
+     "title": "Community Workshop",
+     "summary": "A local workshop that needs both a venue and equipment",
+     "detail": "",
+     "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+     "tokenId": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "tokenDecimals": 6,
+     "tokenSymbol": "testUSD",
+     "deadlineMs": "1794026700000",
+     "participantLimit": 128,
+     "matchRule": "one-to-one-capped-v1",
+     "settlementRule": "all-legs-v1",
+     "legs": [
+      {
+       "legId": 0,
+       "title": "Essential budget",
+       "purpose": "",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declaredSponsorCap": "200000000",
+       "sponsorAllocation": "200000000",
+       "communityTarget": "400000000"
+      },
+      {
+       "legId": 1,
+       "title": "Equipment",
+       "purpose": "",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "300000000",
+       "declaredSponsorCap": "100000000",
+       "sponsorAllocation": "100000000",
+       "communityTarget": "200000000"
+      }
+     ]
+    },
+    "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+    "state": "Open",
+    "created_at_ms": "1793940561061",
+    "finalized_at_ms": null,
+    "failure_reason": null,
+    "active": [
+     "400000000",
+     "200000000"
+    ],
+    "closing_active": null,
+    "participant_count": 1,
+    "accounting": {
+     "accepted_inflows": "900000000",
+     "active_principal": "600000000",
+     "sponsor_reserved": "300000000",
+     "failed_principal_reserved": "0",
+     "available_credits": "0",
+     "pending_transfers": "0",
+     "confirmed_paid": "0"
+    }
+   },
+   "proposal": {
+    "id": 2,
+    "proposer": "at-rel-council-mw4f9nmo.testnet",
+    "description": "AllTogether plan 3 \"Community Workshop\": match 300 testUSD, terms 74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+    "status": "Approved",
+    "kind": {
+     "FunctionCall": {
+      "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "actions": [
+       {
+        "method_name": "ft_transfer_call",
+        "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjMwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciBjYW1wYWlnbiAzIiwibXNnIjoie1widlwiOjEsXCJhY3Rpb25cIjpcInNwb25zb3JcIixcImNhbXBhaWduX2lkXCI6XCIzXCIsXCJ0ZXJtc19oYXNoXCI6XCI3NDMzODg1OTU1NGVlODg5ODc4NTgxZmE3YmZlYjliZTRjZDcwZTYwZjc5YmQ5ZDMwODI4NWYwZDY4MTlhNWNmXCJ9In0=",
+        "deposit": "1",
+        "gas": "100000000000000"
+       }
+      ]
+     }
+    },
+    "votes": {
+     "at-rel-council-mw4f9nmo.testnet": "Approve"
+    },
+    "submission_time": "1793941056952697425",
+    "campaign_id": "3",
+    "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+    "amount": "300000000"
+   },
+   "contributors": [
+    {
+     "account_id": "araash.testnet",
+     "positions": [
+      {
+       "active": "400000000",
+       "accepted_total": "400000000",
+       "refund_consumed": false
+      },
+      {
+       "active": "200000000",
+       "accepted_total": "200000000",
+       "refund_consumed": false
+      }
+     ],
+     "credits": []
+    }
+   ],
+   "beneficiary_credits": [
+    null,
+    null
+   ],
+   "sponsor_refund": null
+  },
+  {
+   "campaign": {
+    "id": "4",
+    "terms": {
+     "schemaVersion": 1,
+     "domain": "alltogether/near-testnet/v1",
+     "escrowId": "escrow.at-rel-owner-mw4f9xmq.testnet",
+     "campaignId": "4",
+     "organizer": "at-rel-owner-mw4f9xmq.testnet",
+     "title": "Riverside Repair Café",
+     "summary": "Three budgets, one deadline: a hall, shared tools and step-free access. If any budget falls short, everyone is refunded.",
+     "detail": "Open for the hackathon judges. Claim 1,000 testUSD from the demo faucet and pledge to any budget before 20 November 2026, 00:00 UTC. The DAO matches each budget up to its cap once its proposal passes.",
+     "daoId": "alltogether-mw4f9nmo.sputnikv2.testnet",
+     "tokenId": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "tokenDecimals": 6,
+     "tokenSymbol": "testUSD",
+     "deadlineMs": "1795132800000",
+     "participantLimit": 128,
+     "matchRule": "one-to-one-capped-v1",
+     "settlementRule": "all-legs-v1",
+     "legs": [
+      {
+       "legId": 0,
+       "title": "Venue",
+       "purpose": "Community hall for four Saturday sessions",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "3000000000",
+       "declaredSponsorCap": "1000000000",
+       "sponsorAllocation": "1000000000",
+       "communityTarget": "2000000000"
+      },
+      {
+       "legId": 1,
+       "title": "Tools",
+       "purpose": "Shared repair tools and spare parts",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "1500000000",
+       "declaredSponsorCap": "500000000",
+       "sponsorAllocation": "500000000",
+       "communityTarget": "1000000000"
+      },
+      {
+       "legId": 2,
+       "title": "Access",
+       "purpose": "Ramp hire and a sign-language interpreter",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "900000000",
+       "declaredSponsorCap": "300000000",
+       "sponsorAllocation": "300000000",
+       "communityTarget": "600000000"
+      }
+     ]
+    },
+    "terms_hash": "016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73",
+    "state": "Open",
+    "created_at_ms": "1794035828831",
+    "finalized_at_ms": null,
+    "failure_reason": null,
+    "active": [
+     "500000000",
+     "300000000",
+     "150000000"
+    ],
+    "closing_active": null,
+    "participant_count": 2,
+    "accounting": {
+     "accepted_inflows": "2750000000",
+     "active_principal": "950000000",
+     "sponsor_reserved": "1800000000",
+     "failed_principal_reserved": "0",
+     "available_credits": "0",
+     "pending_transfers": "0",
+     "confirmed_paid": "0"
+    }
+   },
+   "proposal": {
+    "id": 3,
+    "proposer": "at-rel-council-mw4f9nmo.testnet",
+    "description": "AllTogether 4: Riverside Repair Café\nTerms SHA-256: 016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73\nOne deadline: 1795132800000\nAll earmarked budgets must succeed.\nVenue: 3000000000 base units to venue.at-rel-owner-mw4f9xmq.testnet\nTools: 1500000000 base units to equipment.at-rel-owner-mw4f9xmq.testnet\nAccess: 900000000 base units to access.at-rel-owner-mw4f9xmq.testnet",
+    "status": "Approved",
+    "kind": {
+     "FunctionCall": {
+      "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+      "actions": [
+       {
+        "method_name": "ft_transfer_call",
+        "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjE4MDAwMDAwMDAiLCJtZW1vIjoiQWxsVG9nZXRoZXIgY2FtcGFpZ24gNCIsIm1zZyI6IntcInZcIjoxLFwiYWN0aW9uXCI6XCJzcG9uc29yXCIsXCJjYW1wYWlnbl9pZFwiOlwiNFwiLFwidGVybXNfaGFzaFwiOlwiMDE2ZTk1OTFmNTg0NWZkZGUxMjNmMTkxMDkyZWIzNzM0MzVhNjA1ODUxNTk3YmNhY2U3MTQ3NDBkNDA1YWQ3M1wifSJ9",
+        "deposit": "1",
+        "gas": "100000000000000"
+       }
+      ]
+     }
+    },
+    "votes": {
+     "at-rel-council-mw4f9nmo.testnet": "Approve"
+    },
+    "submission_time": "1794035856154750176",
+    "campaign_id": "4",
+    "terms_hash": "016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73",
+    "amount": "1800000000"
+   },
+   "contributors": [
+    {
+     "account_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "500000000",
+       "accepted_total": "500000000",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      }
+     ],
+     "credits": []
+    },
+    {
+     "account_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+     "positions": [
+      {
+       "active": "0",
+       "accepted_total": "0",
+       "refund_consumed": false
+      },
+      {
+       "active": "300000000",
+       "accepted_total": "300000000",
+       "refund_consumed": false
+      },
+      {
+       "active": "150000000",
+       "accepted_total": "150000000",
+       "refund_consumed": false
+      }
+     ],
+     "credits": []
+    }
+   ],
+   "beneficiary_credits": [
+    null,
+    null,
+    null
+   ],
+   "sponsor_refund": null
+  }
+ ],
+ "proposals": [
+  {
+   "id": 0,
+   "proposer": "at-rel-council-mw4f9nmo.testnet",
+   "description": "AllTogether release 1, immutable terms 86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347, all budgets required",
+   "status": "Approved",
+   "kind": {
+    "FunctionCall": {
+     "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "actions": [
+      {
+       "method_name": "ft_transfer_call",
+       "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDEiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjFcIixcInRlcm1zX2hhc2hcIjpcIjg2ZDRiM2Y5NzU0OWEzY2M1ODgxZjQ2MDYxNTI2YjNkZDlhNDZkMzcwMjk4ODMyNzNhZmU4Y2M0ZTUxMjgzNDdcIn0ifQ==",
+       "deposit": "1",
+       "gas": "100000000000000"
+      }
+     ]
+    }
+   },
+   "votes": {
+    "at-rel-council-mw4f9nmo.testnet": "Approve"
+   },
+   "submission_time": "1793936302373691942",
+   "campaign_id": "1",
+   "terms_hash": "86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347",
+   "amount": "400000000"
+  },
+  {
+   "id": 1,
+   "proposer": "at-rel-council-mw4f9nmo.testnet",
+   "description": "AllTogether release 2, immutable terms ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193, all budgets required",
+   "status": "Approved",
+   "kind": {
+    "FunctionCall": {
+     "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "actions": [
+      {
+       "method_name": "ft_transfer_call",
+       "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjQwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciByZWxlYXNlIGNhbXBhaWduIDIiLCJtc2ciOiJ7XCJ2XCI6MSxcImFjdGlvblwiOlwic3BvbnNvclwiLFwiY2FtcGFpZ25faWRcIjpcIjJcIixcInRlcm1zX2hhc2hcIjpcImFlOTQxODQ1MDRiM2IwNDkwMGMyN2UxYWE5OGVlMGFiMWRkYjE2NDY1NzNjNzYyYWVhYTMyN2Y3MjVkNzIxOTNcIn0ifQ==",
+       "deposit": "1",
+       "gas": "100000000000000"
+      }
+     ]
+    }
+   },
+   "votes": {
+    "at-rel-council-mw4f9nmo.testnet": "Approve"
+   },
+   "submission_time": "1793936458522577071",
+   "campaign_id": "2",
+   "terms_hash": "ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193",
+   "amount": "400000000"
+  },
+  {
+   "id": 2,
+   "proposer": "at-rel-council-mw4f9nmo.testnet",
+   "description": "AllTogether plan 3 \"Community Workshop\": match 300 testUSD, terms 74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+   "status": "Approved",
+   "kind": {
+    "FunctionCall": {
+     "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "actions": [
+      {
+       "method_name": "ft_transfer_call",
+       "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjMwMDAwMDAwMCIsIm1lbW8iOiJBbGxUb2dldGhlciBjYW1wYWlnbiAzIiwibXNnIjoie1widlwiOjEsXCJhY3Rpb25cIjpcInNwb25zb3JcIixcImNhbXBhaWduX2lkXCI6XCIzXCIsXCJ0ZXJtc19oYXNoXCI6XCI3NDMzODg1OTU1NGVlODg5ODc4NTgxZmE3YmZlYjliZTRjZDcwZTYwZjc5YmQ5ZDMwODI4NWYwZDY4MTlhNWNmXCJ9In0=",
+       "deposit": "1",
+       "gas": "100000000000000"
+      }
+     ]
+    }
+   },
+   "votes": {
+    "at-rel-council-mw4f9nmo.testnet": "Approve"
+   },
+   "submission_time": "1793941056952697425",
+   "campaign_id": "3",
+   "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+   "amount": "300000000"
+  },
+  {
+   "id": 3,
+   "proposer": "at-rel-council-mw4f9nmo.testnet",
+   "description": "AllTogether 4: Riverside Repair Café\nTerms SHA-256: 016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73\nOne deadline: 1795132800000\nAll earmarked budgets must succeed.\nVenue: 3000000000 base units to venue.at-rel-owner-mw4f9xmq.testnet\nTools: 1500000000 base units to equipment.at-rel-owner-mw4f9xmq.testnet\nAccess: 900000000 base units to access.at-rel-owner-mw4f9xmq.testnet",
+   "status": "Approved",
+   "kind": {
+    "FunctionCall": {
+     "receiver_id": "testusd.at-rel-owner-mw4f9xmq.testnet",
+     "actions": [
+      {
+       "method_name": "ft_transfer_call",
+       "args": "eyJyZWNlaXZlcl9pZCI6ImVzY3Jvdy5hdC1yZWwtb3duZXItbXc0Zjl4bXEudGVzdG5ldCIsImFtb3VudCI6IjE4MDAwMDAwMDAiLCJtZW1vIjoiQWxsVG9nZXRoZXIgY2FtcGFpZ24gNCIsIm1zZyI6IntcInZcIjoxLFwiYWN0aW9uXCI6XCJzcG9uc29yXCIsXCJjYW1wYWlnbl9pZFwiOlwiNFwiLFwidGVybXNfaGFzaFwiOlwiMDE2ZTk1OTFmNTg0NWZkZGUxMjNmMTkxMDkyZWIzNzM0MzVhNjA1ODUxNTk3YmNhY2U3MTQ3NDBkNDA1YWQ3M1wifSJ9",
+       "deposit": "1",
+       "gas": "100000000000000"
+      }
+     ]
+    }
+   },
+   "votes": {
+    "at-rel-council-mw4f9nmo.testnet": "Approve"
+   },
+   "submission_time": "1794035856154750176",
+   "campaign_id": "4",
+   "terms_hash": "016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73",
+   "amount": "1800000000"
+  }
+ ],
+ "events": [
+  {
+   "tx": "2BFMGqRn8yQSNLmNDn4rqc4HBWfLVnzzUyc8C5xQFTaA",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "create_campaign",
+   "args": {
+    "input": {
+     "title": "Release incomplete accessible workshop",
+     "summary": "Actual Sputnik and independent-faucet contributor verification",
+     "detail": "All essential earmarked budgets must succeed together.",
+     "deadline_ms": "1793936412487",
+     "legs": [
+      {
+       "title": "Venue",
+       "purpose": "Workshop space",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declared_sponsor_cap": "200000000"
+      },
+      {
+       "title": "Equipment",
+       "purpose": "Shared tools",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "250000000",
+       "declared_sponsor_cap": "125000000"
+      },
+      {
+       "title": "Accessibility",
+       "purpose": "Essential access",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "150000000",
+       "declared_sponsor_cap": "75000000"
+      }
+     ]
+    }
+   },
+   "leg": null,
+   "at": "1793936296524062000",
+   "block": 276435194,
+   "event": "campaign_created",
+   "data": {
+    "campaign_id": "1",
+    "terms_hash": "86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347",
+    "storage_yocto": "2924080000000000000000000"
+   }
+  },
+  {
+   "tx": "BVvZ6QoZiXBz4H7xhiiFTAfpy2PuVLuk4JisjGbJBi73",
+   "signer": "at-rel-council-mw4f9nmo.testnet",
+   "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+   "method": "act_proposal",
+   "args": {
+    "id": 0,
+    "action": "VoteApprove"
+   },
+   "leg": null,
+   "at": "1793936311121644500",
+   "block": 276435219,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "1",
+    "sender_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "action": "sponsor",
+    "amount": "400000000"
+   }
+  },
+  {
+   "tx": "9EnvgyUz3FytosBkFqLyky7AnDsSisSTyygxTgWkpCdc",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "400000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"1\",\"leg_id\":0,\"terms_hash\":\"86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347\"}"
+   },
+   "leg": 0,
+   "at": "1793936318436534000",
+   "block": 276435232,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "1",
+    "sender_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "400000000"
+   }
+  },
+  {
+   "tx": "CFoiRKJjqdVQd8e5oMhRohtQoVPpgtEwtVh8G1M2jpUb",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "125000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"1\",\"leg_id\":1,\"terms_hash\":\"86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347\"}"
+   },
+   "leg": 1,
+   "at": "1793936322874054100",
+   "block": 276435241,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "1",
+    "sender_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "125000000"
+   }
+  },
+  {
+   "tx": "4ZzyXjDGz3arybPRPS78ZzcVPgPutFMHg2PoeHmPQmS7",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "50000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"1\",\"leg_id\":2,\"terms_hash\":\"86d4b3f97549a3cc5881f46061526b3dd9a46d37029883273afe8cc4e5128347\"}"
+   },
+   "leg": 2,
+   "at": "1793936328101790200",
+   "block": 276435250,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "1",
+    "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "50000000"
+   }
+  },
+  {
+   "tx": "8jz4fuQhgRMms4ZvkpeKaXnLGi26UEJDgaGCMgQKHVAf",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "finalize",
+   "args": {
+    "campaign_id": "1"
+   },
+   "leg": null,
+   "at": "1793936422243667700",
+   "block": 276435407,
+   "event": "campaign_finalized",
+   "data": {
+    "campaign_id": "1",
+    "state": "Failed",
+    "closing_active": [
+     "400000000",
+     "125000000",
+     "50000000"
+    ]
+   }
+  },
+  {
+   "tx": "6zpthw927296WJU6ShoNXUgvnU8Cguqz4rjtNtxhF1kr",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "materialize_refund",
+   "args": {
+    "campaign_id": "1"
+   },
+   "leg": null,
+   "at": "1793936427040822000",
+   "block": 276435415,
+   "event": "refund_materialized",
+   "data": {
+    "campaign_id": "1",
+    "amount": "525000000",
+    "credit_id": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-"
+   }
+  },
+  {
+   "tx": "GTnRSSUcWKMomXKvKC3YYw6Yq4qDTiwFHoMpNTu3T4VB",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936431352677400",
+   "block": 276435422,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-",
+    "nonce": "1",
+    "amount": "525000000",
+    "recipient": "alice.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "GTnRSSUcWKMomXKvKC3YYw6Yq4qDTiwFHoMpNTu3T4VB",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936432445120000",
+   "block": 276435424,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "1:refund:alice.at-rel-owner-mw4f9xmq.testnet:-",
+    "nonce": "1",
+    "amount": "525000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "7SkkUnirJfcHTg52hxv9paxex5y4Jeh2UD3Zqse8K2cy",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "materialize_refund",
+   "args": {
+    "campaign_id": "1"
+   },
+   "leg": null,
+   "at": "1793936436806622000",
+   "block": 276435431,
+   "event": "refund_materialized",
+   "data": {
+    "campaign_id": "1",
+    "amount": "50000000",
+    "credit_id": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-"
+   }
+  },
+  {
+   "tx": "6m8pHJG6FdFUSv7Nh4euZmz2dcHeU1nuDbFq6Ki71MXH",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936441019160300",
+   "block": 276435438,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-",
+    "nonce": "1",
+    "amount": "50000000",
+    "recipient": "bob.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "6m8pHJG6FdFUSv7Nh4euZmz2dcHeU1nuDbFq6Ki71MXH",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936442193066800",
+   "block": 276435440,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "1:refund:bob.at-rel-owner-mw4f9xmq.testnet:-",
+    "nonce": "1",
+    "amount": "50000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "GV2bAfi9KtgHK3LumPJ6eTHGAYnkgF7MauZdWhniiWmR",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:sponsor_refund:alltogether-mw4f9nmo.sputnikv2.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936446533001000",
+   "block": 276435447,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "1:sponsor_refund:alltogether-mw4f9nmo.sputnikv2.testnet:-",
+    "nonce": "1",
+    "amount": "400000000",
+    "recipient": "alltogether-mw4f9nmo.sputnikv2.testnet"
+   }
+  },
+  {
+   "tx": "GV2bAfi9KtgHK3LumPJ6eTHGAYnkgF7MauZdWhniiWmR",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "1:sponsor_refund:alltogether-mw4f9nmo.sputnikv2.testnet:-"
+   },
+   "leg": null,
+   "at": "1793936447655215000",
+   "block": 276435449,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "1:sponsor_refund:alltogether-mw4f9nmo.sputnikv2.testnet:-",
+    "nonce": "1",
+    "amount": "400000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "2Cek4eeJobnn2QoBn35htQ6iZE6wyReJ1dY6WPAwQfUM",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "create_campaign",
+   "args": {
+    "input": {
+     "title": "Release complete accessible workshop",
+     "summary": "Actual Sputnik and independent-faucet contributor verification",
+     "detail": "All essential earmarked budgets must succeed together.",
+     "deadline_ms": "1793936570613",
+     "legs": [
+      {
+       "title": "Venue",
+       "purpose": "Workshop space",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declared_sponsor_cap": "200000000"
+      },
+      {
+       "title": "Equipment",
+       "purpose": "Shared tools",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "250000000",
+       "declared_sponsor_cap": "125000000"
+      },
+      {
+       "title": "Accessibility",
+       "purpose": "Essential access",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "150000000",
+       "declared_sponsor_cap": "75000000"
+      }
+     ]
+    }
+   },
+   "leg": null,
+   "at": "1793936454388461000",
+   "block": 276435460,
+   "event": "campaign_created",
+   "data": {
+    "campaign_id": "2",
+    "terms_hash": "ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193",
+    "storage_yocto": "2924080000000000000000000"
+   }
+  },
+  {
+   "tx": "HoGqStqefefHq5GLmPfLaEtUr9CC7wPZitPQ6WYXLFc6",
+   "signer": "at-rel-council-mw4f9nmo.testnet",
+   "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+   "method": "act_proposal",
+   "args": {
+    "id": 1,
+    "action": "VoteApprove"
+   },
+   "leg": null,
+   "at": "1793936463990387000",
+   "block": 276435476,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "2",
+    "sender_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "action": "sponsor",
+    "amount": "400000000"
+   }
+  },
+  {
+   "tx": "6C9DkvQzfYqvjC8LzT6Q2PQfuexEJQkGwPumqZjZXxKm",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "400000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"2\",\"leg_id\":0,\"terms_hash\":\"ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193\"}"
+   },
+   "leg": 0,
+   "at": "1793936473759051800",
+   "block": 276435492,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "2",
+    "sender_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "400000000"
+   }
+  },
+  {
+   "tx": "9v2RZv1GiRPLrfteQYWxo4MEKwnNuGM9MDs5CmTxbi1W",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "125000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"2\",\"leg_id\":1,\"terms_hash\":\"ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193\"}"
+   },
+   "leg": 1,
+   "at": "1793936479165304300",
+   "block": 276435501,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "2",
+    "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "125000000"
+   }
+  },
+  {
+   "tx": "5nQP6jVtwtXPpoPtFnTL93tQdX4A9p6HdTUJUQqf1mvz",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "75000000",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"2\",\"leg_id\":2,\"terms_hash\":\"ae94184504b3b04900c27e1aa98ee0ab1ddb1646573c762aeaa327f725d72193\"}"
+   },
+   "leg": 2,
+   "at": "1793936484650151200",
+   "block": 276435510,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "2",
+    "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "75000000"
+   }
+  },
+  {
+   "tx": "AtdnRfPMoTq4ehnXTypfBayxxRtZHc9iCbyWPMHf8npY",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "finalize",
+   "args": {
+    "campaign_id": "2"
+   },
+   "leg": null,
+   "at": "1793936584492319200",
+   "block": 276435673,
+   "event": "campaign_finalized",
+   "data": {
+    "campaign_id": "2",
+    "state": "Succeeded",
+    "closing_active": [
+     "400000000",
+     "125000000",
+     "75000000"
+    ]
+   }
+  },
+  {
+   "tx": "DQna3kFHDnKTUmBqRBHme4WX8mKTCVwLKAD76rHY5k9n",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0"
+   },
+   "leg": null,
+   "at": "1793936589772395300",
+   "block": 276435681,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "2:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+    "nonce": "1",
+    "amount": "600000000",
+    "recipient": "venue.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "DQna3kFHDnKTUmBqRBHme4WX8mKTCVwLKAD76rHY5k9n",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0"
+   },
+   "leg": null,
+   "at": "1793936595383910700",
+   "block": 276435688,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "2:beneficiary:venue.at-rel-owner-mw4f9xmq.testnet:0",
+    "nonce": "1",
+    "amount": "600000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "Aw4mZTr9toPVVwJgkNNt1YKXDhZiw6D2pKt4voGfn45r",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1793936600562466300",
+   "block": 276435696,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "1",
+    "amount": "250000000",
+    "recipient": "equipment.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "Aw4mZTr9toPVVwJgkNNt1YKXDhZiw6D2pKt4voGfn45r",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1793936605694648600",
+   "block": 276435703,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "1",
+    "amount": "250000000",
+    "success": false
+   }
+  },
+  {
+   "tx": "9qNLhsxtxnGp9fycqfjLrHLcD88osrDfuhti52yJKL5K",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1793936623843972400",
+   "block": 276435727,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "2",
+    "amount": "250000000",
+    "recipient": "equipment.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "9qNLhsxtxnGp9fycqfjLrHLcD88osrDfuhti52yJKL5K",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1"
+   },
+   "leg": null,
+   "at": "1793936624615705600",
+   "block": 276435729,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "2:beneficiary:equipment.at-rel-owner-mw4f9xmq.testnet:1",
+    "nonce": "2",
+    "amount": "250000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "6nSGXbp3d3pUhXv1CMc9bKSF5s8SWPzGYdy5oUvJTeyV",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:access.at-rel-owner-mw4f9xmq.testnet:2"
+   },
+   "leg": null,
+   "at": "1793936630398233600",
+   "block": 276435738,
+   "event": "transfer_started",
+   "data": {
+    "credit_id": "2:beneficiary:access.at-rel-owner-mw4f9xmq.testnet:2",
+    "nonce": "1",
+    "amount": "150000000",
+    "recipient": "access.at-rel-owner-mw4f9xmq.testnet"
+   }
+  },
+  {
+   "tx": "6nSGXbp3d3pUhXv1CMc9bKSF5s8SWPzGYdy5oUvJTeyV",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "claim_credit",
+   "args": {
+    "credit_key": "2:beneficiary:access.at-rel-owner-mw4f9xmq.testnet:2"
+   },
+   "leg": null,
+   "at": "1793936631617183500",
+   "block": 276435740,
+   "event": "transfer_resolved",
+   "data": {
+    "credit_id": "2:beneficiary:access.at-rel-owner-mw4f9xmq.testnet:2",
+    "nonce": "1",
+    "amount": "150000000",
+    "success": true
+   }
+  },
+  {
+   "tx": "Aqf6PhoMuWvwUpivLyTpXySF8KcRtWMXJivxu4SCMzdG",
+   "signer": "araash.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "create_campaign",
+   "args": {
+    "input": {
+     "title": "Community Workshop",
+     "summary": "A local workshop that needs both a venue and equipment",
+     "detail": "",
+     "deadline_ms": "1794026700000",
+     "legs": [
+      {
+       "title": "Essential budget",
+       "purpose": "",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "600000000",
+       "declared_sponsor_cap": "200000000"
+      },
+      {
+       "title": "Equipment",
+       "purpose": "",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "300000000",
+       "declared_sponsor_cap": "100000000"
+      }
+     ]
+    }
+   },
+   "leg": null,
+   "at": "1793940561061688000",
+   "block": 276441936,
+   "event": "campaign_created",
+   "data": {
+    "campaign_id": "3",
+    "terms_hash": "74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf",
+    "storage_yocto": "2588820000000000000000000"
+   }
+  },
+  {
+   "tx": "2ZhLPTtKVJPSMdTt7DWGE1QY12Qf7Qz9cq6JtgHzKVzd",
+   "signer": "at-rel-council-mw4f9nmo.testnet",
+   "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+   "method": "act_proposal",
+   "args": {
+    "id": 2,
+    "action": "VoteApprove"
+   },
+   "leg": null,
+   "at": "1793941061754729200",
+   "block": 276442755,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "3",
+    "sender_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "action": "sponsor",
+    "amount": "300000000"
+   }
+  },
+  {
+   "tx": "H6eJSekjDgASaShMDV5GBzJkeXrRB1sb7dVwzpV2cUJz",
+   "signer": "araash.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "400000000",
+    "memo": "AllTogether campaign 3",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"3\",\"terms_hash\":\"74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf\",\"leg_id\":0}"
+   },
+   "leg": 0,
+   "at": "1793941714296806400",
+   "block": 276443826,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "3",
+    "sender_id": "araash.testnet",
+    "action": "pledge",
+    "amount": "400000000"
+   }
+  },
+  {
+   "tx": "7d3oh3t8kMQNo7qEvRkwGsSiDLfcvxrNMEiVfLHB8vzV",
+   "signer": "araash.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "200000000",
+    "memo": "AllTogether campaign 3",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"3\",\"terms_hash\":\"74338859554ee889878581fa7bfeb9be4cd70e60f79bd9d308285f0d6819a5cf\",\"leg_id\":1}"
+   },
+   "leg": 1,
+   "at": "1793941743223223800",
+   "block": 276443871,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "3",
+    "sender_id": "araash.testnet",
+    "action": "pledge",
+    "amount": "200000000"
+   }
+  },
+  {
+   "tx": "3PKZCbaDSJcyQvN66wtQJUCZ2hcs8xsk6zYaptG5yzk5",
+   "signer": "at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "escrow.at-rel-owner-mw4f9xmq.testnet",
+   "method": "create_campaign",
+   "args": {
+    "input": {
+     "title": "Riverside Repair Café",
+     "summary": "Three budgets, one deadline: a hall, shared tools and step-free access. If any budget falls short, everyone is refunded.",
+     "detail": "Open for the hackathon judges. Claim 1,000 testUSD from the demo faucet and pledge to any budget before 20 November 2026, 00:00 UTC. The DAO matches each budget up to its cap once its proposal passes.",
+     "deadline_ms": "1795132800000",
+     "legs": [
+      {
+       "title": "Venue",
+       "purpose": "Community hall for four Saturday sessions",
+       "beneficiary": "venue.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "3000000000",
+       "declared_sponsor_cap": "1000000000"
+      },
+      {
+       "title": "Tools",
+       "purpose": "Shared repair tools and spare parts",
+       "beneficiary": "equipment.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "1500000000",
+       "declared_sponsor_cap": "500000000"
+      },
+      {
+       "title": "Access",
+       "purpose": "Ramp hire and a sign-language interpreter",
+       "beneficiary": "access.at-rel-owner-mw4f9xmq.testnet",
+       "budget": "900000000",
+       "declared_sponsor_cap": "300000000"
+      }
+     ]
+    }
+   },
+   "leg": null,
+   "at": "1794035828831035000",
+   "block": 276599570,
+   "event": "campaign_created",
+   "data": {
+    "campaign_id": "4",
+    "terms_hash": "016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73",
+    "storage_yocto": "2924080000000000000000000"
+   }
+  },
+  {
+   "tx": "J6SHZQDHyuG7DT4nQE5hYDasL6Zd1QVLq7bn4Vn3cWwH",
+   "signer": "at-rel-council-mw4f9nmo.testnet",
+   "receiver": "alltogether-mw4f9nmo.sputnikv2.testnet",
+   "method": "act_proposal",
+   "args": {
+    "id": 3,
+    "action": "VoteApprove"
+   },
+   "leg": null,
+   "at": "1794035873657684200",
+   "block": 276599644,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "4",
+    "sender_id": "alltogether-mw4f9nmo.sputnikv2.testnet",
+    "action": "sponsor",
+    "amount": "1800000000"
+   }
+  },
+  {
+   "tx": "9nMadYH4QqdSsPosp1ba5HJrKURSvRgBJ1f2WfWzkHaa",
+   "signer": "alice.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "500000000",
+    "memo": "AllTogether campaign 4",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"4\",\"terms_hash\":\"016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73\",\"leg_id\":0}"
+   },
+   "leg": 0,
+   "at": "1794035893065258000",
+   "block": 276599676,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "4",
+    "sender_id": "alice.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "500000000"
+   }
+  },
+  {
+   "tx": "EtQz3RZj6zS63vxsF4u1tBS1ooqCzkdyRxRkyxhHLnjx",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "300000000",
+    "memo": "AllTogether campaign 4",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"4\",\"terms_hash\":\"016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73\",\"leg_id\":1}"
+   },
+   "leg": 1,
+   "at": "1794035906881077000",
+   "block": 276599699,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "4",
+    "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "300000000"
+   }
+  },
+  {
+   "tx": "Gzu1ygixWPHsxPyc984T3Dxq62FaA3QB1Hw1tLKaWbok",
+   "signer": "bob.at-rel-owner-mw4f9xmq.testnet",
+   "receiver": "testusd.at-rel-owner-mw4f9xmq.testnet",
+   "method": "ft_transfer_call",
+   "args": {
+    "receiver_id": "escrow.at-rel-owner-mw4f9xmq.testnet",
+    "amount": "150000000",
+    "memo": "AllTogether campaign 4",
+    "msg": "{\"v\":1,\"action\":\"pledge\",\"campaign_id\":\"4\",\"terms_hash\":\"016e9591f5845fdde123f191092eb373435a605851597bcace714740d405ad73\",\"leg_id\":2}"
+   },
+   "leg": 2,
+   "at": "1794035913492583200",
+   "block": 276599709,
+   "event": "funds_accepted",
+   "data": {
+    "campaign_id": "4",
+    "sender_id": "bob.at-rel-owner-mw4f9xmq.testnet",
+    "action": "pledge",
+    "amount": "150000000"
+   }
+  }
+ ],
+ "history_source": "fastnear-tx-api",
+ "history_error": null
+}
